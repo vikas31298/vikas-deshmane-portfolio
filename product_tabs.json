@@ -1,7 +1,7 @@
 {
   "cx-anomaly-platform": {
     "agentic": {
-      "summary": "A LangGraph supervisor coordinates specialised agents over a governed data platform. Every answer and every routed case passes guardrails, and every release passes an evaluation gate.",
+      "summary": "Two tiers of agents run on LangGraph. Ambient agents sit on the data streams and wake up on events, with no one prompting them. When they find something that needs investigation, they hand it to a deep agent, which plans the work, delegates to sub-agents, keeps notes in memory, and returns a routed, evidence-backed case. A human approves anything with customer impact.",
       "columns": [
         {
           "title": "Sources",
@@ -15,21 +15,33 @@
         {
           "title": "Data platform",
           "nodes": [
+            "Streaming ingestion",
             "ETL and validation",
             "466-entity hierarchy",
-            "Time-varying weights",
             "Curated metrics store"
           ]
         },
         {
-          "title": "Agent orchestrator · LangGraph",
+          "title": "Ambient agents · event-driven",
           "highlight": true,
           "nodes": [
-            "Supervisor and intent router",
-            "Anomaly-detection agent",
-            "Theme-classification agent",
-            "Text-to-SQL agent",
-            "Routing and action agent"
+            "Review-stream watcher",
+            "Survey and NPS watcher",
+            "Anomaly detector",
+            "SLA and backlog monitor",
+            "Human-in-the-loop inbox"
+          ]
+        },
+        {
+          "title": "Deep agents · planned work",
+          "highlight": true,
+          "nodes": [
+            "Planner and supervisor",
+            "Root-cause investigator",
+            "Theme-classification sub-agent",
+            "SQL analyst sub-agent",
+            "Report and routing sub-agent",
+            "Working memory and notes"
           ]
         },
         {
@@ -37,7 +49,7 @@
           "nodes": [
             "Azure OpenAI models",
             "Curated SQL library",
-            "SQL warehouse",
+            "Constrained text-to-SQL",
             "Entity and weight resolver",
             "Ops ticketing API"
           ]
@@ -54,6 +66,14 @@
       ],
       "bands": [
         {
+          "title": "Triggers",
+          "text": "Ambient agents run on events and schedules, not prompts"
+        },
+        {
+          "title": "Human in the loop",
+          "text": "Interrupts route customer-impacting actions to an inbox for approval"
+        },
+        {
           "title": "Guardrails",
           "text": "Schema-constrained SQL, PII masking, role-based access"
         },
@@ -62,51 +82,74 @@
           "text": "165-question harness, 80%+ accuracy release gate"
         },
         {
-          "title": "Reliability",
-          "text": "Retries, timeouts, fallback to curated SQL"
-        },
-        {
           "title": "Observability",
-          "text": "LangSmith traces, cost and latency per agent"
+          "text": "LangSmith traces, cost and latency per agent and sub-agent"
         }
       ],
       "flow": [
-        "Ingest: reviews and surveys land daily, are validated and mapped to the 466-entity hierarchy with the right weights for that period.",
-        "Detect: the anomaly agent compares theme volume and sentiment per entity against weighted baselines and flags emerging spikes.",
-        "Classify: the theme agent labels each flagged cluster with a root-cause theme and attaches representative evidence.",
-        "Route: the routing agent opens a case with the owning operations team, with priority, evidence and the affected entities.",
-        "Ask: executives ask questions in plain language; the supervisor answers from curated SQL first and uses constrained text-to-SQL only for new questions.",
-        "Verify: guardrails validate generated SQL against the schema; failures retry, then fall back to the closest curated answer.",
+        "Ingest: reviews, surveys and tickets stream in, are validated and mapped to the 466-entity hierarchy with the right weights for that period.",
+        "Watch: ambient agents run continuously on the streams. The anomaly detector compares theme volume and sentiment per entity against weighted baselines.",
+        "Trigger: when a spike crosses a threshold, the ambient agent opens an investigation instead of waiting for someone to ask.",
+        "Plan: the deep agent's planner breaks the investigation into steps and writes them to working memory.",
+        "Delegate: sub-agents classify the theme, query the data with curated or constrained SQL, and gather representative evidence.",
+        "Decide: the planner reviews the sub-agent results, drafts a case with root cause, affected entities and priority, and proposes an owner.",
+        "Approve: an interrupt sends customer-impacting actions to the human-in-the-loop inbox. Approved cases are routed to the operations team.",
+        "Answer: executives ask questions in plain language; the same deep agent answers from curated SQL first and uses constrained text-to-SQL only for new questions.",
         "Improve: every release runs the 165-question harness, and production traces feed new cases into the regression set."
       ],
       "agents": [
         {
-          "name": "Supervisor",
-          "role": "Understands intent and decides which agent or path handles the request",
-          "guard": "Intent confidence threshold, safe default to curated path"
+          "name": "Review-stream watcher (ambient)",
+          "role": "Listens to new reviews and tickets as they arrive",
+          "guard": "Event-driven only, no autonomous customer contact"
         },
         {
-          "name": "Anomaly detection",
-          "role": "Finds abnormal theme and sentiment shifts per entity",
-          "guard": "Minimum volume and weighted baselines to avoid noise"
+          "name": "Survey and NPS watcher (ambient)",
+          "role": "Tracks survey responses and NPS per entity",
+          "guard": "Minimum sample size before acting"
         },
         {
-          "name": "Theme classification",
-          "role": "Assigns root-cause themes and picks evidence",
-          "guard": "Fixed taxonomy, low-confidence items sent for review"
+          "name": "Anomaly detector (ambient)",
+          "role": "Flags abnormal theme and sentiment shifts",
+          "guard": "Weighted baselines and volume thresholds"
         },
         {
-          "name": "Text-to-SQL",
-          "role": "Answers new analytical questions over governed tables",
+          "name": "SLA and backlog monitor (ambient)",
+          "role": "Escalates cases stuck past their SLA",
+          "guard": "Escalation rules owned by operations"
+        },
+        {
+          "name": "Planner and supervisor (deep)",
+          "role": "Plans an investigation and coordinates sub-agents",
+          "guard": "Step budget and interrupt on customer impact"
+        },
+        {
+          "name": "Root-cause investigator (deep)",
+          "role": "Works through evidence to find the likely cause",
+          "guard": "Must cite evidence for every claim"
+        },
+        {
+          "name": "Theme-classification sub-agent",
+          "role": "Labels clusters with a root-cause theme",
+          "guard": "Fixed taxonomy, low confidence sent for review"
+        },
+        {
+          "name": "SQL analyst sub-agent",
+          "role": "Answers data questions over governed tables",
           "guard": "Schema allow-list, read-only, query validation"
         },
         {
-          "name": "Routing and action",
-          "role": "Creates and assigns cases to operations teams",
+          "name": "Report and routing sub-agent",
+          "role": "Writes the case and assigns an owner",
           "guard": "Ownership rules, duplicate suppression"
+        },
+        {
+          "name": "Working memory",
+          "role": "Keeps plans, notes and interim results across steps",
+          "guard": "Scoped per investigation, PII masked"
         }
       ],
-      "headline": "End-to-end architecture",
+      "headline": "End-to-end architecture: ambient and deep agents",
       "flow_title": "Request lifecycle"
     },
     "research": {
