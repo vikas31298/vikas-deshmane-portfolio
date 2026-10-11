@@ -76,3 +76,25 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 document.querySelectorAll('.gallery img').forEach(img => {
   img.addEventListener('error', () => { img.closest('figure').style.display = 'none'; });
 });
+
+// Product page tabs
+const tabBar = document.getElementById('productTabs');
+if (tabBar) {
+  const buttons = [...tabBar.querySelectorAll('.tabs__btn')];
+  const show = (key, scroll) => {
+    if (!document.getElementById('tab-' + key)) key = 'overview';
+    buttons.forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === key)));
+    document.querySelectorAll('.tabpanel').forEach(p => {
+      const on = p.id === 'tab-' + key;
+      p.hidden = !on;
+      if (on) p.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+    });
+    if (scroll) window.scrollTo({ top: tabBar.offsetTop - 68, behavior: 'smooth' });
+  };
+  buttons.forEach(b => b.addEventListener('click', () => {
+    history.replaceState(null, '', '#' + b.dataset.tab);
+    show(b.dataset.tab, true);
+  }));
+  const initial = location.hash.replace('#', '');
+  if (initial) show(initial, true);
+}

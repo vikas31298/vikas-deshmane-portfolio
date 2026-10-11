@@ -7,7 +7,7 @@
   <meta name="description" content="LLM-driven anomaly detection and agent-assisted operations over 4M+ customer interactions for a multi-brand real-estate group.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=3">
+  <link rel="stylesheet" href="../styles.css?v=4">
 </head>
 <body>
   <header class="nav" id="top">
@@ -42,6 +42,8 @@
     </div>
   </section>
 
+  <nav class="tabs" id="productTabs"><div class="container tabs__inner" role="tablist"><button class="tabs__btn" role="tab" data-tab="overview" aria-selected="true">Overview</button><button class="tabs__btn" role="tab" data-tab="architecture" aria-selected="false">Agentic AI Architecture</button><button class="tabs__btn" role="tab" data-tab="research" aria-selected="false">Product Research</button></div></nav>
+<div class="tabpanel" id="tab-overview" role="tabpanel">
   <section class="section section--tight">
     <div class="container">
       <div class="hero__card reveal"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">58 → 70+</span><span class="stat__label">NPS movement credited to the initiative</span></div><div class="stat"><span class="stat__num">4M+</span><span class="stat__label">Reviews and survey responses monitored</span></div><div class="stat"><span class="stat__num">80%+</span><span class="stat__label">Release-gate accuracy on 165-question harness</span></div><div class="stat"><span class="stat__num">466</span><span class="stat__label">Entities in the data hierarchy, 10 years of data</span></div></div></div>
@@ -91,6 +93,89 @@
     </div>
   </section>
 
+  </div>
+  <div class="tabpanel" id="tab-architecture" role="tabpanel" hidden>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Agentic AI architecture</p><h2>End to end, from raw signal to action</h2><p class="section__sub">A LangGraph supervisor coordinates specialised agents over a governed data platform. Every answer and every routed case passes guardrails, and every release passes an evaluation gate.</p></div>
+      <div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 504" role="img" aria-label="End-to-end agentic AI architecture"><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b4832e"/></marker></defs><rect x="20" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="40.0">SOURCES</tspan></text><rect x="32" y="93.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="117.0">Customer reviews</tspan></text><rect x="32" y="151.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="175.0">Post-handover surveys</tspan></text><rect x="32" y="209.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="233.0">CRM and ticketing</tspan></text><rect x="32" y="267.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="283.5">Portal and social</tspan><tspan x="112.0" y="298.5">feedback</tspan></text><line x1="208" y1="192.0" x2="244" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="248" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="40.0">DATA PLATFORM</tspan></text><rect x="260" y="93.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="117.0">ETL and validation</tspan></text><rect x="260" y="151.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="175.0">466-entity hierarchy</tspan></text><rect x="260" y="209.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="233.0">Time-varying weights</tspan></text><rect x="260" y="267.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="291.0">Curated metrics store</tspan></text><line x1="436" y1="192.0" x2="472" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="476" y="10" width="184" height="364" rx="16" fill="#1f3a5f" stroke="#1f3a5f"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#f0d79a" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="33.0">AGENT ORCHESTRATOR ·</tspan><tspan x="568.0" y="47.0">LANGGRAPH</tspan></text><rect x="488" y="64.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="80.5">Supervisor and intent</tspan><tspan x="568.0" y="95.5">router</tspan></text><rect x="488" y="122.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="138.5">Anomaly-detection</tspan><tspan x="568.0" y="153.5">agent</tspan></text><rect x="488" y="180.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="196.5">Theme-classification</tspan><tspan x="568.0" y="211.5">agent</tspan></text><rect x="488" y="238.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="262.0">Text-to-SQL agent</tspan></text><rect x="488" y="296.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="312.5">Routing and action</tspan><tspan x="568.0" y="327.5">agent</tspan></text><line x1="664" y1="192.0" x2="700" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="704" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="40.0">TOOLS AND MODELS</tspan></text><rect x="716" y="64.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="88.0">Azure OpenAI models</tspan></text><rect x="716" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="146.0">Curated SQL library</tspan></text><rect x="716" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="204.0">SQL warehouse</tspan></text><rect x="716" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="254.5">Entity and weight</tspan><tspan x="796.0" y="269.5">resolver</tspan></text><rect x="716" y="296.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="320.0">Ops ticketing API</tspan></text><line x1="892" y1="192.0" x2="928" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="932" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="40.0">EXPERIENCES</tspan></text><rect x="944" y="93.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="117.0">Executive dashboards</tspan></text><rect x="944" y="151.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="167.5">Conversational</tspan><tspan x="1024.0" y="182.5">analytics</tspan></text><rect x="944" y="209.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="233.0">Ops routing queues</tspan></text><rect x="944" y="267.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="291.0">Proactive alerts</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="start" dominant-baseline="middle"><tspan x="20" y="390.0">CROSS-CUTTING CONTROLS</tspan></text><rect x="20.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="20.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="426.0">Guardrails</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="446.5">Schema-constrained SQL, PII masking,</tspan><tspan x="38.0" y="461.5">role-based access</tspan></text><rect x="297.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="297.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="426.0">Evaluation</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="446.5">165-question harness, 80%+ accuracy</tspan><tspan x="315.0" y="461.5">release gate</tspan></text><rect x="574.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="574.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="426.0">Reliability</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="446.5">Retries, timeouts, fallback to</tspan><tspan x="592.0" y="461.5">curated SQL</tspan></text><rect x="851.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="851.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="426.0">Observability</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="446.5">LangSmith traces, cost and latency</tspan><tspan x="869.0" y="461.5">per agent</tspan></text></svg></div>
+      <p class="diagram__hint">Scroll sideways to see the full diagram on small screens.</p>
+    </div>
+  </section>
+  <section class="section section--tight section--alt">
+    <div class="container detail">
+      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>How one signal moves through the system</h2></div>
+      <div class="detail__main"><ol class="numbered"><li>Ingest: reviews and surveys land daily, are validated and mapped to the 466-entity hierarchy with the right weights for that period.</li><li>Detect: the anomaly agent compares theme volume and sentiment per entity against weighted baselines and flags emerging spikes.</li><li>Classify: the theme agent labels each flagged cluster with a root-cause theme and attaches representative evidence.</li><li>Route: the routing agent opens a case with the owning operations team, with priority, evidence and the affected entities.</li><li>Ask: executives ask questions in plain language; the supervisor answers from curated SQL first and uses constrained text-to-SQL only for new questions.</li><li>Verify: guardrails validate generated SQL against the schema; failures retry, then fall back to the closest curated answer.</li><li>Improve: every release runs the 165-question harness, and production traces feed new cases into the regression set.</li></ol></div>
+    </div>
+  </section>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Agent roster</p><h2>Who does what, and what keeps it safe</h2></div>
+      <div class="table-wrap"><table class="agents">
+        <thead><tr><th>Agent</th><th>Responsibility</th><th>Guardrail</th></tr></thead>
+        <tbody><tr><td><strong>Supervisor</strong></td><td>Understands intent and decides which agent or path handles the request</td><td>Intent confidence threshold, safe default to curated path</td></tr><tr><td><strong>Anomaly detection</strong></td><td>Finds abnormal theme and sentiment shifts per entity</td><td>Minimum volume and weighted baselines to avoid noise</td></tr><tr><td><strong>Theme classification</strong></td><td>Assigns root-cause themes and picks evidence</td><td>Fixed taxonomy, low-confidence items sent for review</td></tr><tr><td><strong>Text-to-SQL</strong></td><td>Answers new analytical questions over governed tables</td><td>Schema allow-list, read-only, query validation</td></tr><tr><td><strong>Routing and action</strong></td><td>Creates and assigns cases to operations teams</td><td>Ownership rules, duplicate suppression</td></tr></tbody>
+      </table></div>
+    </div>
+  </section>
+</div>
+<div class="tabpanel" id="tab-research" role="tabpanel" hidden>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Product research</p><h2>Who we built for</h2><p class="section__sub">Discovery combined executive interviews, time with site operations teams and analysis of the existing feedback corpus to find where insight was being lost.</p></div>
+      <div class="arch__stack"><span>Research methods</span><ul class="chips"><li>CXO and brand-head interviews</li><li>Operations team shadowing</li><li>Review and survey corpus analysis</li><li>Dashboard usage analytics</li><li>Usability tests of conversational analytics</li></ul></div>
+    </div>
+  </section>
+  <section class="section section--tight section--alt">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Personas</p><h2>End users and customers</h2></div>
+      <div class="personas">
+        <article class="persona">
+          <header><span class="persona__avatar">GC</span><div><h4>Group CXO</h4><span class="persona__type">Internal · executive</span></div></header>
+          <p class="persona__about">Owns customer experience across brands and entities.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>One trusted NPS view across the group</li><li>Early warning before issues escalate</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Monthly decks are already stale</li><li>Numbers differ by brand and team</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> An executive summary they can drill into and trust.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">SO</span><div><h4>Site operations manager</h4><span class="persona__type">Internal · operator</span></div></header>
+          <p class="persona__about">Runs delivery and handover for a set of projects.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Know which issues need action this week</li><li>Close the loop with customers</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Feedback arrives late and unstructured</li><li>No clear owner for recurring issues</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Routed cases with evidence and priority, not another dashboard.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">CA</span><div><h4>CX analyst</h4><span class="persona__type">Internal · analyst</span></div></header>
+          <p class="persona__about">Answers leadership questions about customer feedback.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Answer ad-hoc questions in minutes</li><li>Keep numbers consistent across reports</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Manual SQL and spreadsheet re-weighting</li><li>Hierarchy changes break comparisons</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Governed metrics and natural-language queries that are provably correct.</p>
+        </article>
+        <article class="persona persona--end">
+          <header><span class="persona__avatar">HB</span><div><h4>Home buyer</h4><span class="persona__type">End customer</span></div></header>
+          <p class="persona__about">Bought a home and is going through possession and after-sales service.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Smooth handover</li><li>Quick resolution of snags</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Repeating the same complaint</li><li>No visibility of who is handling it</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Issues fixed before they need to escalate.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>What we learned and what we changed</h2></div>
+      <div class="insights"><div class="insight"><p class="insight__q">Executives did not trust AI-generated numbers they could not trace.</p><p class="insight__a"><span>Product decision</span>Curated SQL first, constrained text-to-SQL second, with an accuracy gate on every release.</p></div><div class="insight"><p class="insight__q">Operations teams rarely opened dashboards but acted quickly on assigned work.</p><p class="insight__a"><span>Product decision</span>Push routed cases with evidence into ops queues instead of adding more charts.</p></div><div class="insight"><p class="insight__q">Group restructuring made year-on-year comparisons misleading.</p><p class="insight__a"><span>Product decision</span>Model time-varying entity weights so history stays comparable.</p></div></div>
+    </div>
+  </section>
+</div>
+
   <section class="section section--tight">
     <div class="container pager"><span></span><a href="dhani-transaction-platform.html" class="pager__link pager__link--next"><small>Next</small>Order &amp; Transaction Platform for a 10M+ User Super App</a></div>
   </section>
@@ -112,6 +197,6 @@
       <a href="../index.html#products">All products</a>
     </div>
   </footer>
-  <script src="../script.js?v=3"></script>
+  <script src="../script.js?v=4"></script>
 </body>
 </html>

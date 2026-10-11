@@ -7,7 +7,7 @@
   <meta name="description" content="Transformer-based query classification, intelligent routing and automated document verification for 10M+ brokerage customers.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=3">
+  <link rel="stylesheet" href="../styles.css?v=4">
 </head>
 <body>
   <header class="nav" id="top">
@@ -42,6 +42,8 @@
     </div>
   </section>
 
+  <nav class="tabs" id="productTabs"><div class="container tabs__inner" role="tablist"><button class="tabs__btn" role="tab" data-tab="overview" aria-selected="true">Overview</button><button class="tabs__btn" role="tab" data-tab="research" aria-selected="false">Product Research</button></div></nav>
+<div class="tabpanel" id="tab-overview" role="tabpanel">
   <section class="section section--tight">
     <div class="container">
       <div class="hero__card reveal"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">60%</span><span class="stat__label">Manual ticket handling automated</span></div><div class="stat"><span class="stat__num">2 days → 30 min</span><span class="stat__label">KYC processing time</span></div><div class="stat"><span class="stat__num">10M+</span><span class="stat__label">Customers served across email and chat</span></div><div class="stat"><span class="stat__num">2 awards</span><span class="stat__label">Employee of the Quarter, Design Lab winner</span></div></div></div>
@@ -91,6 +93,65 @@
     </div>
   </section>
 
+  </div>
+  <div class="tabpanel" id="tab-research" role="tabpanel" hidden>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Product research</p><h2>Who we built for</h2><p class="section__sub">Research analysed the ticket corpus and shadowed support agents to understand why customers contacted support more than once.</p></div>
+      <div class="arch__stack"><span>Research methods</span><ul class="chips"><li>Ticket corpus analysis</li><li>Support agent shadowing</li><li>Customer journey mapping</li><li>KYC funnel analysis</li></ul></div>
+    </div>
+  </section>
+  <section class="section section--tight section--alt">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Personas</p><h2>End users and customers</h2></div>
+      <div class="personas">
+        <article class="persona persona--end">
+          <header><span class="persona__avatar">NI</span><div><h4>New investor</h4><span class="persona__type">End customer</span></div></header>
+          <p class="persona__about">Opening a first trading account.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Start investing the same day</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>KYC verification taking days</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Fast, automated document verification.</p>
+        </article>
+        <article class="persona persona--end">
+          <header><span class="persona__avatar">AT</span><div><h4>Active trader</h4><span class="persona__type">End customer</span></div></header>
+          <p class="persona__about">Trades frequently and depends on payouts and order execution.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Urgent issues fixed immediately</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Tickets bounced between teams</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Right team on the first attempt.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">SA</span><div><h4>Support agent</h4><span class="persona__type">Internal · operator</span></div></header>
+          <p class="persona__about">Handles email and chat queries.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Resolve more, faster</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Misrouted and repetitive tickets</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Pre-classified tickets and automated answers for common asks.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">KR</span><div><h4>KYC reviewer</h4><span class="persona__type">Internal · compliance</span></div></header>
+          <p class="persona__about">Verifies identity and fraud checks.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Accurate, auditable checks</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Manual document review</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Automation with a full audit trail.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>What we learned and what we changed</h2></div>
+      <div class="insights"><div class="insight"><p class="insight__q">Repeat contacts were driven mostly by misrouting.</p><p class="insight__a"><span>Product decision</span>Classification and routing came before full automation.</p></div><div class="insight"><p class="insight__q">Slow KYC was the biggest barrier to activation.</p><p class="insight__a"><span>Product decision</span>Document AI cut verification from 2 days to 30 minutes.</p></div><div class="insight"><p class="insight__q">Agents distrusted low-confidence automation.</p><p class="insight__a"><span>Product decision</span>Human-in-the-loop below a confidence threshold.</p></div></div>
+    </div>
+  </section>
+</div>
+
   <section class="section section--tight">
     <div class="container pager"><a href="dmi-loan-management.html" class="pager__link"><small>Previous</small>Loan Management System of Record &amp; Lending Digitisation</a><a href="onyourrank-edtech.html" class="pager__link pager__link--next"><small>Next</small>OnYourRank EdTech Platform</a></div>
   </section>
@@ -112,6 +173,6 @@
       <a href="../index.html#products">All products</a>
     </div>
   </footer>
-  <script src="../script.js?v=3"></script>
+  <script src="../script.js?v=4"></script>
 </body>
 </html>

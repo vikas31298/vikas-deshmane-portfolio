@@ -12,6 +12,7 @@ os.makedirs(os.path.join(ROOT, 'products'), exist_ok=True)
 e = html.escape
 
 import build_covers
+import build_tabs
 build_covers.build()
 
 def cover(p):
@@ -28,7 +29,7 @@ def head(title, desc, depth=1):
   <meta name="description" content="{e(desc)}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{rel}styles.css?v=3">
+  <link rel="stylesheet" href="{rel}styles.css?v=4">
 </head>
 <body>
   <header class="nav" id="top">
@@ -58,7 +59,7 @@ def foot(depth=1):
       <a href="{rel}index.html#products">All products</a>
     </div>
   </footer>
-  <script src="{rel}script.js?v=3"></script>
+  <script src="{rel}script.js?v=4"></script>
 </body>
 </html>
 """
@@ -76,6 +77,7 @@ def product_page(p, prev_p, next_p):
     prev_link = f'<a href="{prev_p["slug"]}.html" class="pager__link"><small>Previous</small>{e(prev_p["name"])}</a>' if prev_p else '<span></span>'
     next_link = f'<a href="{next_p["slug"]}.html" class="pager__link pager__link--next"><small>Next</small>{e(next_p["name"])}</a>' if next_p else '<span></span>'
 
+    tab_nav, tab_panels = build_tabs.tabs_for(p['slug'])
     return head(p['name'], p['tagline']) + f"""
   <section class="phero">
     <div class="container">
@@ -92,6 +94,7 @@ def product_page(p, prev_p, next_p):
     </div>
   </section>
 
+  {tab_nav}<div class="tabpanel" id="tab-overview" role="tabpanel">
   <section class="section section--tight">
     <div class="container">
       <div class="hero__card reveal"><div class="stat-grid stat-grid--4">{metrics}</div></div>
@@ -141,6 +144,8 @@ def product_page(p, prev_p, next_p):
     </div>
   </section>
 
+  </div>
+  {tab_panels}
   <section class="section section--tight">
     <div class="container pager">{prev_link}{next_link}</div>
   </section>

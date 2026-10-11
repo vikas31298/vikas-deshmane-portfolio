@@ -7,7 +7,7 @@
   <meta name="description" content="Configurable rule engine for validation, credit evaluation, risk scoring and approval automation that unlocked 10x processing capacity.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=3">
+  <link rel="stylesheet" href="../styles.css?v=4">
 </head>
 <body>
   <header class="nav" id="top">
@@ -42,6 +42,8 @@
     </div>
   </section>
 
+  <nav class="tabs" id="productTabs"><div class="container tabs__inner" role="tablist"><button class="tabs__btn" role="tab" data-tab="overview" aria-selected="true">Overview</button><button class="tabs__btn" role="tab" data-tab="research" aria-selected="false">Product Research</button></div></nav>
+<div class="tabpanel" id="tab-overview" role="tabpanel">
   <section class="section section--tight">
     <div class="container">
       <div class="hero__card reveal"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">10x</span><span class="stat__label">Processing capacity</span></div><div class="stat"><span class="stat__num">₹800Cr → ₹2,100Cr</span><span class="stat__label">Portfolio growth (+162%)</span></div><div class="stat"><span class="stat__num">60 → 2 days</span><span class="stat__label">Partner onboarding time</span></div><div class="stat"><span class="stat__num">−60%</span><span class="stat__label">Manual support burden</span></div></div></div>
@@ -91,6 +93,65 @@
     </div>
   </section>
 
+  </div>
+  <div class="tabpanel" id="tab-research" role="tabpanel" hidden>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Product research</p><h2>Who we built for</h2><p class="section__sub">Discovery mapped the partner onboarding process and the credit operations workflow end to end to find what actually limited growth.</p></div>
+      <div class="arch__stack"><span>Research methods</span><ul class="chips"><li>Partner onboarding process mapping</li><li>Credit operations time-and-motion study</li><li>Partner interviews</li><li>Support ticket analysis</li></ul></div>
+    </div>
+  </section>
+  <section class="section section--tight section--alt">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Personas</p><h2>End users and customers</h2></div>
+      <div class="personas">
+        <article class="persona">
+          <header><span class="persona__avatar">PI</span><div><h4>Partner integration lead</h4><span class="persona__type">B2B partner</span></div></header>
+          <p class="persona__about">Brings a fintech or merchant partner onto the lending platform.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Go live in days, not months</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Bespoke integration for every partner</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Standard APIs and configuration-based onboarding.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">CA</span><div><h4>Credit analyst</h4><span class="persona__type">Internal · operator</span></div></header>
+          <p class="persona__about">Reviews and approves loan applications.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Clear the queue</li><li>Make consistent decisions</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Manual checks on simple cases</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Automation for routine cases, focus on exceptions.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">RH</span><div><h4>Risk head</h4><span class="persona__type">Internal · policy owner</span></div></header>
+          <p class="persona__about">Sets credit policy.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Change rules quickly and safely</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Engineering releases for every rule change</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> A rule engine risk teams can own.</p>
+        </article>
+        <article class="persona persona--end">
+          <header><span class="persona__avatar">B</span><div><h4>Borrower</h4><span class="persona__type">End customer</span></div></header>
+          <p class="persona__about">Applies for a loan through a partner.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Instant decision</li><li>Simple servicing</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Waiting days</li><li>Calling support for basic requests</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Instant decisions and self-service support.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>What we learned and what we changed</h2></div>
+      <div class="insights"><div class="insight"><p class="insight__q">Most onboarding delay was configuration and paperwork, not code.</p><p class="insight__a"><span>Product decision</span>Standardised partner configuration cut onboarding from 60 days to 2.</p></div><div class="insight"><p class="insight__q">The majority of applications were straightforward.</p><p class="insight__a"><span>Product decision</span>ML instant decisioning for routine cases, humans on exceptions.</p></div><div class="insight"><p class="insight__q">A handful of intents made up most support requests.</p><p class="insight__a"><span>Product decision</span>An NLP chatbot automated them, reducing manual load by 60%.</p></div></div>
+    </div>
+  </section>
+</div>
+
   <section class="section section--tight">
     <div class="container pager"><a href="llm-quality-platform.html" class="pager__link"><small>Previous</small>LLM Evaluation, Monitoring &amp; Enterprise RAG Platform</a><a href="angel-one-servicing-ai.html" class="pager__link pager__link--next"><small>Next</small>NLP-Powered CRM &amp; Automated KYC</a></div>
   </section>
@@ -112,6 +173,6 @@
       <a href="../index.html#products">All products</a>
     </div>
   </footer>
-  <script src="../script.js?v=3"></script>
+  <script src="../script.js?v=4"></script>
 </body>
 </html>

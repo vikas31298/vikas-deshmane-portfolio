@@ -7,7 +7,7 @@
   <meta name="description" content="Production quality gates for LLM features plus an enterprise RAG servicing assistant for finance and procurement users.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=3">
+  <link rel="stylesheet" href="../styles.css?v=4">
 </head>
 <body>
   <header class="nav" id="top">
@@ -42,6 +42,8 @@
     </div>
   </section>
 
+  <nav class="tabs" id="productTabs"><div class="container tabs__inner" role="tablist"><button class="tabs__btn" role="tab" data-tab="overview" aria-selected="true">Overview</button><button class="tabs__btn" role="tab" data-tab="architecture" aria-selected="false">Agentic AI Architecture</button><button class="tabs__btn" role="tab" data-tab="research" aria-selected="false">Product Research</button></div></nav>
+<div class="tabpanel" id="tab-overview" role="tabpanel">
   <section class="section section--tight">
     <div class="container">
       <div class="hero__card reveal"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">94%</span><span class="stat__label">Issues caught before deployment</span></div><div class="stat"><span class="stat__num">−52%</span><span class="stat__label">Inference cost across 2M+ requests</span></div><div class="stat"><span class="stat__num">&lt;3s</span><span class="stat__label">Answer latency at 99.9% uptime</span></div><div class="stat"><span class="stat__num">−30%</span><span class="stat__label">Infrastructure cost from CDC-based ETL</span></div></div></div>
@@ -91,6 +93,89 @@
     </div>
   </section>
 
+  </div>
+  <div class="tabpanel" id="tab-architecture" role="tabpanel" hidden>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Agentic AI architecture</p><h2>End to end, from raw signal to action</h2><p class="section__sub">A retrieval-augmented assistant built as a chain of planning, retrieval, generation and checking steps, wrapped in a quality and cost loop that decides what ships.</p></div>
+      <div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 504" role="img" aria-label="End-to-end agentic AI architecture"><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b4832e"/></marker></defs><rect x="20" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="40.0">USERS</tspan></text><rect x="32" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="146.0">Finance teams</tspan></text><rect x="32" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="204.0">Procurement teams</tspan></text><rect x="32" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="254.5">Product and</tspan><tspan x="112.0" y="269.5">engineering</tspan></text><line x1="208" y1="192.0" x2="244" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="248" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="40.0">ACCESS LAYER</tspan></text><rect x="260" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="146.0">Servicing assistant UI</tspan></text><rect x="260" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="204.0">API gateway</tspan></text><rect x="260" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="262.0">Role-based access</tspan></text><line x1="436" y1="192.0" x2="472" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="476" y="10" width="184" height="364" rx="16" fill="#1f3a5f" stroke="#1f3a5f"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#f0d79a" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="40.0">ASSISTANT PIPELINE</tspan></text><rect x="488" y="64.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="88.0">Query planner</tspan></text><rect x="488" y="122.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="146.0">Retriever</tspan></text><rect x="488" y="180.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="204.0">Answer generator</tspan></text><rect x="488" y="238.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="262.0">Guardrail checker</tspan></text><rect x="488" y="296.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="320.0">Citation formatter</tspan></text><line x1="664" y1="192.0" x2="700" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="704" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="40.0">KNOWLEDGE AND MODELS</tspan></text><rect x="716" y="93.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="109.5">Azure Cognitive Search</tspan><tspan x="796.0" y="124.5">index</tspan></text><rect x="716" y="151.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="167.5">Contracts and SLA</tspan><tspan x="796.0" y="182.5">documents</tspan></text><rect x="716" y="209.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="233.0">Warehouse data via CDC</tspan></text><rect x="716" y="267.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="291.0">Azure OpenAI models</tspan></text><line x1="892" y1="192.0" x2="928" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="932" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="40.0">QUALITY LOOP</tspan></text><rect x="944" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="138.5">Offline evaluation</tspan><tspan x="1024.0" y="153.5">suites</tspan></text><rect x="944" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="204.0">Online quality gates</tspan></text><rect x="944" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="254.5">Cost and telemetry</tspan><tspan x="1024.0" y="269.5">dashboards</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="start" dominant-baseline="middle"><tspan x="20" y="390.0">CROSS-CUTTING CONTROLS</tspan></text><rect x="20.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="20.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="426.0">Guardrails</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="454.0">Content filtering, RBAC, PII handling</tspan></text><rect x="297.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="297.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="426.0">Evaluation</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="446.5">Accuracy, hallucination and safety</tspan><tspan x="315.0" y="461.5">gates, 94% caught pre-deploy</tspan></text><rect x="574.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="574.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="426.0">Cost</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="446.5">Model routing and caching, 52% lower</tspan><tspan x="592.0" y="461.5">inference cost</tspan></text><rect x="851.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="851.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="426.0">SLOs</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="446.5">Answers under 3 seconds at 99.9%</tspan><tspan x="869.0" y="461.5">uptime</tspan></text></svg></div>
+      <p class="diagram__hint">Scroll sideways to see the full diagram on small screens.</p>
+    </div>
+  </section>
+  <section class="section section--tight section--alt">
+    <div class="container detail">
+      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>How one signal moves through the system</h2></div>
+      <div class="detail__main"><ol class="numbered"><li>Ask: a finance or procurement user asks about an SLA, renewal or contract term; access is checked against their role.</li><li>Plan: the planner rewrites the question and decides which sources are needed.</li><li>Retrieve: Cognitive Search returns the most relevant contract passages and warehouse facts the user is allowed to see.</li><li>Generate: the model drafts an answer grounded only in retrieved content.</li><li>Check: guardrails test for unsupported claims, unsafe content and policy breaches before anything is shown.</li><li>Cite: the formatter attaches sources so every number can be audited.</li><li>Gate: every change runs the evaluation suites, and production telemetry tracks quality, latency and cost.</li></ol></div>
+    </div>
+  </section>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Agent roster</p><h2>Who does what, and what keeps it safe</h2></div>
+      <div class="table-wrap"><table class="agents">
+        <thead><tr><th>Agent</th><th>Responsibility</th><th>Guardrail</th></tr></thead>
+        <tbody><tr><td><strong>Query planner</strong></td><td>Rewrites the question and picks sources</td><td>Restricted to allowed sources per role</td></tr><tr><td><strong>Retriever</strong></td><td>Fetches passages and facts</td><td>Security trimming on every result</td></tr><tr><td><strong>Answer generator</strong></td><td>Writes a grounded answer</td><td>Answer only from retrieved context</td></tr><tr><td><strong>Guardrail checker</strong></td><td>Blocks hallucinated or unsafe output</td><td>Hallucination and safety scoring thresholds</td></tr><tr><td><strong>Citation formatter</strong></td><td>Adds auditable sources</td><td>No answer shown without a citation</td></tr></tbody>
+      </table></div>
+    </div>
+  </section>
+</div>
+<div class="tabpanel" id="tab-research" role="tabpanel" hidden>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Product research</p><h2>Who we built for</h2><p class="section__sub">Research focused on how finance and procurement users actually looked up contract information, and on where LLM features were failing in practice.</p></div>
+      <div class="arch__stack"><span>Research methods</span><ul class="chips"><li>Finance and procurement interviews</li><li>Task analysis of contract look-ups</li><li>Review of LLM failure logs</li><li>Inference cost telemetry analysis</li></ul></div>
+    </div>
+  </section>
+  <section class="section section--tight section--alt">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Personas</p><h2>End users and customers</h2></div>
+      <div class="personas">
+        <article class="persona">
+          <header><span class="persona__avatar">PM</span><div><h4>Procurement manager</h4><span class="persona__type">Internal · end user</span></div></header>
+          <p class="persona__about">Manages vendor contracts and renewals.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Find renewal dates and SLAs fast</li><li>Avoid missed renewals</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Digging through long PDFs</li><li>Information spread across systems</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Instant answers with the source clause attached.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">FC</span><div><h4>Finance controller</h4><span class="persona__type">Internal · end user</span></div></header>
+          <p class="persona__about">Tracks commitments and spend against contracts.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Accurate commitment figures</li><li>Audit-ready answers</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Unverifiable numbers</li><li>Manual reconciliation</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Cited, auditable answers it can rely on.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">PE</span><div><h4>Product engineer</h4><span class="persona__type">Internal · builder</span></div></header>
+          <p class="persona__about">Ships LLM features into production.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Release quickly with confidence</li><li>Catch regressions early</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Manual spot checks</li><li>Surprises after release</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Automated quality gates in the release path.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">CO</span><div><h4>Compliance officer</h4><span class="persona__type">Internal · governance</span></div></header>
+          <p class="persona__about">Owns financial compliance and data access.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Right people see the right data</li><li>Traceable decisions</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Opaque AI behaviour</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> RBAC, content filtering and an audit trail.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>What we learned and what we changed</h2></div>
+      <div class="insights"><div class="insight"><p class="insight__q">Users only trusted answers that showed where the number came from.</p><p class="insight__a"><span>Product decision</span>Citations became mandatory for every answer.</p></div><div class="insight"><p class="insight__q">The most damaging failures were confident but invented figures.</p><p class="insight__a"><span>Product decision</span>A hallucination gate now blocks releases that regress.</p></div><div class="insight"><p class="insight__q">A large share of spend came from repeated, similar questions.</p><p class="insight__a"><span>Product decision</span>Caching and model routing cut inference cost by 52%.</p></div></div>
+    </div>
+  </section>
+</div>
+
   <section class="section section--tight">
     <div class="container pager"><a href="dhani-transaction-platform.html" class="pager__link"><small>Previous</small>Order &amp; Transaction Platform for a 10M+ User Super App</a><a href="dmi-loan-management.html" class="pager__link pager__link--next"><small>Next</small>Loan Management System of Record &amp; Lending Digitisation</a></div>
   </section>
@@ -112,6 +197,6 @@
       <a href="../index.html#products">All products</a>
     </div>
   </footer>
-  <script src="../script.js?v=3"></script>
+  <script src="../script.js?v=4"></script>
 </body>
 </html>

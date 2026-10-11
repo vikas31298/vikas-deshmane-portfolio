@@ -7,7 +7,7 @@
   <meta name="description" content="A high-volume EdTech platform built from zero to 5K+ concurrent users and 100K+ monthly transactions with AI-assisted evaluation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=3">
+  <link rel="stylesheet" href="../styles.css?v=4">
 </head>
 <body>
   <header class="nav" id="top">
@@ -42,6 +42,8 @@
     </div>
   </section>
 
+  <nav class="tabs" id="productTabs"><div class="container tabs__inner" role="tablist"><button class="tabs__btn" role="tab" data-tab="overview" aria-selected="true">Overview</button><button class="tabs__btn" role="tab" data-tab="research" aria-selected="false">Product Research</button></div></nav>
+<div class="tabpanel" id="tab-overview" role="tabpanel">
   <section class="section section--tight">
     <div class="container">
       <div class="hero__card reveal"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">5K+</span><span class="stat__label">Concurrent users</span></div><div class="stat"><span class="stat__num">100K+</span><span class="stat__label">Monthly transactions</span></div><div class="stat"><span class="stat__num">99.9%</span><span class="stat__label">Uptime</span></div><div class="stat"><span class="stat__num">+50%</span><span class="stat__label">Journey completion efficiency</span></div></div></div>
@@ -91,6 +93,65 @@
     </div>
   </section>
 
+  </div>
+  <div class="tabpanel" id="tab-research" role="tabpanel" hidden>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Product research</p><h2>Who we built for</h2><p class="section__sub">As co-founder, research ran continuously through learner interviews, funnel data and experiments.</p></div>
+      <div class="arch__stack"><span>Research methods</span><ul class="chips"><li>Learner interviews</li><li>Educator interviews</li><li>Funnel analytics</li><li>A/B experiments</li><li>Support ticket review</li></ul></div>
+    </div>
+  </section>
+  <section class="section section--tight section--alt">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Personas</p><h2>End users and customers</h2></div>
+      <div class="personas">
+        <article class="persona persona--end">
+          <header><span class="persona__avatar">EA</span><div><h4>Exam aspirant</h4><span class="persona__type">End customer</span></div></header>
+          <p class="persona__about">Student preparing for a competitive exam.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Affordable practice</li><li>Fast, useful feedback</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Slow evaluation</li><li>Confusing purchase flow</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Instant, relevant feedback on every attempt.</p>
+        </article>
+        <article class="persona persona--end">
+          <header><span class="persona__avatar">PO</span><div><h4>Parent or payer</h4><span class="persona__type">End customer · buyer</span></div></header>
+          <p class="persona__about">Pays for the course on the student&#x27;s behalf.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Value for money</li><li>Visible progress</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Unclear outcomes</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Clear progress reporting and simple payment.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">E</span><div><h4>Educator</h4><span class="persona__type">Content partner</span></div></header>
+          <p class="persona__about">Creates and sells course content.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Reach more learners</li><li>Reliable payouts</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Manual evaluation workload</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> AI-assisted evaluation and reliable delivery.</p>
+        </article>
+        <article class="persona">
+          <header><span class="persona__avatar">SL</span><div><h4>Support lead</h4><span class="persona__type">Internal · operator</span></div></header>
+          <p class="persona__about">Handles learner queries.</p>
+          <div class="persona__cols">
+            <div><h5>Goals</h5><ul><li>Fewer tickets per transaction</li></ul></div>
+            <div><h5>Pain points</h5><ul><li>Spikes in exam season</li></ul></div>
+          </div>
+          <p class="persona__needs"><strong>Needs:</strong> Fewer failure points in the journey.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>What we learned and what we changed</h2></div>
+      <div class="insights"><div class="insight"><p class="insight__q">Drop-off clustered at checkout and first-use.</p><p class="insight__a"><span>Product decision</span>Simplified purchase and onboarding lifted completion by 50%.</p></div><div class="insight"><p class="insight__q">Feedback speed drove retention more than content volume.</p><p class="insight__a"><span>Product decision</span>Asynchronous AI evaluation at 95% relevance.</p></div><div class="insight"><p class="insight__q">Exam-season spikes caused most outages and tickets.</p><p class="insight__a"><span>Product decision</span>Horizontal scaling and retry handling for 99.9% uptime.</p></div></div>
+    </div>
+  </section>
+</div>
+
   <section class="section section--tight">
     <div class="container pager"><a href="angel-one-servicing-ai.html" class="pager__link"><small>Previous</small>NLP-Powered CRM &amp; Automated KYC</a><span></span></div>
   </section>
@@ -112,6 +173,6 @@
       <a href="../index.html#products">All products</a>
     </div>
   </footer>
-  <script src="../script.js?v=3"></script>
+  <script src="../script.js?v=4"></script>
 </body>
 </html>

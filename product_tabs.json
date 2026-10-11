@@ -1,0 +1,168 @@
+{
+  "cx-anomaly-platform": {
+    "agentic": {
+      "summary": "A LangGraph supervisor coordinates specialised agents over a governed data platform. Every answer and every routed case passes guardrails, and every release passes an evaluation gate.",
+      "columns": [
+        {"title": "Sources", "nodes": ["Customer reviews", "Post-handover surveys", "CRM and ticketing", "Portal and social feedback"]},
+        {"title": "Data platform", "nodes": ["ETL and validation", "466-entity hierarchy", "Time-varying weights", "Curated metrics store"]},
+        {"title": "Agent orchestrator · LangGraph", "highlight": true, "nodes": ["Supervisor and intent router", "Anomaly-detection agent", "Theme-classification agent", "Text-to-SQL agent", "Routing and action agent"]},
+        {"title": "Tools and models", "nodes": ["Azure OpenAI models", "Curated SQL library", "SQL warehouse", "Entity and weight resolver", "Ops ticketing API"]},
+        {"title": "Experiences", "nodes": ["Executive dashboards", "Conversational analytics", "Ops routing queues", "Proactive alerts"]}
+      ],
+      "bands": [
+        {"title": "Guardrails", "text": "Schema-constrained SQL, PII masking, role-based access"},
+        {"title": "Evaluation", "text": "165-question harness, 80%+ accuracy release gate"},
+        {"title": "Reliability", "text": "Retries, timeouts, fallback to curated SQL"},
+        {"title": "Observability", "text": "LangSmith traces, cost and latency per agent"}
+      ],
+      "flow": [
+        "Ingest: reviews and surveys land daily, are validated and mapped to the 466-entity hierarchy with the right weights for that period.",
+        "Detect: the anomaly agent compares theme volume and sentiment per entity against weighted baselines and flags emerging spikes.",
+        "Classify: the theme agent labels each flagged cluster with a root-cause theme and attaches representative evidence.",
+        "Route: the routing agent opens a case with the owning operations team, with priority, evidence and the affected entities.",
+        "Ask: executives ask questions in plain language; the supervisor answers from curated SQL first and uses constrained text-to-SQL only for new questions.",
+        "Verify: guardrails validate generated SQL against the schema; failures retry, then fall back to the closest curated answer.",
+        "Improve: every release runs the 165-question harness, and production traces feed new cases into the regression set."
+      ],
+      "agents": [
+        {"name": "Supervisor", "role": "Understands intent and decides which agent or path handles the request", "guard": "Intent confidence threshold, safe default to curated path"},
+        {"name": "Anomaly detection", "role": "Finds abnormal theme and sentiment shifts per entity", "guard": "Minimum volume and weighted baselines to avoid noise"},
+        {"name": "Theme classification", "role": "Assigns root-cause themes and picks evidence", "guard": "Fixed taxonomy, low-confidence items sent for review"},
+        {"name": "Text-to-SQL", "role": "Answers new analytical questions over governed tables", "guard": "Schema allow-list, read-only, query validation"},
+        {"name": "Routing and action", "role": "Creates and assigns cases to operations teams", "guard": "Ownership rules, duplicate suppression"}
+      ]
+    },
+    "research": {
+      "summary": "Discovery combined executive interviews, time with site operations teams and analysis of the existing feedback corpus to find where insight was being lost.",
+      "methods": ["CXO and brand-head interviews", "Operations team shadowing", "Review and survey corpus analysis", "Dashboard usage analytics", "Usability tests of conversational analytics"],
+      "personas": [
+        {"name": "Group CXO", "type": "Internal · executive", "about": "Owns customer experience across brands and entities.", "goals": ["One trusted NPS view across the group", "Early warning before issues escalate"], "pains": ["Monthly decks are already stale", "Numbers differ by brand and team"], "needs": "An executive summary they can drill into and trust."},
+        {"name": "Site operations manager", "type": "Internal · operator", "about": "Runs delivery and handover for a set of projects.", "goals": ["Know which issues need action this week", "Close the loop with customers"], "pains": ["Feedback arrives late and unstructured", "No clear owner for recurring issues"], "needs": "Routed cases with evidence and priority, not another dashboard."},
+        {"name": "CX analyst", "type": "Internal · analyst", "about": "Answers leadership questions about customer feedback.", "goals": ["Answer ad-hoc questions in minutes", "Keep numbers consistent across reports"], "pains": ["Manual SQL and spreadsheet re-weighting", "Hierarchy changes break comparisons"], "needs": "Governed metrics and natural-language queries that are provably correct."},
+        {"name": "Home buyer", "type": "End customer", "about": "Bought a home and is going through possession and after-sales service.", "goals": ["Smooth handover", "Quick resolution of snags"], "pains": ["Repeating the same complaint", "No visibility of who is handling it"], "needs": "Issues fixed before they need to escalate."}
+      ],
+      "insights": [
+        {"insight": "Executives did not trust AI-generated numbers they could not trace.", "decision": "Curated SQL first, constrained text-to-SQL second, with an accuracy gate on every release."},
+        {"insight": "Operations teams rarely opened dashboards but acted quickly on assigned work.", "decision": "Push routed cases with evidence into ops queues instead of adding more charts."},
+        {"insight": "Group restructuring made year-on-year comparisons misleading.", "decision": "Model time-varying entity weights so history stays comparable."}
+      ]
+    }
+  },
+  "llm-quality-platform": {
+    "agentic": {
+      "summary": "A retrieval-augmented assistant built as a chain of planning, retrieval, generation and checking steps, wrapped in a quality and cost loop that decides what ships.",
+      "columns": [
+        {"title": "Users", "nodes": ["Finance teams", "Procurement teams", "Product and engineering"]},
+        {"title": "Access layer", "nodes": ["Servicing assistant UI", "API gateway", "Role-based access"]},
+        {"title": "Assistant pipeline", "highlight": true, "nodes": ["Query planner", "Retriever", "Answer generator", "Guardrail checker", "Citation formatter"]},
+        {"title": "Knowledge and models", "nodes": ["Azure Cognitive Search index", "Contracts and SLA documents", "Warehouse data via CDC", "Azure OpenAI models"]},
+        {"title": "Quality loop", "nodes": ["Offline evaluation suites", "Online quality gates", "Cost and telemetry dashboards"]}
+      ],
+      "bands": [
+        {"title": "Guardrails", "text": "Content filtering, RBAC, PII handling"},
+        {"title": "Evaluation", "text": "Accuracy, hallucination and safety gates, 94% caught pre-deploy"},
+        {"title": "Cost", "text": "Model routing and caching, 52% lower inference cost"},
+        {"title": "SLOs", "text": "Answers under 3 seconds at 99.9% uptime"}
+      ],
+      "flow": [
+        "Ask: a finance or procurement user asks about an SLA, renewal or contract term; access is checked against their role.",
+        "Plan: the planner rewrites the question and decides which sources are needed.",
+        "Retrieve: Cognitive Search returns the most relevant contract passages and warehouse facts the user is allowed to see.",
+        "Generate: the model drafts an answer grounded only in retrieved content.",
+        "Check: guardrails test for unsupported claims, unsafe content and policy breaches before anything is shown.",
+        "Cite: the formatter attaches sources so every number can be audited.",
+        "Gate: every change runs the evaluation suites, and production telemetry tracks quality, latency and cost."
+      ],
+      "agents": [
+        {"name": "Query planner", "role": "Rewrites the question and picks sources", "guard": "Restricted to allowed sources per role"},
+        {"name": "Retriever", "role": "Fetches passages and facts", "guard": "Security trimming on every result"},
+        {"name": "Answer generator", "role": "Writes a grounded answer", "guard": "Answer only from retrieved context"},
+        {"name": "Guardrail checker", "role": "Blocks hallucinated or unsafe output", "guard": "Hallucination and safety scoring thresholds"},
+        {"name": "Citation formatter", "role": "Adds auditable sources", "guard": "No answer shown without a citation"}
+      ]
+    },
+    "research": {
+      "summary": "Research focused on how finance and procurement users actually looked up contract information, and on where LLM features were failing in practice.",
+      "methods": ["Finance and procurement interviews", "Task analysis of contract look-ups", "Review of LLM failure logs", "Inference cost telemetry analysis"],
+      "personas": [
+        {"name": "Procurement manager", "type": "Internal · end user", "about": "Manages vendor contracts and renewals.", "goals": ["Find renewal dates and SLAs fast", "Avoid missed renewals"], "pains": ["Digging through long PDFs", "Information spread across systems"], "needs": "Instant answers with the source clause attached."},
+        {"name": "Finance controller", "type": "Internal · end user", "about": "Tracks commitments and spend against contracts.", "goals": ["Accurate commitment figures", "Audit-ready answers"], "pains": ["Unverifiable numbers", "Manual reconciliation"], "needs": "Cited, auditable answers it can rely on."},
+        {"name": "Product engineer", "type": "Internal · builder", "about": "Ships LLM features into production.", "goals": ["Release quickly with confidence", "Catch regressions early"], "pains": ["Manual spot checks", "Surprises after release"], "needs": "Automated quality gates in the release path."},
+        {"name": "Compliance officer", "type": "Internal · governance", "about": "Owns financial compliance and data access.", "goals": ["Right people see the right data", "Traceable decisions"], "pains": ["Opaque AI behaviour"], "needs": "RBAC, content filtering and an audit trail."}
+      ],
+      "insights": [
+        {"insight": "Users only trusted answers that showed where the number came from.", "decision": "Citations became mandatory for every answer."},
+        {"insight": "The most damaging failures were confident but invented figures.", "decision": "A hallucination gate now blocks releases that regress."},
+        {"insight": "A large share of spend came from repeated, similar questions.", "decision": "Caching and model routing cut inference cost by 52%."}
+      ]
+    }
+  },
+  "dhani-transaction-platform": {
+    "research": {
+      "summary": "Research combined funnel analytics across the app with support-contact analysis and incident reviews to find where customers and operators were failing.",
+      "methods": ["Funnel analytics", "Support contact analysis", "Incident post-mortems", "Customer interviews", "A/B experiments"],
+      "personas": [
+        {"name": "First-time credit user", "type": "End customer", "about": "Mobile-first customer applying for small-ticket credit.", "goals": ["Instant decision", "Money in the account quickly"], "pains": ["KYC retries and drop-offs", "Unclear application status"], "needs": "A fast journey with clear status at every step."},
+        {"name": "Repeat customer", "type": "End customer", "about": "Existing user of the super app's commerce and health services.", "goals": ["Pre-approved offers", "One-tap repeat purchases"], "pains": ["Re-entering details", "Irrelevant offers"], "needs": "Relevant, pre-approved offers inside journeys already in use."},
+        {"name": "Credit and risk manager", "type": "Internal · policy owner", "about": "Owns credit policy and portfolio quality.", "goals": ["Grow safely", "Change policy quickly"], "pains": ["Policy changes need releases"], "needs": "Configurable decisioning with clear guardrails."},
+        {"name": "Support agent", "type": "Internal · operator", "about": "Resolves failed and stuck transactions.", "goals": ["Resolve on first contact"], "pains": ["No visibility into where a transaction failed"], "needs": "Event-level status and a clear next action."}
+      ],
+      "insights": [
+        {"insight": "The most common contact was 'where is my application or disbursal'.", "decision": "Lifecycle events drive proactive status updates to customers."},
+        {"insight": "Many drop-offs happened at KYC vendor failures.", "decision": "Retry and fallback routing across verification providers."},
+        {"insight": "Pre-approved users converted far better than cold offers.", "decision": "Propensity models decide who sees which cross-sell offer."}
+      ]
+    }
+  },
+  "dmi-loan-management": {
+    "research": {
+      "summary": "Discovery mapped the partner onboarding process and the credit operations workflow end to end to find what actually limited growth.",
+      "methods": ["Partner onboarding process mapping", "Credit operations time-and-motion study", "Partner interviews", "Support ticket analysis"],
+      "personas": [
+        {"name": "Partner integration lead", "type": "B2B partner", "about": "Brings a fintech or merchant partner onto the lending platform.", "goals": ["Go live in days, not months"], "pains": ["Bespoke integration for every partner"], "needs": "Standard APIs and configuration-based onboarding."},
+        {"name": "Credit analyst", "type": "Internal · operator", "about": "Reviews and approves loan applications.", "goals": ["Clear the queue", "Make consistent decisions"], "pains": ["Manual checks on simple cases"], "needs": "Automation for routine cases, focus on exceptions."},
+        {"name": "Risk head", "type": "Internal · policy owner", "about": "Sets credit policy.", "goals": ["Change rules quickly and safely"], "pains": ["Engineering releases for every rule change"], "needs": "A rule engine risk teams can own."},
+        {"name": "Borrower", "type": "End customer", "about": "Applies for a loan through a partner.", "goals": ["Instant decision", "Simple servicing"], "pains": ["Waiting days", "Calling support for basic requests"], "needs": "Instant decisions and self-service support."}
+      ],
+      "insights": [
+        {"insight": "Most onboarding delay was configuration and paperwork, not code.", "decision": "Standardised partner configuration cut onboarding from 60 days to 2."},
+        {"insight": "The majority of applications were straightforward.", "decision": "ML instant decisioning for routine cases, humans on exceptions."},
+        {"insight": "A handful of intents made up most support requests.", "decision": "An NLP chatbot automated them, reducing manual load by 60%."}
+      ]
+    }
+  },
+  "angel-one-servicing-ai": {
+    "research": {
+      "summary": "Research analysed the ticket corpus and shadowed support agents to understand why customers contacted support more than once.",
+      "methods": ["Ticket corpus analysis", "Support agent shadowing", "Customer journey mapping", "KYC funnel analysis"],
+      "personas": [
+        {"name": "New investor", "type": "End customer", "about": "Opening a first trading account.", "goals": ["Start investing the same day"], "pains": ["KYC verification taking days"], "needs": "Fast, automated document verification."},
+        {"name": "Active trader", "type": "End customer", "about": "Trades frequently and depends on payouts and order execution.", "goals": ["Urgent issues fixed immediately"], "pains": ["Tickets bounced between teams"], "needs": "Right team on the first attempt."},
+        {"name": "Support agent", "type": "Internal · operator", "about": "Handles email and chat queries.", "goals": ["Resolve more, faster"], "pains": ["Misrouted and repetitive tickets"], "needs": "Pre-classified tickets and automated answers for common asks."},
+        {"name": "KYC reviewer", "type": "Internal · compliance", "about": "Verifies identity and fraud checks.", "goals": ["Accurate, auditable checks"], "pains": ["Manual document review"], "needs": "Automation with a full audit trail."}
+      ],
+      "insights": [
+        {"insight": "Repeat contacts were driven mostly by misrouting.", "decision": "Classification and routing came before full automation."},
+        {"insight": "Slow KYC was the biggest barrier to activation.", "decision": "Document AI cut verification from 2 days to 30 minutes."},
+        {"insight": "Agents distrusted low-confidence automation.", "decision": "Human-in-the-loop below a confidence threshold."}
+      ]
+    }
+  },
+  "onyourrank-edtech": {
+    "research": {
+      "summary": "As co-founder, research ran continuously through learner interviews, funnel data and experiments.",
+      "methods": ["Learner interviews", "Educator interviews", "Funnel analytics", "A/B experiments", "Support ticket review"],
+      "personas": [
+        {"name": "Exam aspirant", "type": "End customer", "about": "Student preparing for a competitive exam.", "goals": ["Affordable practice", "Fast, useful feedback"], "pains": ["Slow evaluation", "Confusing purchase flow"], "needs": "Instant, relevant feedback on every attempt."},
+        {"name": "Parent or payer", "type": "End customer · buyer", "about": "Pays for the course on the student's behalf.", "goals": ["Value for money", "Visible progress"], "pains": ["Unclear outcomes"], "needs": "Clear progress reporting and simple payment."},
+        {"name": "Educator", "type": "Content partner", "about": "Creates and sells course content.", "goals": ["Reach more learners", "Reliable payouts"], "pains": ["Manual evaluation workload"], "needs": "AI-assisted evaluation and reliable delivery."},
+        {"name": "Support lead", "type": "Internal · operator", "about": "Handles learner queries.", "goals": ["Fewer tickets per transaction"], "pains": ["Spikes in exam season"], "needs": "Fewer failure points in the journey."}
+      ],
+      "insights": [
+        {"insight": "Drop-off clustered at checkout and first-use.", "decision": "Simplified purchase and onboarding lifted completion by 50%."},
+        {"insight": "Feedback speed drove retention more than content volume.", "decision": "Asynchronous AI evaluation at 95% relevance."},
+        {"insight": "Exam-season spikes caused most outages and tickets.", "decision": "Horizontal scaling and retry handling for 99.9% uptime."}
+      ]
+    }
+  }
+}
