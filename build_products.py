@@ -29,12 +29,14 @@ def head(title, desc, depth=1):
   <meta name="description" content="{e(desc)}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{rel}styles.css?v=5">
+  <link rel="icon" type="image/png" href="{rel}assets/favicon.png">
+  <link rel="apple-touch-icon" href="{rel}assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="{rel}styles.css?v=6">
 </head>
 <body>
   <header class="nav" id="top">
     <div class="container nav__inner">
-      <a href="{rel}index.html" class="nav__brand">Vikas Deshmane</a>
+      <a href="{rel}index.html" class="nav__brand"><img src="{rel}assets/avatar.jpg" alt="" class="nav__avatar">Vikas Deshmane</a>
       <nav class="nav__links" id="navLinks">
         <a href="{rel}index.html#about">About</a>
         <a href="{rel}index.html#products" class="active">Products</a>
@@ -62,7 +64,7 @@ def foot(depth=1):
       </nav>
     </div>
   </footer>
-  <script src="{rel}script.js?v=5"></script>
+  <script src="{rel}script.js?v=6"></script>
 </body>
 </html>
 """
