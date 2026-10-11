@@ -277,7 +277,7 @@ h5 { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transfor
 .pager__link:hover { color: var(--accent); }
 
 /* Hobbies */
-.hobbies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
+.hobbies { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
 .hobby { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
 .hobby__icon { font-size: 1.8rem; display: block; margin-bottom: 0.6rem; }
 .hobby h4 { margin-bottom: 0.5rem; }
