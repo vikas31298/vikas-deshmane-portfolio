@@ -7,12 +7,12 @@
   <meta name="description" content="A high-volume EdTech platform built from zero to 5K+ concurrent users and 100K+ monthly transactions with AI-assisted evaluation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=4">
+  <link rel="stylesheet" href="../styles.css?v=5">
 </head>
 <body>
   <header class="nav" id="top">
     <div class="container nav__inner">
-      <a href="../index.html" class="nav__brand">Vikas Deshmane<span>.</span></a>
+      <a href="../index.html" class="nav__brand">Vikas Deshmane</a>
       <nav class="nav__links" id="navLinks">
         <a href="../index.html#about">About</a>
         <a href="../index.html#products" class="active">Products</a>
@@ -21,7 +21,6 @@
         <a href="../index.html#contact">Contact</a>
       </nav>
       <div class="nav__actions">
-        <a href="../assets/Vikas_Deshmane_CV.docx" class="btn btn--ghost btn--sm" download>Download CV</a>
         <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -29,7 +28,7 @@
 
   <section class="phero">
     <div class="container">
-      <a href="../index.html#products" class="back">← All products</a>
+      <a href="../index.html#products" class="back">All work</a>
       <p class="eyebrow">Marketplace · 0 to 1</p>
       <h1 class="phero__title">OnYourRank EdTech Platform</h1>
       <p class="phero__tagline">A high-volume EdTech platform built from zero to 5K+ concurrent users and 100K+ monthly transactions with AI-assisted evaluation.</p>
@@ -46,50 +45,50 @@
 <div class="tabpanel" id="tab-overview" role="tabpanel">
   <section class="section section--tight">
     <div class="container">
-      <div class="hero__card reveal"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">5K+</span><span class="stat__label">Concurrent users</span></div><div class="stat"><span class="stat__num">100K+</span><span class="stat__label">Monthly transactions</span></div><div class="stat"><span class="stat__num">99.9%</span><span class="stat__label">Uptime</span></div><div class="stat"><span class="stat__num">+50%</span><span class="stat__label">Journey completion efficiency</span></div></div></div>
+      <div class="hero__card"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">5K+</span><span class="stat__label">Concurrent users</span></div><div class="stat"><span class="stat__num">100K+</span><span class="stat__label">Monthly transactions</span></div><div class="stat"><span class="stat__num">99.9%</span><span class="stat__label">Uptime</span></div><div class="stat"><span class="stat__num">+50%</span><span class="stat__label">Journey completion efficiency</span></div></div></div>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">Business context</p><h2>The problem</h2></div>
-      <div class="detail__main reveal"><p class="lead-text">As co-founder, the brief was to build a discover-to-purchase-to-serve journey from scratch that could hold up under exam-season spikes, while using AI to evaluate learner responses at scale with high relevance.</p></div>
+      <div class="detail__side"><p class="eyebrow">Overview</p><h2>Business context</h2></div>
+      <div class="detail__main"><p class="lead-text">As co-founder, the brief was to build a discover-to-purchase-to-serve journey from scratch that could hold up under exam-season spikes, while using AI to evaluate learner responses at scale with high relevance.</p></div>
     </div>
   </section>
 
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">My role</p><h2>Scope and ownership</h2></div>
-      <div class="detail__main reveal"><p class="lead-text">Owned end-to-end product strategy, PRDs and roadmap. Ran prioritisation from funnel dashboards and experiments, and partnered with engineering on API design, retry handling and failure monitoring for AI pipelines.</p></div>
+      <div class="detail__side"><p class="eyebrow">Responsibility</p><h2>My role</h2></div>
+      <div class="detail__main"><p class="lead-text">Owned end-to-end product strategy, PRDs and roadmap. Ran prioritisation from funnel dashboards and experiments, and partnered with engineering on API design, retry handling and failure monitoring for AI pipelines.</p></div>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">Product strategy</p><h2>How I approached it</h2></div>
-      <div class="detail__main reveal"><ol class="numbered"><li>Instrumented the full funnel from day one so friction points were found with data rather than opinion.</li><li>Chose a microservices stack (Angular, FastAPI, PostgreSQL) with CI/CD and horizontal scaling to survive traffic spikes.</li><li>Made AI evaluation a core product capability with explicit relevance targets and failure monitoring.</li><li>Ran continuous experiments on the purchase and serve steps to lift completion and cut support contacts.</li></ol></div>
+      <div class="detail__side"><p class="eyebrow">Approach</p><h2>Product strategy</h2></div>
+      <div class="detail__main"><ol class="numbered"><li>Instrumented the full funnel from day one so friction points were found with data rather than opinion.</li><li>Chose a microservices stack (Angular, FastAPI, PostgreSQL) with CI/CD and horizontal scaling to survive traffic spikes.</li><li>Made AI evaluation a core product capability with explicit relevance targets and failure monitoring.</li><li>Ran continuous experiments on the purchase and serve steps to lift completion and cut support contacts.</li></ol></div>
     </div>
   </section>
 
   <section class="section section--tight section--alt">
     <div class="container">
-      <div class="section__head reveal"><p class="eyebrow">Tech architecture</p><h2>How the platform is put together</h2><p class="section__sub">An Angular front end talks to FastAPI microservices over PostgreSQL. Orders, payments and content delivery are separate services with retry handling. AI evaluation pipelines process learner submissions asynchronously with relevance monitoring and fallbacks.</p></div>
-      <div class="arch reveal"><div class="arch__layer"><div class="arch__name">Experience</div><div class="arch__items"><span>Angular web app</span><span>Learner and educator journeys</span></div></div><div class="arch__layer"><div class="arch__name">Services</div><div class="arch__items"><span>Catalogue and discovery</span><span>Orders and payments</span><span>Content delivery</span><span>Evaluation API</span></div></div><div class="arch__layer"><div class="arch__name">AI Pipelines</div><div class="arch__items"><span>Async evaluation workers</span><span>Relevance monitoring</span><span>Retry and fallback</span></div></div><div class="arch__layer"><div class="arch__name">Platform</div><div class="arch__items"><span>FastAPI microservices</span><span>PostgreSQL</span><span>CI/CD</span><span>Horizontal scaling</span></div></div><div class="arch__layer"><div class="arch__name">Insight</div><div class="arch__items"><span>Funnel dashboards</span><span>Experimentation</span></div></div></div>
-      <div class="arch__stack reveal"><span>Key technologies</span><ul class="chips"><li>Angular</li><li>FastAPI</li><li>PostgreSQL</li><li>CI/CD</li><li>AI evaluation pipelines</li></ul></div>
+      <div class="section__head"><p class="eyebrow">Technology</p><h2>Architecture</h2><p class="section__sub">An Angular front end talks to FastAPI microservices over PostgreSQL. Orders, payments and content delivery are separate services with retry handling. AI evaluation pipelines process learner submissions asynchronously with relevance monitoring and fallbacks.</p></div>
+      <div class="arch"><div class="arch__layer"><div class="arch__name">Experience</div><div class="arch__items"><span>Angular web app</span><span>Learner and educator journeys</span></div></div><div class="arch__layer"><div class="arch__name">Services</div><div class="arch__items"><span>Catalogue and discovery</span><span>Orders and payments</span><span>Content delivery</span><span>Evaluation API</span></div></div><div class="arch__layer"><div class="arch__name">AI Pipelines</div><div class="arch__items"><span>Async evaluation workers</span><span>Relevance monitoring</span><span>Retry and fallback</span></div></div><div class="arch__layer"><div class="arch__name">Platform</div><div class="arch__items"><span>FastAPI microservices</span><span>PostgreSQL</span><span>CI/CD</span><span>Horizontal scaling</span></div></div><div class="arch__layer"><div class="arch__name">Insight</div><div class="arch__items"><span>Funnel dashboards</span><span>Experimentation</span></div></div></div>
+      <div class="arch__stack"><span>Key technologies</span><ul class="chips"><li>Angular</li><li>FastAPI</li><li>PostgreSQL</li><li>CI/CD</li><li>AI evaluation pipelines</li></ul></div>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head reveal"><p class="eyebrow">Business impact</p><h2>What moved</h2></div>
+      <div class="section__head"><p class="eyebrow">Results</p><h2>Business impact</h2></div>
       <div class="impacts"><div class="impact"><span class="impact__value">+50%</span><p>Completion efficiency across the discover-to-purchase-to-serve journey.</p></div><div class="impact"><span class="impact__value">100K+</span><p>AI evaluations processed at 95% relevance accuracy.</p></div><div class="impact"><span class="impact__value">99.9%</span><p>Uptime at 5K+ concurrent users and 100K+ monthly transactions.</p></div><div class="impact"><span class="impact__value">Lower support load</span><p>Friction fixes reduced support contacts per transaction.</p></div></div>
     </div>
   </section>
 
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">Key decisions</p><h2>Trade-offs I would defend</h2></div>
-      <div class="detail__main reveal"><ul class="bullets"><li>Ran AI evaluation asynchronously so a slow model never blocked purchase or delivery.</li><li>Chose a boring, scalable stack over novelty to protect reliability during exam-season peaks.</li><li>Treated the funnel dashboard as the roadmap input, which kept the small team focused on measurable friction.</li></ul></div>
+      <div class="detail__side"><p class="eyebrow">Judgement</p><h2>Key decisions</h2></div>
+      <div class="detail__main"><ul class="bullets"><li>Ran AI evaluation asynchronously so a slow model never blocked purchase or delivery.</li><li>Chose a boring, scalable stack over novelty to protect reliability during exam-season peaks.</li><li>Treated the funnel dashboard as the roadmap input, which kept the small team focused on measurable friction.</li></ul></div>
     </div>
   </section>
 
@@ -97,20 +96,20 @@
   <div class="tabpanel" id="tab-architecture" role="tabpanel" hidden>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">System architecture</p><h2>End to end, from discovery to AI-evaluated learning</h2><p class="section__sub">A microservices platform on FastAPI and PostgreSQL that scales horizontally for exam-season peaks, with AI evaluation running asynchronously so it never blocks purchase or learning.</p></div>
+      <div class="section__head"><p class="eyebrow">System architecture</p><h2>End-to-end architecture</h2><p class="section__sub">A microservices platform on FastAPI and PostgreSQL that scales horizontally for exam-season peaks, with AI evaluation running asynchronously so it never blocks purchase or learning.</p></div>
       <div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 446" role="img" aria-label="End-to-end architecture diagram"><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b4832e"/></marker></defs><rect x="20" y="10" width="184" height="306" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="40.0">USERS</tspan></text><rect x="32" y="93.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="117.0">Learners</tspan></text><rect x="32" y="151.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="175.0">Parents and payers</tspan></text><rect x="32" y="209.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="233.0">Educators</tspan></text><line x1="208" y1="163.0" x2="244" y2="163.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="248" y="10" width="184" height="306" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="40.0">FRONT END</tspan></text><rect x="260" y="93.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="117.0">Angular web app</tspan></text><rect x="260" y="151.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="175.0">CDN and static assets</tspan></text><rect x="260" y="209.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="233.0">API gateway</tspan></text><line x1="436" y1="163.0" x2="472" y2="163.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="476" y="10" width="184" height="306" rx="16" fill="#1f3a5f" stroke="#1f3a5f"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#f0d79a" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="40.0">CORE SERVICES</tspan></text><rect x="488" y="64.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="80.5">Catalogue and</tspan><tspan x="568.0" y="95.5">discovery</tspan></text><rect x="488" y="122.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="146.0">Orders and payments</tspan></text><rect x="488" y="180.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="204.0">Content delivery</tspan></text><rect x="488" y="238.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="262.0">Evaluation API</tspan></text><line x1="664" y1="163.0" x2="700" y2="163.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="704" y="10" width="184" height="306" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="40.0">AI PIPELINE</tspan></text><rect x="716" y="64.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="88.0">Submission queue</tspan></text><rect x="716" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="138.5">Async evaluation</tspan><tspan x="796.0" y="153.5">workers</tspan></text><rect x="716" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="204.0">Relevance scoring</tspan></text><rect x="716" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="262.0">Retry and fallback</tspan></text><line x1="892" y1="163.0" x2="928" y2="163.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="932" y="10" width="184" height="306" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="40.0">DATA AND INSIGHT</tspan></text><rect x="944" y="93.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="117.0">PostgreSQL</tspan></text><rect x="944" y="151.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="175.0">Funnel dashboards</tspan></text><rect x="944" y="209.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="233.0">Experimentation</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="start" dominant-baseline="middle"><tspan x="20" y="332.0">CROSS-CUTTING CONTROLS</tspan></text><rect x="20.0" y="346" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="20.0" y="346" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="368.0">Scale</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="388.5">Horizontal scaling for 5K+ concurrent</tspan><tspan x="38.0" y="403.5">users</tspan></text><rect x="297.0" y="346" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="297.0" y="346" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="368.0">Reliability</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="396.0">99.9% uptime, CI/CD, retry handling</tspan></text><rect x="574.0" y="346" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="574.0" y="346" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="368.0">AI quality</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="388.5">95% relevance accuracy, failure</tspan><tspan x="592.0" y="403.5">monitoring</tspan></text><rect x="851.0" y="346" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="851.0" y="346" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="368.0">Growth</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="396.0">Funnel analytics and A/B experiments</tspan></text></svg></div>
-      <p class="diagram__hint">Scroll sideways to see the full diagram on small screens.</p>
+      
     </div>
   </section>
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>How one learner moves through the platform</h2></div>
+      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>Request lifecycle</h2></div>
       <div class="detail__main"><ol class="numbered"><li>Discover: a learner finds a course through catalogue and search.</li><li>Purchase: orders and payments complete in a simplified checkout.</li><li>Learn: content delivery serves lessons and practice tests.</li><li>Submit: answers go to a queue instead of blocking the learner.</li><li>Evaluate: AI workers score submissions asynchronously, with retries and fallbacks.</li><li>Feedback: results return to the learner with relevance-checked explanations.</li><li>Improve: funnel dashboards and experiments decide the next round of changes.</li></ol></div>
     </div>
   </section>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Service roster</p><h2>Who does what, and what keeps it safe</h2></div>
+      <div class="section__head"><p class="eyebrow">Service roster</p><h2>Components and guardrails</h2></div>
       <div class="table-wrap"><table class="agents">
         <thead><tr><th>Service</th><th>Responsibility</th><th>Guardrail</th></tr></thead>
         <tbody><tr><td><strong>Catalogue</strong></td><td>Search and course discovery</td><td>Cached for peak traffic</td></tr><tr><td><strong>Orders and payments</strong></td><td>Checkout and payment confirmation</td><td>Idempotent payment handling</td></tr><tr><td><strong>Content delivery</strong></td><td>Serves lessons and tests</td><td>CDN and horizontal scaling</td></tr><tr><td><strong>Evaluation workers</strong></td><td>Score learner submissions with AI</td><td>Async queue, retries, relevance threshold</td></tr><tr><td><strong>Analytics</strong></td><td>Funnel and experiment reporting</td><td>Single event schema</td></tr></tbody>
@@ -121,13 +120,13 @@
 <div class="tabpanel" id="tab-research" role="tabpanel" hidden>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Product research</p><h2>Who we built for</h2><p class="section__sub">As co-founder, research ran continuously through learner interviews, funnel data and experiments.</p></div>
+      <div class="section__head"><p class="eyebrow">Discovery</p><h2>Product research</h2><p class="section__sub">As co-founder, research ran continuously through learner interviews, funnel data and experiments.</p></div>
       <div class="arch__stack"><span>Research methods</span><ul class="chips"><li>Learner interviews</li><li>Educator interviews</li><li>Funnel analytics</li><li>A/B experiments</li><li>Support ticket review</li></ul></div>
     </div>
   </section>
   <section class="section section--tight section--alt">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Personas</p><h2>End users and customers</h2></div>
+      <div class="section__head"><p class="eyebrow">Users</p><h2>Personas</h2></div>
       <div class="personas">
         <article class="persona persona--end">
           <header><span class="persona__avatar">EA</span><div><h4>Exam aspirant</h4><span class="persona__type">End customer</span></div></header>
@@ -170,7 +169,7 @@
   </section>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>What we learned and what we changed</h2></div>
+      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>Insights and decisions</h2></div>
       <div class="insights"><div class="insight"><p class="insight__q">Drop-off clustered at checkout and first-use.</p><p class="insight__a"><span>Product decision</span>Simplified purchase and onboarding lifted completion by 50%.</p></div><div class="insight"><p class="insight__q">Feedback speed drove retention more than content volume.</p><p class="insight__a"><span>Product decision</span>Asynchronous AI evaluation at 95% relevance.</p></div><div class="insight"><p class="insight__q">Exam-season spikes caused most outages and tickets.</p><p class="insight__a"><span>Product decision</span>Horizontal scaling and retry handling for 99.9% uptime.</p></div></div>
     </div>
   </section>
@@ -181,9 +180,9 @@
   </section>
 
   <section class="section section--contact">
-    <div class="container contact reveal">
-      <h2>Want to go deeper on this product?</h2>
-      <p class="contact__lead">Happy to walk through the architecture, the numbers and the decisions in a conversation.</p>
+    <div class="container contact">
+      <h2>Get in touch</h2>
+      <p class="contact__lead">I am happy to discuss this work in more detail.</p>
       <div class="contact__links">
         <a class="btn btn--primary" href="mailto:vikasdeshmane.iiml@gmail.com">Email me</a>
         <a class="btn btn--ghost" href="https://www.linkedin.com/in/vikasdeshmane" target="_blank" rel="noopener">LinkedIn</a>
@@ -194,9 +193,13 @@
   <footer class="footer">
     <div class="container footer__inner">
       <span>© <span id="year"></span> Vikas Deshmane</span>
-      <a href="../index.html#products">All products</a>
+      <nav class="footer__links">
+        <a href="../index.html#products">All work</a>
+        <a href="mailto:vikasdeshmane.iiml@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/vikasdeshmane" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
     </div>
   </footer>
-  <script src="../script.js?v=4"></script>
+  <script src="../script.js?v=5"></script>
 </body>
 </html>

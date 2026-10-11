@@ -7,12 +7,12 @@
   <meta name="description" content="LLM-powered contract review that redlines clauses against a company&#x27;s own policy playbook and answers questions about any contract through a chatbot.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=4">
+  <link rel="stylesheet" href="../styles.css?v=5">
 </head>
 <body>
   <header class="nav" id="top">
     <div class="container nav__inner">
-      <a href="../index.html" class="nav__brand">Vikas Deshmane<span>.</span></a>
+      <a href="../index.html" class="nav__brand">Vikas Deshmane</a>
       <nav class="nav__links" id="navLinks">
         <a href="../index.html#about">About</a>
         <a href="../index.html#products" class="active">Products</a>
@@ -21,7 +21,6 @@
         <a href="../index.html#contact">Contact</a>
       </nav>
       <div class="nav__actions">
-        <a href="../assets/Vikas_Deshmane_CV.docx" class="btn btn--ghost btn--sm" download>Download CV</a>
         <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -29,7 +28,7 @@
 
   <section class="phero">
     <div class="container">
-      <a href="../index.html#products" class="back">← All products</a>
+      <a href="../index.html#products" class="back">All work</a>
       <p class="eyebrow">GenAI · Legal &amp; Procurement</p>
       <h1 class="phero__title">AI Contract Evaluation &amp; Redlining</h1>
       <p class="phero__tagline">LLM-powered contract review that redlines clauses against a company&#x27;s own policy playbook and answers questions about any contract through a chatbot.</p>
@@ -46,50 +45,50 @@
 <div class="tabpanel" id="tab-overview" role="tabpanel">
   <section class="section section--tight">
     <div class="container">
-      <div class="hero__card reveal"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">Custom</span><span class="stat__label">Policy playbooks per organisation</span></div><div class="stat"><span class="stat__num">Clause-level</span><span class="stat__label">Redlines with suggested wording</span></div><div class="stat"><span class="stat__num">Cited</span><span class="stat__label">Every suggestion linked to the policy it applies</span></div><div class="stat"><span class="stat__num">Chat</span><span class="stat__label">Ask questions across any contract</span></div></div></div>
+      <div class="hero__card"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">Custom</span><span class="stat__label">Policy playbooks per organisation</span></div><div class="stat"><span class="stat__num">Clause-level</span><span class="stat__label">Redlines with suggested wording</span></div><div class="stat"><span class="stat__num">Cited</span><span class="stat__label">Every suggestion linked to the policy it applies</span></div><div class="stat"><span class="stat__num">Chat</span><span class="stat__label">Ask questions across any contract</span></div></div></div>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">Business context</p><h2>The problem</h2></div>
-      <div class="detail__main reveal"><p class="lead-text">Legal and procurement teams reviewed every vendor and customer contract by hand against internal policies that lived in people&#x27;s heads and scattered documents. Reviews were slow, inconsistent between reviewers, and business teams waited days for simple answers.</p></div>
+      <div class="detail__side"><p class="eyebrow">Overview</p><h2>Business context</h2></div>
+      <div class="detail__main"><p class="lead-text">Legal and procurement teams reviewed every vendor and customer contract by hand against internal policies that lived in people&#x27;s heads and scattered documents. Reviews were slow, inconsistent between reviewers, and business teams waited days for simple answers.</p></div>
     </div>
   </section>
 
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">My role</p><h2>Scope and ownership</h2></div>
-      <div class="detail__main reveal"><p class="lead-text">Owned the product from problem definition to launch: the policy playbook model, clause extraction, redlining logic, chatbot experience and the guardrails needed for legal use.</p></div>
+      <div class="detail__side"><p class="eyebrow">Responsibility</p><h2>My role</h2></div>
+      <div class="detail__main"><p class="lead-text">Owned the product from problem definition to launch: the policy playbook model, clause extraction, redlining logic, chatbot experience and the guardrails needed for legal use.</p></div>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">Product strategy</p><h2>How I approached it</h2></div>
-      <div class="detail__main reveal"><ol class="numbered"><li>Turn each organisation&#x27;s policy into a structured playbook of clauses, positions and fallback wording.</li><li>Extract and classify every clause, then compare it with the playbook rather than asking the model for open-ended opinions.</li><li>Show redlines as tracked changes with a reason and a link to the policy, so reviewers stay in control.</li><li>Add a chatbot so business users can ask questions about any contract without waiting for legal.</li></ol></div>
+      <div class="detail__side"><p class="eyebrow">Approach</p><h2>Product strategy</h2></div>
+      <div class="detail__main"><ol class="numbered"><li>Turn each organisation&#x27;s policy into a structured playbook of clauses, positions and fallback wording.</li><li>Extract and classify every clause, then compare it with the playbook rather than asking the model for open-ended opinions.</li><li>Show redlines as tracked changes with a reason and a link to the policy, so reviewers stay in control.</li><li>Add a chatbot so business users can ask questions about any contract without waiting for legal.</li></ol></div>
     </div>
   </section>
 
   <section class="section section--tight section--alt">
     <div class="container">
-      <div class="section__head reveal"><p class="eyebrow">Tech architecture</p><h2>How the platform is put together</h2><p class="section__sub">Uploaded contracts are parsed and split into clauses. Each clause is classified, compared against the organisation&#x27;s policy playbook, and redlined with suggested wording. A retrieval-backed chatbot answers questions over the same clause index.</p></div>
-      <div class="arch reveal"><div class="arch__layer"><div class="arch__name">Users</div><div class="arch__items"><span>Legal reviewers</span><span>Procurement</span><span>Business teams</span></div></div><div class="arch__layer"><div class="arch__name">Document processing</div><div class="arch__items"><span>Upload and parsing</span><span>Clause segmentation</span><span>Clause classification</span></div></div><div class="arch__layer"><div class="arch__name">Policy engine</div><div class="arch__items"><span>Policy playbook</span><span>Deviation scoring</span><span>Suggested redlines</span></div></div><div class="arch__layer"><div class="arch__name">AI services</div><div class="arch__items"><span>LLM for redlining</span><span>Retrieval index</span><span>Contract chatbot</span></div></div><div class="arch__layer"><div class="arch__name">Governance</div><div class="arch__items"><span>Role-based access</span><span>Audit trail</span><span>Human approval</span></div></div></div>
-      <div class="arch__stack reveal"><span>Key technologies</span><ul class="chips"><li>LLMs</li><li>RAG</li><li>Clause classification</li><li>Document parsing</li><li>RBAC</li></ul></div>
+      <div class="section__head"><p class="eyebrow">Technology</p><h2>Architecture</h2><p class="section__sub">Uploaded contracts are parsed and split into clauses. Each clause is classified, compared against the organisation&#x27;s policy playbook, and redlined with suggested wording. A retrieval-backed chatbot answers questions over the same clause index.</p></div>
+      <div class="arch"><div class="arch__layer"><div class="arch__name">Users</div><div class="arch__items"><span>Legal reviewers</span><span>Procurement</span><span>Business teams</span></div></div><div class="arch__layer"><div class="arch__name">Document processing</div><div class="arch__items"><span>Upload and parsing</span><span>Clause segmentation</span><span>Clause classification</span></div></div><div class="arch__layer"><div class="arch__name">Policy engine</div><div class="arch__items"><span>Policy playbook</span><span>Deviation scoring</span><span>Suggested redlines</span></div></div><div class="arch__layer"><div class="arch__name">AI services</div><div class="arch__items"><span>LLM for redlining</span><span>Retrieval index</span><span>Contract chatbot</span></div></div><div class="arch__layer"><div class="arch__name">Governance</div><div class="arch__items"><span>Role-based access</span><span>Audit trail</span><span>Human approval</span></div></div></div>
+      <div class="arch__stack"><span>Key technologies</span><ul class="chips"><li>LLMs</li><li>RAG</li><li>Clause classification</li><li>Document parsing</li><li>RBAC</li></ul></div>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head reveal"><p class="eyebrow">Business impact</p><h2>What moved</h2></div>
+      <div class="section__head"><p class="eyebrow">Results</p><h2>Business impact</h2></div>
       <div class="impacts"><div class="impact"><span class="impact__value">Faster reviews</span><p>First-pass review automated, so legal focuses on real deviations.</p></div><div class="impact"><span class="impact__value">Consistent</span><p>Every contract is checked against the same written policy.</p></div><div class="impact"><span class="impact__value">Self-serve</span><p>Business teams get contract answers from the chatbot instead of waiting for legal.</p></div><div class="impact"><span class="impact__value">Auditable</span><p>Each redline records the policy rule and reviewer decision behind it.</p></div></div>
     </div>
   </section>
 
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">Key decisions</p><h2>Trade-offs I would defend</h2></div>
-      <div class="detail__main reveal"><ul class="bullets"><li>Compared clauses against a written playbook instead of letting the model judge contracts freely, which made outputs explainable.</li><li>Kept a human approval step on every redline, because legal liability stays with the reviewer.</li><li>Built the chatbot on the same clause index as redlining, so answers and redlines never disagree.</li></ul></div>
+      <div class="detail__side"><p class="eyebrow">Judgement</p><h2>Key decisions</h2></div>
+      <div class="detail__main"><ul class="bullets"><li>Compared clauses against a written playbook instead of letting the model judge contracts freely, which made outputs explainable.</li><li>Kept a human approval step on every redline, because legal liability stays with the reviewer.</li><li>Built the chatbot on the same clause index as redlining, so answers and redlines never disagree.</li></ul></div>
     </div>
   </section>
 
@@ -97,20 +96,20 @@
   <div class="tabpanel" id="tab-architecture" role="tabpanel" hidden>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Agentic AI architecture</p><h2>End to end, from uploaded contract to approved redline</h2><p class="section__sub">A pipeline of specialised agents parses the contract, compares every clause with the organisation&#x27;s own policy playbook, drafts redlines, and powers a chatbot over the same clause index. A human approves every change.</p></div>
+      <div class="section__head"><p class="eyebrow">Agentic AI architecture</p><h2>End-to-end architecture</h2><p class="section__sub">A pipeline of specialised agents parses the contract, compares every clause with the organisation&#x27;s own policy playbook, drafts redlines, and powers a chatbot over the same clause index. A human approves every change.</p></div>
       <div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 504" role="img" aria-label="End-to-end architecture diagram"><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b4832e"/></marker></defs><rect x="20" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="40.0">USERS</tspan></text><rect x="32" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="146.0">Legal reviewers</tspan></text><rect x="32" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="204.0">Procurement teams</tspan></text><rect x="32" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="262.0">Business owners</tspan></text><line x1="208" y1="192.0" x2="244" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="248" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="40.0">INGESTION</tspan></text><rect x="260" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="146.0">Upload and OCR</tspan></text><rect x="260" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="204.0">Clause segmentation</tspan></text><rect x="260" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="262.0">Metadata extraction</tspan></text><line x1="436" y1="192.0" x2="472" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="476" y="10" width="184" height="364" rx="16" fill="#1f3a5f" stroke="#1f3a5f"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#f0d79a" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="40.0">AGENT PIPELINE</tspan></text><rect x="488" y="64.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="80.5">Clause classifier</tspan><tspan x="568.0" y="95.5">agent</tspan></text><rect x="488" y="122.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="138.5">Policy comparison</tspan><tspan x="568.0" y="153.5">agent</tspan></text><rect x="488" y="180.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="204.0">Redline drafting agent</tspan></text><rect x="488" y="238.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="262.0">Risk summary agent</tspan></text><rect x="488" y="296.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="320.0">Contract Q&amp;A agent</tspan></text><line x1="664" y1="192.0" x2="700" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="704" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="40.0">KNOWLEDGE</tspan></text><rect x="716" y="93.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="117.0">Policy playbook</tspan></text><rect x="716" y="151.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="167.5">Fallback clause</tspan><tspan x="796.0" y="182.5">library</tspan></text><rect x="716" y="209.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="233.0">Clause vector index</tspan></text><rect x="716" y="267.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="291.0">LLM</tspan></text><line x1="892" y1="192.0" x2="928" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="932" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="40.0">OUTPUTS</tspan></text><rect x="944" y="93.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="109.5">Tracked-change</tspan><tspan x="1024.0" y="124.5">document</tspan></text><rect x="944" y="151.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="175.0">Risk summary</tspan></text><rect x="944" y="209.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="225.5">Chat answers with</tspan><tspan x="1024.0" y="240.5">citations</tspan></text><rect x="944" y="267.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="291.0">Approval workflow</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="start" dominant-baseline="middle"><tspan x="20" y="390.0">CROSS-CUTTING CONTROLS</tspan></text><rect x="20.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="20.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="426.0">Human approval</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="446.5">Every redline accepted or rejected by</tspan><tspan x="38.0" y="461.5">a reviewer</tspan></text><rect x="297.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="297.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="426.0">Explainability</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="446.5">Each change cites the policy rule</tspan><tspan x="315.0" y="461.5">behind it</tspan></text><rect x="574.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="574.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="426.0">Access control</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="446.5">Role-based access to contracts and</tspan><tspan x="592.0" y="461.5">playbooks</tspan></text><rect x="851.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="851.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="426.0">Audit</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="446.5">Full history of suggestions and</tspan><tspan x="869.0" y="461.5">decisions</tspan></text></svg></div>
-      <p class="diagram__hint">Scroll sideways to see the full diagram on small screens.</p>
+      
     </div>
   </section>
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>How one contract moves through review</h2></div>
+      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>Request lifecycle</h2></div>
       <div class="detail__main"><ol class="numbered"><li>Upload: a reviewer uploads a contract; it is parsed and split into clauses.</li><li>Classify: the classifier agent labels each clause type, such as liability, termination or payment terms.</li><li>Compare: the policy agent checks each clause against the organisation&#x27;s playbook position.</li><li>Redline: the drafting agent proposes replacement wording from the fallback library with a short reason.</li><li>Summarise: the risk agent lists the highest-risk deviations for the reviewer.</li><li>Approve: the reviewer accepts, edits or rejects each change and exports a tracked-change document.</li><li>Ask: business users ask the chatbot questions; answers cite the exact clause.</li></ol></div>
     </div>
   </section>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Agent roster</p><h2>Who does what, and what keeps it safe</h2></div>
+      <div class="section__head"><p class="eyebrow">Agent roster</p><h2>Components and guardrails</h2></div>
       <div class="table-wrap"><table class="agents">
         <thead><tr><th>Agent</th><th>Responsibility</th><th>Guardrail</th></tr></thead>
         <tbody><tr><td><strong>Clause classifier</strong></td><td>Labels every clause by type</td><td>Fixed clause taxonomy</td></tr><tr><td><strong>Policy comparison</strong></td><td>Finds deviations from the playbook</td><td>Compares only against written policy</td></tr><tr><td><strong>Redline drafting</strong></td><td>Proposes compliant replacement wording</td><td>Uses approved fallback clauses first</td></tr><tr><td><strong>Risk summary</strong></td><td>Ranks deviations by business risk</td><td>Severity rules set by legal</td></tr><tr><td><strong>Contract Q&amp;A</strong></td><td>Answers questions about a contract</td><td>Answers only with a cited clause</td></tr></tbody>
@@ -121,13 +120,13 @@
 <div class="tabpanel" id="tab-research" role="tabpanel" hidden>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Product research</p><h2>Who we built for</h2><p class="section__sub">Research shadowed legal and procurement reviewers and collected the questions business teams sent to legal.</p></div>
+      <div class="section__head"><p class="eyebrow">Discovery</p><h2>Product research</h2><p class="section__sub">Research shadowed legal and procurement reviewers and collected the questions business teams sent to legal.</p></div>
       <div class="arch__stack"><span>Research methods</span><ul class="chips"><li>Reviewer shadowing</li><li>Analysis of past redlines</li><li>Legal team interviews</li><li>Business-team request log review</li></ul></div>
     </div>
   </section>
   <section class="section section--tight section--alt">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Personas</p><h2>End users and customers</h2></div>
+      <div class="section__head"><p class="eyebrow">Users</p><h2>Personas</h2></div>
       <div class="personas">
         <article class="persona">
           <header><span class="persona__avatar">IC</span><div><h4>In-house counsel</h4><span class="persona__type">Internal · end user</span></div></header>
@@ -170,7 +169,7 @@
   </section>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>What we learned and what we changed</h2></div>
+      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>Insights and decisions</h2></div>
       <div class="insights"><div class="insight"><p class="insight__q">Most edits were the same few positions repeated across contracts.</p><p class="insight__a"><span>Product decision</span>Encode them as a playbook with fallback wording.</p></div><div class="insight"><p class="insight__q">Lawyers rejected suggestions they could not trace to policy.</p><p class="insight__a"><span>Product decision</span>Every redline cites the policy rule behind it.</p></div><div class="insight"><p class="insight__q">Many legal requests were simple questions, not reviews.</p><p class="insight__a"><span>Product decision</span>A contract chatbot for self-serve answers.</p></div></div>
     </div>
   </section>
@@ -181,9 +180,9 @@
   </section>
 
   <section class="section section--contact">
-    <div class="container contact reveal">
-      <h2>Want to go deeper on this product?</h2>
-      <p class="contact__lead">Happy to walk through the architecture, the numbers and the decisions in a conversation.</p>
+    <div class="container contact">
+      <h2>Get in touch</h2>
+      <p class="contact__lead">I am happy to discuss this work in more detail.</p>
       <div class="contact__links">
         <a class="btn btn--primary" href="mailto:vikasdeshmane.iiml@gmail.com">Email me</a>
         <a class="btn btn--ghost" href="https://www.linkedin.com/in/vikasdeshmane" target="_blank" rel="noopener">LinkedIn</a>
@@ -194,9 +193,13 @@
   <footer class="footer">
     <div class="container footer__inner">
       <span>© <span id="year"></span> Vikas Deshmane</span>
-      <a href="../index.html#products">All products</a>
+      <nav class="footer__links">
+        <a href="../index.html#products">All work</a>
+        <a href="mailto:vikasdeshmane.iiml@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/vikasdeshmane" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
     </div>
   </footer>
-  <script src="../script.js?v=4"></script>
+  <script src="../script.js?v=5"></script>
 </body>
 </html>

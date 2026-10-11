@@ -105,7 +105,9 @@
           "role": "Creates and assigns cases to operations teams",
           "guard": "Ownership rules, duplicate suppression"
         }
-      ]
+      ],
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle"
     },
     "research": {
       "summary": "Discovery combined executive interviews, time with site operations teams and analysis of the existing feedback corpus to find where insight was being lost.",
@@ -292,7 +294,9 @@
           "role": "Adds auditable sources",
           "guard": "No answer shown without a citation"
         }
-      ]
+      ],
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle"
     },
     "research": {
       "summary": "Research focused on how finance and procurement users actually looked up contract information, and on where LLM features were failing in practice.",
@@ -380,8 +384,8 @@
       "tab_label": "Architecture",
       "eyebrow": "System architecture",
       "roster_label": "Service",
-      "headline": "End to end, from application to disbursal",
-      "flow_title": "How one application moves through the platform",
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle",
       "summary": "An event-driven platform: every lifecycle step is an independent microservice that publishes and consumes Kafka events, so one slow step or partner never stalls the rest.",
       "columns": [
         {
@@ -570,8 +574,8 @@
       "tab_label": "Architecture",
       "eyebrow": "System architecture",
       "roster_label": "Component",
-      "headline": "End to end, from partner application to loan servicing",
-      "flow_title": "How one loan moves through the system",
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle",
       "summary": "A loan management system of record with a configurable rule engine at its core. Partners integrate through standard APIs, ML scores routine cases instantly, and an NLP assistant handles servicing.",
       "columns": [
         {
@@ -756,8 +760,8 @@
       "tab_label": "AI Architecture",
       "eyebrow": "AI architecture",
       "roster_label": "Component",
-      "headline": "End to end, from customer query to resolution",
-      "flow_title": "How one query or document moves through the system",
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle",
       "summary": "Two AI pipelines share one CRM: transformer models classify and route every email and chat, and a document AI pipeline verifies KYC uploads in minutes.",
       "columns": [
         {
@@ -938,8 +942,8 @@
       "tab_label": "Architecture",
       "eyebrow": "System architecture",
       "roster_label": "Service",
-      "headline": "End to end, from discovery to AI-evaluated learning",
-      "flow_title": "How one learner moves through the platform",
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle",
       "summary": "A microservices platform on FastAPI and PostgreSQL that scales horizontally for exam-season peaks, with AI evaluation running asynchronously so it never blocks purchase or learning.",
       "columns": [
         {
@@ -1125,8 +1129,8 @@
       "tab_label": "Architecture",
       "eyebrow": "System architecture",
       "roster_label": "Component",
-      "headline": "End to end, from credit check to lender decision",
-      "flow_title": "How one application moves through the marketplace",
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle",
       "summary": "Customer and alternative data feed ML underwriting, a matching engine applies each lender's rules, and applications flow to lenders through standard APIs.",
       "columns": [
         {
@@ -1313,8 +1317,8 @@
     "agentic": {
       "tab_label": "Agentic AI Architecture",
       "roster_label": "Agent",
-      "headline": "End to end, from uploaded contract to approved redline",
-      "flow_title": "How one contract moves through review",
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle",
       "summary": "A pipeline of specialised agents parses the contract, compares every clause with the organisation's own policy playbook, drafts redlines, and powers a chatbot over the same clause index. A human approves every change.",
       "columns": [
         {
@@ -1499,8 +1503,8 @@
     "agentic": {
       "tab_label": "Agentic AI Architecture",
       "roster_label": "Agent",
-      "headline": "End to end, from a rep's question to a compliant answer",
-      "flow_title": "How one sales question is answered",
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle",
       "summary": "An orchestrating agent understands the rep's question, retrieves approved product content, calls deterministic tools for eligibility and EMI, and checks every answer for compliance before it is shown.",
       "columns": [
         {
@@ -1687,8 +1691,8 @@
       "tab_label": "Architecture",
       "eyebrow": "System architecture",
       "roster_label": "Component",
-      "headline": "End to end, from GST consent to disbursal",
-      "flow_title": "How one small-business loan moves through the system",
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle",
       "summary": "With the business owner's consent, GST return data is fetched and turned into cash-flow features. Risk models and the configurable rule engine decide, and approved loans are booked on the loan management system.",
       "columns": [
         {
@@ -1870,8 +1874,8 @@
       "tab_label": "AI Architecture",
       "eyebrow": "AI architecture",
       "roster_label": "Component",
-      "headline": "End to end, from sign-up to first trade",
-      "flow_title": "How one new investor gets activated",
+      "headline": "End-to-end architecture",
+      "flow_title": "Request lifecycle",
       "summary": "A digital journey collects details and documents, document AI classifies and reads every file, automated checks verify and screen for fraud, and clean applications activate without manual review.",
       "columns": [
         {

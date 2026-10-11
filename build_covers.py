@@ -17,7 +17,7 @@ def frame(inner, label):
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="{html.escape(label)}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="{NAVY}"/><stop offset="1" stop-color="{NAVY2}"/>
+      <stop offset="0" stop-color="{NAVY}"/><stop offset="1" stop-color="{NAVY}"/>
     </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
@@ -27,8 +27,6 @@ def frame(inner, label):
     </radialGradient>
   </defs>
   <rect width="{W}" height="{H}" fill="url(#bg)"/>
-  <rect width="{W}" height="{H}" fill="url(#grid)"/>
-  <rect width="{W}" height="{H}" fill="url(#glow)"/>
   {inner}
 </svg>
 '''
@@ -207,9 +205,6 @@ def generic(p):
         g += txt(x + 18, 332, m['value'], 22 if len(m['value']) < 12 else 17, GOLD, 700)
         for j, line in enumerate(_wrap(m['label'], 28)[:2]):
             g += txt(x + 18, 358 + j * 16, line, 12, CREAM, 500, op=0.8)
-    g += f'<circle cx="700" cy="120" r="70" fill="none" stroke="{GOLD}" stroke-opacity="0.35" stroke-width="2"/>'
-    g += f'<circle cx="700" cy="120" r="44" fill="{GOLD}" fill-opacity="0.12"/>'
-    g += f'<circle cx="700" cy="120" r="8" fill="{GOLD}"/>'
     return frame(g, p['name'])
 
 

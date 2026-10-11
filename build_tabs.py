@@ -90,20 +90,20 @@ def agentic_tab(a):
     return f"""
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">{e(a.get('eyebrow', 'Agentic AI architecture'))}</p><h2>{e(a.get('headline', 'End to end, from raw signal to action'))}</h2><p class="section__sub">{e(a['summary'])}</p></div>
+      <div class="section__head"><p class="eyebrow">{e(a.get('eyebrow', 'Agentic AI architecture'))}</p><h2>{e(a.get('headline', 'End-to-end architecture'))}</h2><p class="section__sub">{e(a['summary'])}</p></div>
       <div class="diagram">{diagram(a)}</div>
-      <p class="diagram__hint">Scroll sideways to see the full diagram on small screens.</p>
+      
     </div>
   </section>
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>{e(a.get('flow_title', 'How one signal moves through the system'))}</h2></div>
+      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>{e(a.get('flow_title', 'Request lifecycle'))}</h2></div>
       <div class="detail__main"><ol class="numbered">{flow}</ol></div>
     </div>
   </section>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">{e(a.get('roster_label', 'Agent'))} roster</p><h2>Who does what, and what keeps it safe</h2></div>
+      <div class="section__head"><p class="eyebrow">{e(a.get('roster_label', 'Agent'))} roster</p><h2>Components and guardrails</h2></div>
       <div class="table-wrap"><table class="agents">
         <thead><tr><th>{e(a.get('roster_label', 'Agent'))}</th><th>Responsibility</th><th>Guardrail</th></tr></thead>
         <tbody>{rows}</tbody>
@@ -134,20 +134,20 @@ def research_tab(r):
     return f"""
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Product research</p><h2>Who we built for</h2><p class="section__sub">{e(r['summary'])}</p></div>
+      <div class="section__head"><p class="eyebrow">Discovery</p><h2>Product research</h2><p class="section__sub">{e(r['summary'])}</p></div>
       <div class="arch__stack"><span>Research methods</span><ul class="chips">{methods}</ul></div>
     </div>
   </section>
   <section class="section section--tight section--alt">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Personas</p><h2>End users and customers</h2></div>
+      <div class="section__head"><p class="eyebrow">Users</p><h2>Personas</h2></div>
       <div class="personas">{personas}
       </div>
     </div>
   </section>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>What we learned and what we changed</h2></div>
+      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>Insights and decisions</h2></div>
       <div class="insights">{insights}</div>
     </div>
   </section>"""

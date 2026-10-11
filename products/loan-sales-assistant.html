@@ -7,12 +7,12 @@
   <meta name="description" content="An LLM-powered chatbot that gives sales teams and channel partners instant, compliant answers on loan products, eligibility, pricing and documentation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=4">
+  <link rel="stylesheet" href="../styles.css?v=5">
 </head>
 <body>
   <header class="nav" id="top">
     <div class="container nav__inner">
-      <a href="../index.html" class="nav__brand">Vikas Deshmane<span>.</span></a>
+      <a href="../index.html" class="nav__brand">Vikas Deshmane</a>
       <nav class="nav__links" id="navLinks">
         <a href="../index.html#about">About</a>
         <a href="../index.html#products" class="active">Products</a>
@@ -21,7 +21,6 @@
         <a href="../index.html#contact">Contact</a>
       </nav>
       <div class="nav__actions">
-        <a href="../assets/Vikas_Deshmane_CV.docx" class="btn btn--ghost btn--sm" download>Download CV</a>
         <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -29,7 +28,7 @@
 
   <section class="phero">
     <div class="container">
-      <a href="../index.html#products" class="back">← All products</a>
+      <a href="../index.html#products" class="back">All work</a>
       <p class="eyebrow">GenAI · Sales Enablement</p>
       <h1 class="phero__title">LLM Sales-Enablement Assistant for Loan Products</h1>
       <p class="phero__tagline">An LLM-powered chatbot that gives sales teams and channel partners instant, compliant answers on loan products, eligibility, pricing and documentation.</p>
@@ -46,50 +45,50 @@
 <div class="tabpanel" id="tab-overview" role="tabpanel">
   <section class="section section--tight">
     <div class="container">
-      <div class="hero__card reveal"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">Instant</span><span class="stat__label">Answers on products, eligibility and documents</span></div><div class="stat"><span class="stat__num">Compliant</span><span class="stat__label">Answers only from approved content</span></div><div class="stat"><span class="stat__num">Multi-product</span><span class="stat__label">Covers the full loan product range</span></div><div class="stat"><span class="stat__num">Field-ready</span><span class="stat__label">Built for sales teams and partners on mobile</span></div></div></div>
+      <div class="hero__card"><div class="stat-grid stat-grid--4"><div class="stat"><span class="stat__num">Instant</span><span class="stat__label">Answers on products, eligibility and documents</span></div><div class="stat"><span class="stat__num">Compliant</span><span class="stat__label">Answers only from approved content</span></div><div class="stat"><span class="stat__num">Multi-product</span><span class="stat__label">Covers the full loan product range</span></div><div class="stat"><span class="stat__num">Field-ready</span><span class="stat__label">Built for sales teams and partners on mobile</span></div></div></div>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">Business context</p><h2>The problem</h2></div>
-      <div class="detail__main reveal"><p class="lead-text">Sales teams and channel partners sold many loan products, each with its own eligibility rules, pricing and document checklist. Product information sat in long PDFs and circulars that changed often, so reps called product teams, gave customers wrong answers, or lost deals while waiting.</p></div>
+      <div class="detail__side"><p class="eyebrow">Overview</p><h2>Business context</h2></div>
+      <div class="detail__main"><p class="lead-text">Sales teams and channel partners sold many loan products, each with its own eligibility rules, pricing and document checklist. Product information sat in long PDFs and circulars that changed often, so reps called product teams, gave customers wrong answers, or lost deals while waiting.</p></div>
     </div>
   </section>
 
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">My role</p><h2>Scope and ownership</h2></div>
-      <div class="detail__main reveal"><p class="lead-text">Owned the product end to end: knowledge sources, conversation design, eligibility tools, compliance guardrails and rollout to sales teams.</p></div>
+      <div class="detail__side"><p class="eyebrow">Responsibility</p><h2>My role</h2></div>
+      <div class="detail__main"><p class="lead-text">Owned the product end to end: knowledge sources, conversation design, eligibility tools, compliance guardrails and rollout to sales teams.</p></div>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">Product strategy</p><h2>How I approached it</h2></div>
-      <div class="detail__main reveal"><ol class="numbered"><li>Answer only from approved, versioned product content so reps never quote outdated terms.</li><li>Pair retrieval with deterministic tools for eligibility and EMI calculations instead of letting the model do maths.</li><li>Design for the field: short answers, document checklists and shareable summaries for customers.</li><li>Log every unanswered question to show product teams where content was missing.</li></ol></div>
+      <div class="detail__side"><p class="eyebrow">Approach</p><h2>Product strategy</h2></div>
+      <div class="detail__main"><ol class="numbered"><li>Answer only from approved, versioned product content so reps never quote outdated terms.</li><li>Pair retrieval with deterministic tools for eligibility and EMI calculations instead of letting the model do maths.</li><li>Design for the field: short answers, document checklists and shareable summaries for customers.</li><li>Log every unanswered question to show product teams where content was missing.</li></ol></div>
     </div>
   </section>
 
   <section class="section section--tight section--alt">
     <div class="container">
-      <div class="section__head reveal"><p class="eyebrow">Tech architecture</p><h2>How the platform is put together</h2><p class="section__sub">Sales users chat through a mobile-friendly interface. The assistant retrieves from an index of approved product content, calls tools for eligibility and EMI calculations, and passes every answer through compliance guardrails before replying.</p></div>
-      <div class="arch reveal"><div class="arch__layer"><div class="arch__name">Users</div><div class="arch__items"><span>Sales executives</span><span>Channel partners</span><span>Product managers</span></div></div><div class="arch__layer"><div class="arch__name">Interface</div><div class="arch__items"><span>Mobile chat</span><span>Web chat</span><span>Shareable summaries</span></div></div><div class="arch__layer"><div class="arch__name">Assistant</div><div class="arch__items"><span>Intent detection</span><span>Retrieval</span><span>Answer generation</span><span>Tool calls</span></div></div><div class="arch__layer"><div class="arch__name">Knowledge and tools</div><div class="arch__items"><span>Product content index</span><span>Eligibility rules</span><span>EMI calculator</span></div></div><div class="arch__layer"><div class="arch__name">Governance</div><div class="arch__items"><span>Approved-content only</span><span>Compliance filters</span><span>Gap analytics</span></div></div></div>
-      <div class="arch__stack reveal"><span>Key technologies</span><ul class="chips"><li>LLMs</li><li>RAG</li><li>Tool calling</li><li>Guardrails</li><li>Analytics</li></ul></div>
+      <div class="section__head"><p class="eyebrow">Technology</p><h2>Architecture</h2><p class="section__sub">Sales users chat through a mobile-friendly interface. The assistant retrieves from an index of approved product content, calls tools for eligibility and EMI calculations, and passes every answer through compliance guardrails before replying.</p></div>
+      <div class="arch"><div class="arch__layer"><div class="arch__name">Users</div><div class="arch__items"><span>Sales executives</span><span>Channel partners</span><span>Product managers</span></div></div><div class="arch__layer"><div class="arch__name">Interface</div><div class="arch__items"><span>Mobile chat</span><span>Web chat</span><span>Shareable summaries</span></div></div><div class="arch__layer"><div class="arch__name">Assistant</div><div class="arch__items"><span>Intent detection</span><span>Retrieval</span><span>Answer generation</span><span>Tool calls</span></div></div><div class="arch__layer"><div class="arch__name">Knowledge and tools</div><div class="arch__items"><span>Product content index</span><span>Eligibility rules</span><span>EMI calculator</span></div></div><div class="arch__layer"><div class="arch__name">Governance</div><div class="arch__items"><span>Approved-content only</span><span>Compliance filters</span><span>Gap analytics</span></div></div></div>
+      <div class="arch__stack"><span>Key technologies</span><ul class="chips"><li>LLMs</li><li>RAG</li><li>Tool calling</li><li>Guardrails</li><li>Analytics</li></ul></div>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head reveal"><p class="eyebrow">Business impact</p><h2>What moved</h2></div>
+      <div class="section__head"><p class="eyebrow">Results</p><h2>Business impact</h2></div>
       <div class="impacts"><div class="impact"><span class="impact__value">Faster answers</span><p>Reps get product and eligibility answers in the conversation instead of escalating.</p></div><div class="impact"><span class="impact__value">Fewer errors</span><p>Answers come only from current, approved product content.</p></div><div class="impact"><span class="impact__value">Content gaps</span><p>Unanswered questions show product teams exactly what to document next.</p></div><div class="impact"><span class="impact__value">Partner reach</span><p>Channel partners get the same answers as the internal sales team.</p></div></div>
     </div>
   </section>
 
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side reveal"><p class="eyebrow">Key decisions</p><h2>Trade-offs I would defend</h2></div>
-      <div class="detail__main reveal"><ul class="bullets"><li>Used tools for eligibility and EMI maths because model arithmetic is not reliable enough for pricing.</li><li>Restricted answers to approved content even when it meant replying &#x27;I don&#x27;t know&#x27;.</li><li>Launched with one product line first, then expanded once accuracy was proven.</li></ul></div>
+      <div class="detail__side"><p class="eyebrow">Judgement</p><h2>Key decisions</h2></div>
+      <div class="detail__main"><ul class="bullets"><li>Used tools for eligibility and EMI maths because model arithmetic is not reliable enough for pricing.</li><li>Restricted answers to approved content even when it meant replying &#x27;I don&#x27;t know&#x27;.</li><li>Launched with one product line first, then expanded once accuracy was proven.</li></ul></div>
     </div>
   </section>
 
@@ -97,20 +96,20 @@
   <div class="tabpanel" id="tab-architecture" role="tabpanel" hidden>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Agentic AI architecture</p><h2>End to end, from a rep&#x27;s question to a compliant answer</h2><p class="section__sub">An orchestrating agent understands the rep&#x27;s question, retrieves approved product content, calls deterministic tools for eligibility and EMI, and checks every answer for compliance before it is shown.</p></div>
+      <div class="section__head"><p class="eyebrow">Agentic AI architecture</p><h2>End-to-end architecture</h2><p class="section__sub">An orchestrating agent understands the rep&#x27;s question, retrieves approved product content, calls deterministic tools for eligibility and EMI, and checks every answer for compliance before it is shown.</p></div>
       <div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 504" role="img" aria-label="End-to-end architecture diagram"><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b4832e"/></marker></defs><rect x="20" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="40.0">USERS</tspan></text><rect x="32" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="146.0">Sales executives</tspan></text><rect x="32" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="204.0">Channel partners</tspan></text><rect x="32" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="112.0" y="262.0">Team leads</tspan></text><line x1="208" y1="192.0" x2="244" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="248" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="40.0">CHANNELS</tspan></text><rect x="260" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="146.0">Mobile chat</tspan></text><rect x="260" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="204.0">Web chat</tspan></text><rect x="260" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="340.0" y="262.0">Shareable summaries</tspan></text><line x1="436" y1="192.0" x2="472" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="476" y="10" width="184" height="364" rx="16" fill="#1f3a5f" stroke="#1f3a5f"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#f0d79a" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="40.0">AGENT ORCHESTRATOR</tspan></text><rect x="488" y="64.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="80.5">Intent and product</tspan><tspan x="568.0" y="95.5">router</tspan></text><rect x="488" y="122.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="138.5">Knowledge retrieval</tspan><tspan x="568.0" y="153.5">agent</tspan></text><rect x="488" y="180.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="204.0">Eligibility tool agent</tspan></text><rect x="488" y="238.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="262.0">Answer composer</tspan></text><rect x="488" y="296.0" width="160" height="48" rx="10" fill="#2b4d7c" stroke="#4a6a95"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle"><tspan x="568.0" y="320.0">Compliance checker</tspan></text><line x1="664" y1="192.0" x2="700" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="704" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="40.0">KNOWLEDGE AND TOOLS</tspan></text><rect x="716" y="64.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="80.5">Approved product</tspan><tspan x="796.0" y="95.5">content</tspan></text><rect x="716" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="146.0">Eligibility rules</tspan></text><rect x="716" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="204.0">EMI calculator</tspan></text><rect x="716" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="262.0">Document checklists</tspan></text><rect x="716" y="296.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="796.0" y="320.0">LLM</tspan></text><line x1="892" y1="192.0" x2="928" y2="192.0" stroke="#b4832e" stroke-width="2.5" marker-end="url(#arr)"/><rect x="932" y="10" width="184" height="364" rx="16" fill="#f3f0ea" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="40.0">INSIGHT</tspan></text><rect x="944" y="122.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="138.5">Unanswered-question</tspan><tspan x="1024.0" y="153.5">log</tspan></text><rect x="944" y="180.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="204.0">Usage analytics</tspan></text><rect x="944" y="238.0" width="160" height="48" rx="10" fill="#ffffff" stroke="#d9dde4"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#141c2b" text-anchor="middle" dominant-baseline="middle"><tspan x="1024.0" y="254.5">Content update</tspan><tspan x="1024.0" y="269.5">workflow</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#b4832e" text-anchor="start" dominant-baseline="middle"><tspan x="20" y="390.0">CROSS-CUTTING CONTROLS</tspan></text><rect x="20.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="20.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="426.0">Approved content</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="38.0" y="446.5">Answers only from versioned product</tspan><tspan x="38.0" y="461.5">material</tspan></text><rect x="297.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="297.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="426.0">Deterministic maths</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="315.0" y="446.5">Eligibility and EMI computed by</tspan><tspan x="315.0" y="461.5">tools, not the model</tspan></text><rect x="574.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="574.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="426.0">Compliance</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="592.0" y="454.0">Blocks promises on rates or approvals</tspan></text><rect x="851.0" y="404" width="265.0" height="76" rx="12" fill="#ffffff" stroke="#d9dde4"/><rect x="851.0" y="404" width="5" height="76" rx="2" fill="#b4832e"/><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3a5f" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="426.0">Feedback loop</tspan></text><text font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#5b6475" text-anchor="start" dominant-baseline="middle"><tspan x="869.0" y="454.0">Gaps flow back to product teams</tspan></text></svg></div>
-      <p class="diagram__hint">Scroll sideways to see the full diagram on small screens.</p>
+      
     </div>
   </section>
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>How one sales question is answered</h2></div>
+      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>Request lifecycle</h2></div>
       <div class="detail__main"><ol class="numbered"><li>Ask: a rep asks a question about a loan product during a customer conversation.</li><li>Route: the orchestrator identifies the product and the type of question.</li><li>Retrieve: the knowledge agent pulls the relevant approved content.</li><li>Calculate: eligibility and EMI questions go to deterministic tools.</li><li>Compose: the answer is written briefly with the document checklist where relevant.</li><li>Check: the compliance checker blocks guarantees and outdated terms.</li><li>Learn: unanswered questions are logged for product teams to fill.</li></ol></div>
     </div>
   </section>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Agent roster</p><h2>Who does what, and what keeps it safe</h2></div>
+      <div class="section__head"><p class="eyebrow">Agent roster</p><h2>Components and guardrails</h2></div>
       <div class="table-wrap"><table class="agents">
         <thead><tr><th>Agent</th><th>Responsibility</th><th>Guardrail</th></tr></thead>
         <tbody><tr><td><strong>Intent and product router</strong></td><td>Identifies the product and question type</td><td>Asks to clarify when unsure</td></tr><tr><td><strong>Knowledge retrieval</strong></td><td>Fetches approved product content</td><td>Current versions only</td></tr><tr><td><strong>Eligibility tool</strong></td><td>Runs eligibility and EMI calculations</td><td>Deterministic rules, no model maths</td></tr><tr><td><strong>Answer composer</strong></td><td>Writes short, field-ready answers</td><td>Grounded in retrieved content</td></tr><tr><td><strong>Compliance checker</strong></td><td>Blocks risky or misleading statements</td><td>Policy word lists and rules</td></tr></tbody>
@@ -121,13 +120,13 @@
 <div class="tabpanel" id="tab-research" role="tabpanel" hidden>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Product research</p><h2>Who we built for</h2><p class="section__sub">Research rode along with sales teams and reviewed the questions they sent to product and credit teams.</p></div>
+      <div class="section__head"><p class="eyebrow">Discovery</p><h2>Product research</h2><p class="section__sub">Research rode along with sales teams and reviewed the questions they sent to product and credit teams.</p></div>
       <div class="arch__stack"><span>Research methods</span><ul class="chips"><li>Sales ride-alongs</li><li>Analysis of escalation messages</li><li>Sales-head interviews</li><li>Pilot usage analytics</li></ul></div>
     </div>
   </section>
   <section class="section section--tight section--alt">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Personas</p><h2>End users and customers</h2></div>
+      <div class="section__head"><p class="eyebrow">Users</p><h2>Personas</h2></div>
       <div class="personas">
         <article class="persona">
           <header><span class="persona__avatar">FS</span><div><h4>Field sales executive</h4><span class="persona__type">Internal · end user</span></div></header>
@@ -170,7 +169,7 @@
   </section>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>What we learned and what we changed</h2></div>
+      <div class="section__head"><p class="eyebrow">Insights to decisions</p><h2>Insights and decisions</h2></div>
       <div class="insights"><div class="insight"><p class="insight__q">Most escalations were eligibility and document questions.</p><p class="insight__a"><span>Product decision</span>Tools for eligibility plus document checklists in answers.</p></div><div class="insight"><p class="insight__q">Reps trusted the bot only when numbers were exact.</p><p class="insight__a"><span>Product decision</span>All calculations done by deterministic tools.</p></div><div class="insight"><p class="insight__q">Product content changed faster than training could keep up.</p><p class="insight__a"><span>Product decision</span>Versioned content and a gap log for product teams.</p></div></div>
     </div>
   </section>
@@ -181,9 +180,9 @@
   </section>
 
   <section class="section section--contact">
-    <div class="container contact reveal">
-      <h2>Want to go deeper on this product?</h2>
-      <p class="contact__lead">Happy to walk through the architecture, the numbers and the decisions in a conversation.</p>
+    <div class="container contact">
+      <h2>Get in touch</h2>
+      <p class="contact__lead">I am happy to discuss this work in more detail.</p>
       <div class="contact__links">
         <a class="btn btn--primary" href="mailto:vikasdeshmane.iiml@gmail.com">Email me</a>
         <a class="btn btn--ghost" href="https://www.linkedin.com/in/vikasdeshmane" target="_blank" rel="noopener">LinkedIn</a>
@@ -194,9 +193,13 @@
   <footer class="footer">
     <div class="container footer__inner">
       <span>© <span id="year"></span> Vikas Deshmane</span>
-      <a href="../index.html#products">All products</a>
+      <nav class="footer__links">
+        <a href="../index.html#products">All work</a>
+        <a href="mailto:vikasdeshmane.iiml@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/vikasdeshmane" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
     </div>
   </footer>
-  <script src="../script.js?v=4"></script>
+  <script src="../script.js?v=5"></script>
 </body>
 </html>

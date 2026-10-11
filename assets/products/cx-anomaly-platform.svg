@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="AI customer-experience analytics dashboard">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#14263f"/>
+      <stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#1f3a5f"/>
     </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
@@ -11,7 +11,5 @@
     </radialGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <rect width="800" height="450" fill="url(#grid)"/>
-  <rect width="800" height="450" fill="url(#glow)"/>
   <rect x="60" y="60" width="680" height="330" rx="12" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-opacity="0.14"/><text x="90" y="100" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#f0d79a" fill-opacity="1" text-anchor="start">NPS TREND</text><text x="90" y="130" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#fbfaf7" fill-opacity="1" text-anchor="start">58 → 70+</text><polygon points="90,370 90,330 150,310 210,318 270,290 330,300 390,250 450,262 510,225 570,205 630,180 690,150 690,370" fill="#f0d79a" fill-opacity="0.10"/><polyline points="90,330 150,310 210,318 270,290 330,300 390,250 450,262 510,225 570,205 630,180 690,150" fill="none" stroke="#f0d79a" stroke-width="3" stroke-linejoin="round"/><circle cx="90" cy="330" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="150" cy="310" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="210" cy="318" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="270" cy="290" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="330" cy="300" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="390" cy="250" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="450" cy="262" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="510" cy="225" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="570" cy="205" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="630" cy="180" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="690" cy="150" r="4" fill="#14263f" stroke="#f0d79a" stroke-width="2"/><circle cx="390" cy="250" r="16" fill="none" stroke="#8fd3c7" stroke-width="2" stroke-dasharray="4 4"/><rect x="430" y="84" width="280" height="64" rx="12" fill="#8fd3c7" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.14"/><text x="448" y="110" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#8fd3c7" fill-opacity="1" text-anchor="start">Anomaly detected</text><text x="448" y="132" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" fill="#fbfaf7" fill-opacity="0.75" text-anchor="start">Routed to Ops · Theme: handover delays</text><path d="M406 238 L460 148" stroke="#8fd3c7" stroke-width="1.5" stroke-dasharray="4 4"/>
 </svg>
