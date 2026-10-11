@@ -1,0 +1,259 @@
+[
+  {
+    "slug": "cx-anomaly-platform",
+    "name": "AI Customer-Experience Analytics Platform",
+    "org": "Dbiz.ai",
+    "role": "Agentic AI Architect / Senior Product Manager",
+    "period": "May 2026 – Present",
+    "category": "AI Platform · Customer Experience",
+    "tagline": "LLM-driven anomaly detection and agent-assisted operations over 4M+ customer interactions for a multi-brand real-estate group.",
+    "hero_metrics": [
+      {"value": "58 → 70+", "label": "NPS movement credited to the initiative"},
+      {"value": "4M+", "label": "Reviews and survey responses monitored"},
+      {"value": "80%+", "label": "Release-gate accuracy on 165-question harness"},
+      {"value": "466", "label": "Entities in the data hierarchy, 10 years of data"}
+    ],
+    "context": "A multi-entity, multi-brand real-estate group collected millions of customer reviews and survey responses across projects, cities and brands. Insight was retrospective: failure themes surfaced only once they had become complaints, escalations and NPS damage. Operations teams had no early signal and executives had no single view across entities.",
+    "role_scope": "Owned product vision, strategy and roadmap for the platform end to end. Translated CXO goals into measurable outcomes, ran executive updates and trade-off discussions, and partnered with engineering, architecture, data engineering and analytics across orchestration, data platform and dashboard workstreams.",
+    "strategy": [
+      "Reframed the problem from reporting to prevention: detect emerging failure themes and route them to the owning operations team before they become complaints.",
+      "Chose an agentic architecture (LangGraph on Azure OpenAI) so analysis, classification and routing could run continuously rather than as monthly reports.",
+      "Treated accuracy as a release-quality control: a 165-question evaluation harness gated at 80%+ accuracy decides whether a version ships.",
+      "Designed a hybrid curated-SQL and constrained text-to-SQL path so executives get reliable answers to known questions and safe answers to new ones."
+    ],
+    "architecture_summary": "Event-driven ingestion feeds a governed data platform built around a 466-entity hierarchy with time-varying weights. LLM agents classify and detect anomalies, a routing layer assigns owners, and a query layer serves dashboards and conversational analytics with retry and fallback at every hop.",
+    "architecture": [
+      {"layer": "Experience", "items": ["Executive dashboards", "Ops routing queues", "Conversational analytics"]},
+      {"layer": "Intelligence", "items": ["LangGraph agents", "Anomaly detection", "Theme classification", "Evaluation harness (165 Q)"]},
+      {"layer": "Query & Orchestration", "items": ["Curated SQL paths", "Constrained text-to-SQL", "Retry and fallback", "Routing rules"]},
+      {"layer": "Data Platform", "items": ["466-entity hierarchy", "Time-varying weights", "ETL and validation", "10 years of history"]},
+      {"layer": "Sources", "items": ["Customer reviews", "Survey responses", "CRM and ticketing"]}
+    ],
+    "impact": [
+      {"value": "NPS 58 → 70+", "detail": "Group-level NPS rise credited to earlier detection and faster resolution of failure themes."},
+      {"value": "4M+", "detail": "Customer interactions monitored continuously instead of sampled monthly."},
+      {"value": "80%+", "detail": "Accuracy gate enforced on every release through the evaluation harness."},
+      {"value": "Single view", "detail": "One consistent entity model across brands and entities for CXO reporting."}
+    ],
+    "decisions": [
+      "Chose constrained text-to-SQL with a curated fallback over open-ended generation, trading flexibility for trust with executive users.",
+      "Invested early in an evaluation harness rather than shipping fast and fixing later; this became the shared release criterion with engineering.",
+      "Modelled time-varying entity weights so historical comparisons stayed valid as the group restructured."
+    ],
+    "stack": ["LangGraph", "Azure OpenAI", "SQL", "ETL pipelines", "Dashboards"]
+  },
+  {
+    "slug": "dhani-transaction-platform",
+    "name": "Order & Transaction Platform for a 10M+ User Super App",
+    "org": "Dhani",
+    "role": "Lead Product Manager / General Manager",
+    "period": "Mar 2022 – Oct 2023",
+    "category": "Transaction Platform · Lending",
+    "tagline": "Event-driven credit and transaction platform processing 50K+ daily applications across e-commerce, healthcare and financial-services lines of business.",
+    "hero_metrics": [
+      {"value": "99.95%", "label": "Platform uptime"},
+      {"value": "50K+", "label": "Applications processed daily"},
+      {"value": "1M+", "label": "Monthly active users on the credit journey"},
+      {"value": "−45%", "label": "Time-to-production across 15+ teams"}
+    ],
+    "context": "Dhani's super app served 10M+ users across e-commerce, healthcare and financial services. Each line of business needed order intake, decisioning, authorization and servicing, but the lending journey in particular had to scale to tens of thousands of applications a day without reliability regressions or rising contact rates.",
+    "role_scope": "Owned product vision and roadmap for the order and transaction platform. Defined validation, orchestration, retry and intelligent-routing behaviour across the application-to-disbursal lifecycle. Led incident learnings and root-cause analysis with operations and support, and coordinated 15+ cross-functional teams.",
+    "strategy": [
+      "Built a single system of record for orders and transactions so each line of business composed on shared primitives instead of rebuilding them.",
+      "Moved to an event-driven architecture across 12 microservices with Kafka so each lifecycle stage could scale and fail independently.",
+      "Prioritised reliability work by failed-interaction and contact-rate impact, not by ticket count.",
+      "Partnered with data science on XGBoost propensity models and A/B experiments to grow cross-sell on the same platform."
+    ],
+    "architecture_summary": "Application intake publishes events to Kafka; validation, KYC and fraud checks, decisioning, authorization and disbursal run as independent microservices with idempotent retries and routing rules. Monitoring and alerting feed a defect-reduction loop owned jointly with operations.",
+    "architecture": [
+      {"layer": "Channels", "items": ["Super app (iOS / Android)", "Partner and web journeys"]},
+      {"layer": "Transaction Services", "items": ["Order intake", "Validation", "KYC and fraud", "Decisioning", "Authorization", "Disbursal and servicing"]},
+      {"layer": "Orchestration", "items": ["Kafka event streams", "Retry and fallback", "Intelligent routing", "Idempotency"]},
+      {"layer": "Intelligence & Data", "items": ["XGBoost propensity models", "A/B experimentation", "Success-rate dashboards"]},
+      {"layer": "Operations", "items": ["Monitoring and alerting", "Incident RCA loop", "SLAs / SLOs"]}
+    ],
+    "impact": [
+      {"value": "99.95%", "detail": "Uptime sustained for 1M+ monthly active users through monitoring, alerting and defect-reduction programs."},
+      {"value": "50+ features", "detail": "Shipped across 15+ cross-functional teams with time-to-production cut by 45%."},
+      {"value": "+35%", "detail": "Product adoption lift from propensity-model-driven cross-sell experiments."},
+      {"value": "Lower contact rate", "detail": "Fixes prioritised by failed-interaction impact reduced repeat contacts to support."}
+    ],
+    "decisions": [
+      "Chose event streaming over synchronous orchestration so a slow downstream partner could not stall intake.",
+      "Made retry and routing behaviour explicit product requirements rather than leaving them to implementation.",
+      "Ran executive trade-off reviews with finance and risk so growth experiments and credit policy stayed aligned."
+    ],
+    "stack": ["Kafka", "Microservices", "XGBoost", "A/B testing", "Monitoring and alerting"]
+  },
+  {
+    "slug": "llm-quality-platform",
+    "name": "LLM Evaluation, Monitoring & Enterprise RAG Platform",
+    "org": "Snap Funds",
+    "role": "Head of Technology, Product & Business",
+    "period": "Oct 2023 – May 2024",
+    "category": "AI Platform · Quality & Cost",
+    "tagline": "Production quality gates for LLM features plus an enterprise RAG servicing assistant for finance and procurement users.",
+    "hero_metrics": [
+      {"value": "94%", "label": "Issues caught before deployment"},
+      {"value": "−52%", "label": "Inference cost across 2M+ requests"},
+      {"value": "<3s", "label": "Answer latency at 99.9% uptime"},
+      {"value": "−30%", "label": "Infrastructure cost from CDC-based ETL"}
+    ],
+    "context": "LLM features were reaching production without systematic checks for accuracy, hallucination or safety, and inference spend was growing with volume. Finance and procurement teams also needed fast, compliant answers on SLAs, renewals and contract terms buried in documents.",
+    "role_scope": "Led technology, product and business as head of function. Owned the evaluation platform, the RAG assistant and the data-warehouse ETL framework, including cost and telemetry efficiency programs.",
+    "strategy": [
+      "Put automated quality gates (accuracy, hallucination detection, safety) in the release path so quality became measurable and enforceable.",
+      "Ran a cost-optimisation program on inference and telemetry rather than accepting spend as proportional to volume.",
+      "Delivered the RAG assistant with guardrails, content filtering and role-based access so it could pass financial compliance review.",
+      "Rebuilt ETL on change-data-capture with validation checkpoints to cut cost and improve freshness."
+    ],
+    "architecture_summary": "An evaluation and monitoring layer wraps every LLM feature with offline test suites and online quality gates. The RAG assistant runs on Azure OpenAI and Cognitive Search with guardrails and RBAC. A CDC-based ETL framework with validation checkpoints feeds the enterprise data warehouse.",
+    "architecture": [
+      {"layer": "Users", "items": ["Finance", "Procurement", "Product and engineering teams"]},
+      {"layer": "Applications", "items": ["RAG servicing assistant", "LLM product features"]},
+      {"layer": "Quality & Governance", "items": ["Accuracy gates", "Hallucination detection", "Safety and content filtering", "RBAC"]},
+      {"layer": "AI Services", "items": ["Azure OpenAI", "Cognitive Search", "Prompt and cost telemetry"]},
+      {"layer": "Data", "items": ["CDC-based ETL", "Validation checkpoints", "Automated scheduling", "Enterprise data warehouse"]}
+    ],
+    "impact": [
+      {"value": "94%", "detail": "Of defects detected pre-deployment by automated quality gates."},
+      {"value": "−52%", "detail": "Inference cost reduction across 2M+ requests through routing, caching and telemetry efficiency."},
+      {"value": "99.9%", "detail": "Uptime for the RAG assistant with answers surfaced in under three seconds."},
+      {"value": "−30%", "detail": "Infrastructure cost reduction from the CDC-based ETL framework."}
+    ],
+    "decisions": [
+      "Treated hallucination and safety as release-blocking defects, equal to functional bugs.",
+      "Chose managed Azure services to meet compliance and RBAC requirements quickly rather than building custom infrastructure.",
+      "Used CDC instead of batch extracts so the warehouse stayed fresh without full reloads."
+    ],
+    "stack": ["Azure OpenAI", "Azure Cognitive Search", "RAG", "CDC / ETL", "Telemetry"]
+  },
+  {
+    "slug": "dmi-loan-management",
+    "name": "Loan Management System of Record & Lending Digitisation",
+    "org": "DMI Finance",
+    "role": "Technical Product Manager, CEO's Office",
+    "period": "May 2019 – Sep 2020",
+    "category": "Lending Platform · System of Record",
+    "tagline": "Configurable rule engine for validation, credit evaluation, risk scoring and approval automation that unlocked 10x processing capacity.",
+    "hero_metrics": [
+      {"value": "10x", "label": "Processing capacity"},
+      {"value": "₹800Cr → ₹2,100Cr", "label": "Portfolio growth (+162%)"},
+      {"value": "60 → 2 days", "label": "Partner onboarding time"},
+      {"value": "−60%", "label": "Manual support burden"}
+    ],
+    "context": "Lending growth was capped by manual credit evaluation and a 60-day partner onboarding cycle. Each new B2B partner required bespoke integration work, and servicing requests from 5M customers landed on human agents.",
+    "role_scope": "Owned the loan management system of record from the CEO's office. Defined the rule engine, led lending digitisation with ML-based instant decisioning, and delivered an NLP self-service chatbot for customer servicing.",
+    "strategy": [
+      "Made credit policy configuration a product capability: a rule engine for validation, scoring and approval that risk teams could change without code.",
+      "Standardised partner integration so onboarding became a configuration exercise rather than a project.",
+      "Introduced ML-based instant decisioning for straightforward cases and reserved human review for exceptions.",
+      "Automated the highest-volume servicing requests through an NLP chatbot with intent classification and entity extraction."
+    ],
+    "architecture_summary": "A loan management system of record sits at the centre, with a configurable rule engine for validation, credit evaluation, risk scoring and approval. Partner APIs feed applications in, ML decisioning scores them, and a servicing layer with an NLP chatbot handles customer requests.",
+    "architecture": [
+      {"layer": "Partners & Customers", "items": ["B2B partner integrations", "Customer app and web", "Self-service chatbot"]},
+      {"layer": "Decisioning", "items": ["Configurable rule engine", "ML instant decisioning", "Risk scoring", "Approval workflows"]},
+      {"layer": "System of Record", "items": ["Loan management system", "Loan lifecycle states", "Audit and compliance"]},
+      {"layer": "Servicing", "items": ["NLP intent classification", "Entity extraction", "Case routing"]}
+    ],
+    "impact": [
+      {"value": "10x", "detail": "Processing capacity increase from automated workflows and instant decisioning."},
+      {"value": "+162%", "detail": "Portfolio growth from ₹800Cr to ₹2,100Cr enabled by the platform."},
+      {"value": "60 → 2 days", "detail": "Partner onboarding time reduced through standardised integration."},
+      {"value": "−60%", "detail": "Manual servicing workload reduced by the NLP chatbot for 5M customers."}
+    ],
+    "decisions": [
+      "Built the rule engine to be owned by risk, not engineering, so policy changes shipped in hours.",
+      "Automated the easy majority first and kept humans on exceptions, which raised capacity without raising risk.",
+      "Prioritised partner onboarding as a growth lever because distribution, not credit appetite, was the constraint."
+    ],
+    "stack": ["Rule engine", "ML decisioning", "Partner APIs", "NLP chatbot"]
+  },
+  {
+    "slug": "angel-one-servicing-ai",
+    "name": "NLP-Powered CRM & Automated KYC",
+    "org": "Angel One",
+    "role": "Process Excellence Lead, COO's Office",
+    "period": "Sep 2020 – Mar 2022",
+    "category": "Servicing Platform · Automation",
+    "tagline": "Transformer-based query classification, intelligent routing and automated document verification for 10M+ brokerage customers.",
+    "hero_metrics": [
+      {"value": "60%", "label": "Manual ticket handling automated"},
+      {"value": "2 days → 30 min", "label": "KYC processing time"},
+      {"value": "10M+", "label": "Customers served across email and chat"},
+      {"value": "2 awards", "label": "Employee of the Quarter, Design Lab winner"}
+    ],
+    "context": "Support for 10M+ brokerage customers across email and chat was manual and slow to route, producing repeat contacts and long resolution times. KYC document checks for onboarding and fraud verification took days.",
+    "role_scope": "From the COO's office, defined and delivered the NLP-powered CRM and automated KYC programs, working across operations, support, compliance and data science.",
+    "strategy": [
+      "Targeted failed and repeat interactions first: classify every incoming query and route it to the right resolver on the first attempt.",
+      "Used transformer models for query classification so routing quality improved with volume instead of degrading.",
+      "Applied BERT-based document classification and entity extraction to KYC so verification became minutes instead of days.",
+      "Measured success by contact rate and resolution time rather than tickets closed."
+    ],
+    "architecture_summary": "Incoming email and chat flow through an NLP classification layer that assigns intent and routes to queues or automated resolvers. A separate document pipeline classifies uploads, extracts entities and runs fraud checks before KYC approval.",
+    "architecture": [
+      {"layer": "Channels", "items": ["Email", "Chat", "Document uploads"]},
+      {"layer": "Understanding", "items": ["Transformer query classification", "BERT document classification", "Entity extraction"]},
+      {"layer": "Routing & Resolution", "items": ["Intelligent routing", "Automated resolvers", "Agent queues"]},
+      {"layer": "Verification", "items": ["KYC checks", "Fraud verification", "Compliance audit trail"]},
+      {"layer": "CRM", "items": ["Case management", "Contact-rate dashboards"]}
+    ],
+    "impact": [
+      {"value": "60%", "detail": "Of manual ticket handling automated through classification and routing."},
+      {"value": "2 days → 30 min", "detail": "KYC and fraud verification time through document AI."},
+      {"value": "Fewer repeat contacts", "detail": "First-attempt routing reduced failed and repeat interactions."},
+      {"value": "Recognition", "detail": "Employee of the Quarter and Design Lab winner (₹1 Lakh prize) for AI-driven product launches."}
+    ],
+    "decisions": [
+      "Started with routing rather than full automation because misrouting was the biggest driver of repeat contacts.",
+      "Kept humans in the loop for low-confidence classifications and measured confidence thresholds explicitly.",
+      "Built the KYC pipeline with a full audit trail so compliance could sign off on automation."
+    ],
+    "stack": ["Transformers", "BERT", "NLP", "CRM", "Document AI"]
+  },
+  {
+    "slug": "onyourrank-edtech",
+    "name": "OnYourRank EdTech Platform",
+    "org": "OnYourRank",
+    "role": "Product Head & Co-Founder",
+    "period": "May 2024 – May 2026",
+    "category": "Marketplace · 0 to 1",
+    "tagline": "A high-volume EdTech platform built from zero to 5K+ concurrent users and 100K+ monthly transactions with AI-assisted evaluation.",
+    "hero_metrics": [
+      {"value": "5K+", "label": "Concurrent users"},
+      {"value": "100K+", "label": "Monthly transactions"},
+      {"value": "99.9%", "label": "Uptime"},
+      {"value": "+50%", "label": "Journey completion efficiency"}
+    ],
+    "context": "As co-founder, the brief was to build a discover-to-purchase-to-serve journey from scratch that could hold up under exam-season spikes, while using AI to evaluate learner responses at scale with high relevance.",
+    "role_scope": "Owned end-to-end product strategy, PRDs and roadmap. Ran prioritisation from funnel dashboards and experiments, and partnered with engineering on API design, retry handling and failure monitoring for AI pipelines.",
+    "strategy": [
+      "Instrumented the full funnel from day one so friction points were found with data rather than opinion.",
+      "Chose a microservices stack (Angular, FastAPI, PostgreSQL) with CI/CD and horizontal scaling to survive traffic spikes.",
+      "Made AI evaluation a core product capability with explicit relevance targets and failure monitoring.",
+      "Ran continuous experiments on the purchase and serve steps to lift completion and cut support contacts."
+    ],
+    "architecture_summary": "An Angular front end talks to FastAPI microservices over PostgreSQL. Orders, payments and content delivery are separate services with retry handling. AI evaluation pipelines process learner submissions asynchronously with relevance monitoring and fallbacks.",
+    "architecture": [
+      {"layer": "Experience", "items": ["Angular web app", "Learner and educator journeys"]},
+      {"layer": "Services", "items": ["Catalogue and discovery", "Orders and payments", "Content delivery", "Evaluation API"]},
+      {"layer": "AI Pipelines", "items": ["Async evaluation workers", "Relevance monitoring", "Retry and fallback"]},
+      {"layer": "Platform", "items": ["FastAPI microservices", "PostgreSQL", "CI/CD", "Horizontal scaling"]},
+      {"layer": "Insight", "items": ["Funnel dashboards", "Experimentation"]}
+    ],
+    "impact": [
+      {"value": "+50%", "detail": "Completion efficiency across the discover-to-purchase-to-serve journey."},
+      {"value": "100K+", "detail": "AI evaluations processed at 95% relevance accuracy."},
+      {"value": "99.9%", "detail": "Uptime at 5K+ concurrent users and 100K+ monthly transactions."},
+      {"value": "Lower support load", "detail": "Friction fixes reduced support contacts per transaction."}
+    ],
+    "decisions": [
+      "Ran AI evaluation asynchronously so a slow model never blocked purchase or delivery.",
+      "Chose a boring, scalable stack over novelty to protect reliability during exam-season peaks.",
+      "Treated the funnel dashboard as the roadmap input, which kept the small team focused on measurable friction."
+    ],
+    "stack": ["Angular", "FastAPI", "PostgreSQL", "CI/CD", "AI evaluation pipelines"]
+  }
+]
