@@ -185,14 +185,43 @@ THEMES = {
 }
 
 
+def _wrap(text, width):
+    words, lines, cur = text.split(), [], ''
+    for w in words:
+        if cur and len(cur) + 1 + len(w) > width:
+            lines.append(cur)
+            cur = w
+        else:
+            cur = f'{cur} {w}'.strip()
+    return lines + ([cur] if cur else [])
+
+
+def generic(p):
+    # Category label, product name and three headline metrics as tiles
+    g = txt(70, 90, p['category'].upper(), 13, GOLD, 700)
+    for i, line in enumerate(_wrap(p['name'], 30)[:3]):
+        g += txt(70, 140 + i * 40, line, 32, CREAM, 700)
+    for i, m in enumerate(p['hero_metrics'][:3]):
+        x = 70 + i * 225
+        g += card(x, 290, 205, 100)
+        g += txt(x + 18, 332, m['value'], 22 if len(m['value']) < 12 else 17, GOLD, 700)
+        for j, line in enumerate(_wrap(m['label'], 28)[:2]):
+            g += txt(x + 18, 358 + j * 16, line, 12, CREAM, 500, op=0.8)
+    g += f'<circle cx="700" cy="120" r="70" fill="none" stroke="{GOLD}" stroke-opacity="0.35" stroke-width="2"/>'
+    g += f'<circle cx="700" cy="120" r="44" fill="{GOLD}" fill-opacity="0.12"/>'
+    g += f'<circle cx="700" cy="120" r="8" fill="{GOLD}"/>'
+    return frame(g, p['name'])
+
+
 def build():
     products = json.load(open(os.path.join(ROOT, 'products.json'), encoding='utf8'))
     for p in products:
-        fn = THEMES.get(p['slug'])
-        if not fn or p.get('image'):
+        if p.get('image'):
             continue
+        fn = THEMES.get(p['slug'])
+        svg = fn() if fn else generic(p)
         with open(os.path.join(OUT, p['slug'] + '.svg'), 'w', encoding='utf8') as f:
-            f.write(fn())
+            f.write(svg)
     print(f'Built covers in {OUT}')
 
 

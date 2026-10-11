@@ -1119,5 +1119,932 @@
         }
       ]
     }
+  },
+  "credit-marketplace": {
+    "agentic": {
+      "tab_label": "Architecture",
+      "eyebrow": "System architecture",
+      "roster_label": "Component",
+      "headline": "End to end, from credit check to lender decision",
+      "flow_title": "How one application moves through the marketplace",
+      "summary": "Customer and alternative data feed ML underwriting, a matching engine applies each lender's rules, and applications flow to lenders through standard APIs.",
+      "columns": [
+        {
+          "title": "Customers",
+          "nodes": [
+            "Web and app",
+            "Free credit report",
+            "Eligibility checker"
+          ]
+        },
+        {
+          "title": "Data",
+          "nodes": [
+            "Bureau data",
+            "SMS transaction signals",
+            "Digital footprint",
+            "Customer profile"
+          ]
+        },
+        {
+          "title": "ML underwriting",
+          "highlight": true,
+          "nodes": [
+            "Feature engineering",
+            "Risk model ensemble",
+            "Income estimation",
+            "Pre-qualification"
+          ]
+        },
+        {
+          "title": "Origination",
+          "nodes": [
+            "Offer matching",
+            "Lender rule sets",
+            "Application builder",
+            "Document collection"
+          ]
+        },
+        {
+          "title": "Partners",
+          "nodes": [
+            "Personal-loan lenders",
+            "Credit-card issuers",
+            "Payment partners"
+          ]
+        }
+      ],
+      "bands": [
+        {
+          "title": "Consent",
+          "text": "Explicit consent for every data source"
+        },
+        {
+          "title": "Model quality",
+          "text": "85%+ accuracy, monitored for drift"
+        },
+        {
+          "title": "Partner SLAs",
+          "text": "Timeouts and retries on lender APIs"
+        },
+        {
+          "title": "Score protection",
+          "text": "Pre-qualify before any hard inquiry"
+        }
+      ],
+      "flow": [
+        "Check: the customer pulls a free credit report and sees their score.",
+        "Enrich: with consent, alternative data adds signals for thin-file customers.",
+        "Score: the model ensemble estimates risk and income.",
+        "Match: the engine applies each lender's and issuer's rules and shows only likely approvals.",
+        "Apply: one application form is mapped to each lender's format and documents are collected once.",
+        "Submit: applications go to lender APIs and statuses flow back to the customer.",
+        "Learn: approval outcomes feed back into the models and matching rules."
+      ],
+      "agents": [
+        {
+          "name": "Risk ensemble",
+          "role": "Scores credit risk on bureau and alternative data",
+          "guard": "Drift monitoring, accuracy threshold"
+        },
+        {
+          "name": "Income estimator",
+          "role": "Estimates income for thin-file customers",
+          "guard": "Conservative bands, lender overrides"
+        },
+        {
+          "name": "Offer matcher",
+          "role": "Shows only offers likely to be approved",
+          "guard": "Lender rules versioned per partner"
+        },
+        {
+          "name": "Application builder",
+          "role": "Maps one form to many lender formats",
+          "guard": "Schema validation per lender"
+        },
+        {
+          "name": "Partner gateway",
+          "role": "Submits and tracks applications",
+          "guard": "Retries, timeouts, status reconciliation"
+        }
+      ]
+    },
+    "research": {
+      "summary": "Research looked at why applicants were rejected and what lenders needed to approve customers they could not assess before.",
+      "methods": [
+        "Rejection-reason analysis",
+        "Customer interviews",
+        "Lender partner workshops",
+        "Funnel analytics"
+      ],
+      "personas": [
+        {
+          "name": "Young salaried professional",
+          "type": "End customer",
+          "about": "First job, little or no credit history.",
+          "goals": [
+            "Get a first credit card",
+            "Build a credit score"
+          ],
+          "pains": [
+            "Rejected without explanation",
+            "Score drops after rejections"
+          ],
+          "needs": "To see what they qualify for before applying."
+        },
+        {
+          "name": "Loan seeker",
+          "type": "End customer",
+          "about": "Needs a personal loan for a specific expense.",
+          "goals": [
+            "Best rate quickly",
+            "Simple paperwork"
+          ],
+          "pains": [
+            "Repeating forms for every lender",
+            "Unclear eligibility"
+          ],
+          "needs": "One application, matched to lenders likely to approve."
+        },
+        {
+          "name": "Lender partnership manager",
+          "type": "Partner",
+          "about": "Runs digital sourcing for a bank or NBFC.",
+          "goals": [
+            "Quality applications",
+            "Low acquisition cost"
+          ],
+          "pains": [
+            "Poorly matched leads",
+            "High rejection rates"
+          ],
+          "needs": "Pre-qualified applicants that fit their policy."
+        },
+        {
+          "name": "Credit risk analyst",
+          "type": "Internal · risk",
+          "about": "Builds and monitors the scoring models.",
+          "goals": [
+            "Accurate risk on thin files"
+          ],
+          "pains": [
+            "Sparse bureau data"
+          ],
+          "needs": "Reliable alternative-data signals with consent."
+        }
+      ],
+      "insights": [
+        {
+          "insight": "Most rejections came from customers applying to lenders whose policy they could never meet.",
+          "decision": "Pre-qualify and show only likely approvals."
+        },
+        {
+          "insight": "Thin-file customers were creditworthy but invisible to bureau-only models.",
+          "decision": "Alternative-data features in an ensemble model."
+        },
+        {
+          "insight": "Customers abandoned when asked to re-enter details for each lender.",
+          "decision": "One application mapped to every lender's format."
+        }
+      ]
+    }
+  },
+  "contract-redlining": {
+    "agentic": {
+      "tab_label": "Agentic AI Architecture",
+      "roster_label": "Agent",
+      "headline": "End to end, from uploaded contract to approved redline",
+      "flow_title": "How one contract moves through review",
+      "summary": "A pipeline of specialised agents parses the contract, compares every clause with the organisation's own policy playbook, drafts redlines, and powers a chatbot over the same clause index. A human approves every change.",
+      "columns": [
+        {
+          "title": "Users",
+          "nodes": [
+            "Legal reviewers",
+            "Procurement teams",
+            "Business owners"
+          ]
+        },
+        {
+          "title": "Ingestion",
+          "nodes": [
+            "Upload and OCR",
+            "Clause segmentation",
+            "Metadata extraction"
+          ]
+        },
+        {
+          "title": "Agent pipeline",
+          "highlight": true,
+          "nodes": [
+            "Clause classifier agent",
+            "Policy comparison agent",
+            "Redline drafting agent",
+            "Risk summary agent",
+            "Contract Q&A agent"
+          ]
+        },
+        {
+          "title": "Knowledge",
+          "nodes": [
+            "Policy playbook",
+            "Fallback clause library",
+            "Clause vector index",
+            "LLM"
+          ]
+        },
+        {
+          "title": "Outputs",
+          "nodes": [
+            "Tracked-change document",
+            "Risk summary",
+            "Chat answers with citations",
+            "Approval workflow"
+          ]
+        }
+      ],
+      "bands": [
+        {
+          "title": "Human approval",
+          "text": "Every redline accepted or rejected by a reviewer"
+        },
+        {
+          "title": "Explainability",
+          "text": "Each change cites the policy rule behind it"
+        },
+        {
+          "title": "Access control",
+          "text": "Role-based access to contracts and playbooks"
+        },
+        {
+          "title": "Audit",
+          "text": "Full history of suggestions and decisions"
+        }
+      ],
+      "flow": [
+        "Upload: a reviewer uploads a contract; it is parsed and split into clauses.",
+        "Classify: the classifier agent labels each clause type, such as liability, termination or payment terms.",
+        "Compare: the policy agent checks each clause against the organisation's playbook position.",
+        "Redline: the drafting agent proposes replacement wording from the fallback library with a short reason.",
+        "Summarise: the risk agent lists the highest-risk deviations for the reviewer.",
+        "Approve: the reviewer accepts, edits or rejects each change and exports a tracked-change document.",
+        "Ask: business users ask the chatbot questions; answers cite the exact clause."
+      ],
+      "agents": [
+        {
+          "name": "Clause classifier",
+          "role": "Labels every clause by type",
+          "guard": "Fixed clause taxonomy"
+        },
+        {
+          "name": "Policy comparison",
+          "role": "Finds deviations from the playbook",
+          "guard": "Compares only against written policy"
+        },
+        {
+          "name": "Redline drafting",
+          "role": "Proposes compliant replacement wording",
+          "guard": "Uses approved fallback clauses first"
+        },
+        {
+          "name": "Risk summary",
+          "role": "Ranks deviations by business risk",
+          "guard": "Severity rules set by legal"
+        },
+        {
+          "name": "Contract Q&A",
+          "role": "Answers questions about a contract",
+          "guard": "Answers only with a cited clause"
+        }
+      ]
+    },
+    "research": {
+      "summary": "Research shadowed legal and procurement reviewers and collected the questions business teams sent to legal.",
+      "methods": [
+        "Reviewer shadowing",
+        "Analysis of past redlines",
+        "Legal team interviews",
+        "Business-team request log review"
+      ],
+      "personas": [
+        {
+          "name": "In-house counsel",
+          "type": "Internal · end user",
+          "about": "Reviews vendor and customer contracts.",
+          "goals": [
+            "Consistent positions",
+            "Less time on routine clauses"
+          ],
+          "pains": [
+            "Repeating the same edits",
+            "Policy not written down"
+          ],
+          "needs": "First-pass redlines tied to written policy."
+        },
+        {
+          "name": "Procurement manager",
+          "type": "Internal · end user",
+          "about": "Negotiates vendor agreements.",
+          "goals": [
+            "Close deals faster"
+          ],
+          "pains": [
+            "Waiting days for legal review"
+          ],
+          "needs": "Quick view of which clauses need negotiation."
+        },
+        {
+          "name": "Business owner",
+          "type": "Internal · requester",
+          "about": "Owns the commercial relationship.",
+          "goals": [
+            "Simple answers about terms"
+          ],
+          "pains": [
+            "Legal language",
+            "No visibility of status"
+          ],
+          "needs": "A chatbot that explains terms in plain language."
+        },
+        {
+          "name": "General counsel",
+          "type": "Internal · policy owner",
+          "about": "Sets the organisation's contract policy.",
+          "goals": [
+            "Policy applied everywhere"
+          ],
+          "pains": [
+            "Inconsistent reviews"
+          ],
+          "needs": "A playbook that every review follows."
+        }
+      ],
+      "insights": [
+        {
+          "insight": "Most edits were the same few positions repeated across contracts.",
+          "decision": "Encode them as a playbook with fallback wording."
+        },
+        {
+          "insight": "Lawyers rejected suggestions they could not trace to policy.",
+          "decision": "Every redline cites the policy rule behind it."
+        },
+        {
+          "insight": "Many legal requests were simple questions, not reviews.",
+          "decision": "A contract chatbot for self-serve answers."
+        }
+      ]
+    }
+  },
+  "loan-sales-assistant": {
+    "agentic": {
+      "tab_label": "Agentic AI Architecture",
+      "roster_label": "Agent",
+      "headline": "End to end, from a rep's question to a compliant answer",
+      "flow_title": "How one sales question is answered",
+      "summary": "An orchestrating agent understands the rep's question, retrieves approved product content, calls deterministic tools for eligibility and EMI, and checks every answer for compliance before it is shown.",
+      "columns": [
+        {
+          "title": "Users",
+          "nodes": [
+            "Sales executives",
+            "Channel partners",
+            "Team leads"
+          ]
+        },
+        {
+          "title": "Channels",
+          "nodes": [
+            "Mobile chat",
+            "Web chat",
+            "Shareable summaries"
+          ]
+        },
+        {
+          "title": "Agent orchestrator",
+          "highlight": true,
+          "nodes": [
+            "Intent and product router",
+            "Knowledge retrieval agent",
+            "Eligibility tool agent",
+            "Answer composer",
+            "Compliance checker"
+          ]
+        },
+        {
+          "title": "Knowledge and tools",
+          "nodes": [
+            "Approved product content",
+            "Eligibility rules",
+            "EMI calculator",
+            "Document checklists",
+            "LLM"
+          ]
+        },
+        {
+          "title": "Insight",
+          "nodes": [
+            "Unanswered-question log",
+            "Usage analytics",
+            "Content update workflow"
+          ]
+        }
+      ],
+      "bands": [
+        {
+          "title": "Approved content",
+          "text": "Answers only from versioned product material"
+        },
+        {
+          "title": "Deterministic maths",
+          "text": "Eligibility and EMI computed by tools, not the model"
+        },
+        {
+          "title": "Compliance",
+          "text": "Blocks promises on rates or approvals"
+        },
+        {
+          "title": "Feedback loop",
+          "text": "Gaps flow back to product teams"
+        }
+      ],
+      "flow": [
+        "Ask: a rep asks a question about a loan product during a customer conversation.",
+        "Route: the orchestrator identifies the product and the type of question.",
+        "Retrieve: the knowledge agent pulls the relevant approved content.",
+        "Calculate: eligibility and EMI questions go to deterministic tools.",
+        "Compose: the answer is written briefly with the document checklist where relevant.",
+        "Check: the compliance checker blocks guarantees and outdated terms.",
+        "Learn: unanswered questions are logged for product teams to fill."
+      ],
+      "agents": [
+        {
+          "name": "Intent and product router",
+          "role": "Identifies the product and question type",
+          "guard": "Asks to clarify when unsure"
+        },
+        {
+          "name": "Knowledge retrieval",
+          "role": "Fetches approved product content",
+          "guard": "Current versions only"
+        },
+        {
+          "name": "Eligibility tool",
+          "role": "Runs eligibility and EMI calculations",
+          "guard": "Deterministic rules, no model maths"
+        },
+        {
+          "name": "Answer composer",
+          "role": "Writes short, field-ready answers",
+          "guard": "Grounded in retrieved content"
+        },
+        {
+          "name": "Compliance checker",
+          "role": "Blocks risky or misleading statements",
+          "guard": "Policy word lists and rules"
+        }
+      ]
+    },
+    "research": {
+      "summary": "Research rode along with sales teams and reviewed the questions they sent to product and credit teams.",
+      "methods": [
+        "Sales ride-alongs",
+        "Analysis of escalation messages",
+        "Sales-head interviews",
+        "Pilot usage analytics"
+      ],
+      "personas": [
+        {
+          "name": "Field sales executive",
+          "type": "Internal · end user",
+          "about": "Meets borrowers in person to sell loans.",
+          "goals": [
+            "Answer on the spot",
+            "Close more applications"
+          ],
+          "pains": [
+            "Calling product teams for answers",
+            "Outdated PDFs"
+          ],
+          "needs": "Instant, correct answers on a phone."
+        },
+        {
+          "name": "Channel partner",
+          "type": "Partner",
+          "about": "A DSA or connector sourcing borrowers.",
+          "goals": [
+            "Know which products fit a customer"
+          ],
+          "pains": [
+            "Less training than internal staff"
+          ],
+          "needs": "The same answers internal sales gets."
+        },
+        {
+          "name": "Sales team lead",
+          "type": "Internal · manager",
+          "about": "Runs a team of sales executives.",
+          "goals": [
+            "Consistent pitches",
+            "Faster ramp-up for new hires"
+          ],
+          "pains": [
+            "Mis-selling risk"
+          ],
+          "needs": "Confidence that reps quote correct terms."
+        },
+        {
+          "name": "Borrower",
+          "type": "End customer",
+          "about": "Applying for a business or personal loan.",
+          "goals": [
+            "Clear terms",
+            "Know documents up front"
+          ],
+          "pains": [
+            "Repeated document requests"
+          ],
+          "needs": "Accurate information the first time."
+        }
+      ],
+      "insights": [
+        {
+          "insight": "Most escalations were eligibility and document questions.",
+          "decision": "Tools for eligibility plus document checklists in answers."
+        },
+        {
+          "insight": "Reps trusted the bot only when numbers were exact.",
+          "decision": "All calculations done by deterministic tools."
+        },
+        {
+          "insight": "Product content changed faster than training could keep up.",
+          "decision": "Versioned content and a gap log for product teams."
+        }
+      ]
+    }
+  },
+  "gst-lending": {
+    "agentic": {
+      "tab_label": "Architecture",
+      "eyebrow": "System architecture",
+      "roster_label": "Component",
+      "headline": "End to end, from GST consent to disbursal",
+      "flow_title": "How one small-business loan moves through the system",
+      "summary": "With the business owner's consent, GST return data is fetched and turned into cash-flow features. Risk models and the configurable rule engine decide, and approved loans are booked on the loan management system.",
+      "columns": [
+        {
+          "title": "Applicants",
+          "nodes": [
+            "Small businesses",
+            "Distribution partners",
+            "Relationship managers"
+          ]
+        },
+        {
+          "title": "Data access",
+          "nodes": [
+            "Consent capture",
+            "GST return fetch",
+            "Bank statements",
+            "Bureau data"
+          ]
+        },
+        {
+          "title": "Underwriting",
+          "highlight": true,
+          "nodes": [
+            "Cash-flow features",
+            "Turnover and growth signals",
+            "Risk scoring",
+            "Rule engine decision"
+          ]
+        },
+        {
+          "title": "Fulfilment",
+          "nodes": [
+            "Digital sanction letter",
+            "e-Sign and mandate",
+            "Disbursal"
+          ]
+        },
+        {
+          "title": "Servicing",
+          "nodes": [
+            "Loan management system",
+            "Repayment tracking",
+            "Portfolio monitoring"
+          ]
+        }
+      ],
+      "bands": [
+        {
+          "title": "Consent",
+          "text": "Explicit, logged consent for every data pull"
+        },
+        {
+          "title": "Policy control",
+          "text": "Risk thresholds changed in the rule engine"
+        },
+        {
+          "title": "Conservative start",
+          "text": "Limits widened as repayment data matured"
+        },
+        {
+          "title": "Partner scale",
+          "text": "Partners onboarded by configuration"
+        }
+      ],
+      "flow": [
+        "Apply: a small business applies through a partner or directly.",
+        "Consent: the owner authorises access to their GST returns.",
+        "Fetch: GST, bank and bureau data are pulled automatically.",
+        "Analyse: returns are turned into turnover, consistency and growth features.",
+        "Decide: risk models and the rule engine set approval and limit.",
+        "Disburse: sanction, e-sign and mandate happen digitally before disbursal.",
+        "Monitor: repayment and fresh GST filings feed portfolio monitoring."
+      ],
+      "agents": [
+        {
+          "name": "Consent service",
+          "role": "Captures and logs data-access consent",
+          "guard": "No fetch without consent"
+        },
+        {
+          "name": "GST data connector",
+          "role": "Retrieves filed returns",
+          "guard": "Validation of completeness and dates"
+        },
+        {
+          "name": "Cash-flow engine",
+          "role": "Derives turnover and growth features",
+          "guard": "Outlier and gap checks"
+        },
+        {
+          "name": "Rule engine",
+          "role": "Applies credit policy and limits",
+          "guard": "Versioned rules owned by risk"
+        },
+        {
+          "name": "Loan management system",
+          "role": "Books and services the loan",
+          "guard": "Audit trail and reconciliation"
+        }
+      ]
+    },
+    "research": {
+      "summary": "Research focused on small-business owners who were creditworthy but excluded by traditional lending.",
+      "methods": [
+        "Small-business owner interviews",
+        "Partner workshops",
+        "GST data feasibility study",
+        "Risk policy sessions"
+      ],
+      "personas": [
+        {
+          "name": "Small trader",
+          "type": "End customer",
+          "about": "Runs a GST-registered trading business.",
+          "goals": [
+            "Working capital before peak season"
+          ],
+          "pains": [
+            "No collateral",
+            "No audited financials"
+          ],
+          "needs": "Credit based on actual sales."
+        },
+        {
+          "name": "Small manufacturer",
+          "type": "End customer",
+          "about": "Supplies larger companies on credit terms.",
+          "goals": [
+            "Bridge payment delays"
+          ],
+          "pains": [
+            "Long bank processes"
+          ],
+          "needs": "Fast decisions on verified turnover."
+        },
+        {
+          "name": "Distribution partner",
+          "type": "Partner",
+          "about": "Platform or marketplace serving small businesses.",
+          "goals": [
+            "Offer credit to their sellers"
+          ],
+          "pains": [
+            "Complex lender integrations"
+          ],
+          "needs": "Simple integration and quick onboarding."
+        },
+        {
+          "name": "Credit head",
+          "type": "Internal · risk",
+          "about": "Owns SME credit policy.",
+          "goals": [
+            "Lend safely to a new segment"
+          ],
+          "pains": [
+            "No track record for GST-based lending"
+          ],
+          "needs": "Clear signals and the ability to tune policy fast."
+        }
+      ],
+      "insights": [
+        {
+          "insight": "Filed GST returns gave a verified view of sales that bank statements alone did not.",
+          "decision": "GST returns became the primary underwriting signal."
+        },
+        {
+          "insight": "Owners abandoned when asked for piles of documents.",
+          "decision": "Consent-based data fetch instead of uploads."
+        },
+        {
+          "insight": "Risk needed to learn quickly on a brand-new segment.",
+          "decision": "Conservative launch limits, tuned in the rule engine as data arrived."
+        }
+      ]
+    }
+  },
+  "angel-broking-onboarding": {
+    "agentic": {
+      "tab_label": "AI Architecture",
+      "eyebrow": "AI architecture",
+      "roster_label": "Component",
+      "headline": "End to end, from sign-up to first trade",
+      "flow_title": "How one new investor gets activated",
+      "summary": "A digital journey collects details and documents, document AI classifies and reads every file, automated checks verify and screen for fraud, and clean applications activate without manual review.",
+      "columns": [
+        {
+          "title": "Journey",
+          "nodes": [
+            "Mobile sign-up",
+            "Personal and bank details",
+            "Document upload",
+            "e-Sign"
+          ]
+        },
+        {
+          "title": "Pre-processing",
+          "nodes": [
+            "Image quality checks",
+            "OCR",
+            "Duplicate detection"
+          ]
+        },
+        {
+          "title": "Document AI",
+          "highlight": true,
+          "nodes": [
+            "BERT document classifier",
+            "Entity extraction",
+            "Confidence scoring"
+          ]
+        },
+        {
+          "title": "Verification",
+          "nodes": [
+            "Cross-field matching",
+            "Fraud rules",
+            "Exception review queue"
+          ]
+        },
+        {
+          "title": "Activation",
+          "nodes": [
+            "Trading account",
+            "Demat account",
+            "Welcome and first trade"
+          ]
+        }
+      ],
+      "bands": [
+        {
+          "title": "Compliance",
+          "text": "Audit trail for every KYC decision"
+        },
+        {
+          "title": "Human in the loop",
+          "text": "Low-confidence documents go to reviewers"
+        },
+        {
+          "title": "Speed",
+          "text": "Verification cut from 2 days to 30 minutes"
+        },
+        {
+          "title": "Funnel tracking",
+          "text": "Drop-off measured at each step"
+        }
+      ],
+      "flow": [
+        "Sign up: the investor starts on mobile and enters personal and bank details.",
+        "Upload: identity, address and bank documents are captured in the app.",
+        "Check quality: blurry or duplicate images are flagged immediately so the user can retake them.",
+        "Read: document AI classifies each file and extracts names, numbers and dates.",
+        "Verify: extracted fields are matched across documents and screened by fraud rules.",
+        "Review: only low-confidence or flagged cases go to a reviewer.",
+        "Activate: trading and demat accounts open and the investor can place a first trade."
+      ],
+      "agents": [
+        {
+          "name": "Quality checker",
+          "role": "Catches unreadable or duplicate uploads",
+          "guard": "Instant retake prompt"
+        },
+        {
+          "name": "Document classifier",
+          "role": "Identifies each document type",
+          "guard": "Confidence threshold"
+        },
+        {
+          "name": "Entity extraction",
+          "role": "Reads key fields from documents",
+          "guard": "Cross-document matching"
+        },
+        {
+          "name": "Fraud rules",
+          "role": "Screens for suspicious applications",
+          "guard": "Rules owned by compliance"
+        },
+        {
+          "name": "Review queue",
+          "role": "Handles exceptions",
+          "guard": "SLA timers and audit log"
+        }
+      ]
+    },
+    "research": {
+      "summary": "Research traced where new investors dropped off between sign-up and first trade.",
+      "methods": [
+        "Onboarding funnel analysis",
+        "New-investor interviews",
+        "Operations time-and-motion study",
+        "Compliance workshops"
+      ],
+      "personas": [
+        {
+          "name": "First-time investor",
+          "type": "End customer",
+          "about": "Young investor opening a first demat account on mobile.",
+          "goals": [
+            "Start investing today"
+          ],
+          "pains": [
+            "Waiting days for approval",
+            "Confusing document rules"
+          ],
+          "needs": "Same-day activation with clear guidance."
+        },
+        {
+          "name": "Experienced trader switching brokers",
+          "type": "End customer",
+          "about": "Moving from another broker for lower costs.",
+          "goals": [
+            "Quick switch without downtime"
+          ],
+          "pains": [
+            "Repeating paperwork"
+          ],
+          "needs": "A fast, low-effort journey."
+        },
+        {
+          "name": "KYC operations reviewer",
+          "type": "Internal · operator",
+          "about": "Verifies documents manually.",
+          "goals": [
+            "Clear the backlog"
+          ],
+          "pains": [
+            "Checking every application by hand"
+          ],
+          "needs": "Automation for clean cases, focus on exceptions."
+        },
+        {
+          "name": "Compliance officer",
+          "type": "Internal · governance",
+          "about": "Accountable for KYC rules.",
+          "goals": [
+            "Regulatory compliance"
+          ],
+          "pains": [
+            "Opaque automation"
+          ],
+          "needs": "A complete audit trail."
+        }
+      ],
+      "insights": [
+        {
+          "insight": "Most drop-off happened while waiting for verification, not while filling forms.",
+          "decision": "Automate verification with document AI."
+        },
+        {
+          "insight": "Many rejections were simply blurry or wrong documents.",
+          "decision": "Instant quality checks with retake prompts."
+        },
+        {
+          "insight": "Compliance would only approve automation it could audit.",
+          "decision": "Audit trail designed before launch."
+        }
+      ]
+    }
   }
 }

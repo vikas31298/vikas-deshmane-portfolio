@@ -8,10 +8,22 @@
     "category": "AI Platform · Customer Experience",
     "tagline": "LLM-driven anomaly detection and agent-assisted operations over 4M+ customer interactions for a multi-brand real-estate group.",
     "hero_metrics": [
-      {"value": "58 → 70+", "label": "NPS movement credited to the initiative"},
-      {"value": "4M+", "label": "Reviews and survey responses monitored"},
-      {"value": "80%+", "label": "Release-gate accuracy on 165-question harness"},
-      {"value": "466", "label": "Entities in the data hierarchy, 10 years of data"}
+      {
+        "value": "58 → 70+",
+        "label": "NPS movement credited to the initiative"
+      },
+      {
+        "value": "4M+",
+        "label": "Reviews and survey responses monitored"
+      },
+      {
+        "value": "80%+",
+        "label": "Release-gate accuracy on 165-question harness"
+      },
+      {
+        "value": "466",
+        "label": "Entities in the data hierarchy, 10 years of data"
+      }
     ],
     "context": "A multi-entity, multi-brand real-estate group collected millions of customer reviews and survey responses across projects, cities and brands. Insight was retrospective: failure themes surfaced only once they had become complaints, escalations and NPS damage. Operations teams had no early signal and executives had no single view across entities.",
     "role_scope": "Owned product vision, strategy and roadmap for the platform end to end. Translated CXO goals into measurable outcomes, ran executive updates and trade-off discussions, and partnered with engineering, architecture, data engineering and analytics across orchestration, data platform and dashboard workstreams.",
@@ -23,24 +35,80 @@
     ],
     "architecture_summary": "Event-driven ingestion feeds a governed data platform built around a 466-entity hierarchy with time-varying weights. LLM agents classify and detect anomalies, a routing layer assigns owners, and a query layer serves dashboards and conversational analytics with retry and fallback at every hop.",
     "architecture": [
-      {"layer": "Experience", "items": ["Executive dashboards", "Ops routing queues", "Conversational analytics"]},
-      {"layer": "Intelligence", "items": ["LangGraph agents", "Anomaly detection", "Theme classification", "Evaluation harness (165 Q)"]},
-      {"layer": "Query & Orchestration", "items": ["Curated SQL paths", "Constrained text-to-SQL", "Retry and fallback", "Routing rules"]},
-      {"layer": "Data Platform", "items": ["466-entity hierarchy", "Time-varying weights", "ETL and validation", "10 years of history"]},
-      {"layer": "Sources", "items": ["Customer reviews", "Survey responses", "CRM and ticketing"]}
+      {
+        "layer": "Experience",
+        "items": [
+          "Executive dashboards",
+          "Ops routing queues",
+          "Conversational analytics"
+        ]
+      },
+      {
+        "layer": "Intelligence",
+        "items": [
+          "LangGraph agents",
+          "Anomaly detection",
+          "Theme classification",
+          "Evaluation harness (165 Q)"
+        ]
+      },
+      {
+        "layer": "Query & Orchestration",
+        "items": [
+          "Curated SQL paths",
+          "Constrained text-to-SQL",
+          "Retry and fallback",
+          "Routing rules"
+        ]
+      },
+      {
+        "layer": "Data Platform",
+        "items": [
+          "466-entity hierarchy",
+          "Time-varying weights",
+          "ETL and validation",
+          "10 years of history"
+        ]
+      },
+      {
+        "layer": "Sources",
+        "items": [
+          "Customer reviews",
+          "Survey responses",
+          "CRM and ticketing"
+        ]
+      }
     ],
     "impact": [
-      {"value": "NPS 58 → 70+", "detail": "Group-level NPS rise credited to earlier detection and faster resolution of failure themes."},
-      {"value": "4M+", "detail": "Customer interactions monitored continuously instead of sampled monthly."},
-      {"value": "80%+", "detail": "Accuracy gate enforced on every release through the evaluation harness."},
-      {"value": "Single view", "detail": "One consistent entity model across brands and entities for CXO reporting."}
+      {
+        "value": "NPS 58 → 70+",
+        "detail": "Group-level NPS rise credited to earlier detection and faster resolution of failure themes."
+      },
+      {
+        "value": "4M+",
+        "detail": "Customer interactions monitored continuously instead of sampled monthly."
+      },
+      {
+        "value": "80%+",
+        "detail": "Accuracy gate enforced on every release through the evaluation harness."
+      },
+      {
+        "value": "Single view",
+        "detail": "One consistent entity model across brands and entities for CXO reporting."
+      }
     ],
     "decisions": [
       "Chose constrained text-to-SQL with a curated fallback over open-ended generation, trading flexibility for trust with executive users.",
       "Invested early in an evaluation harness rather than shipping fast and fixing later; this became the shared release criterion with engineering.",
       "Modelled time-varying entity weights so historical comparisons stayed valid as the group restructured."
     ],
-    "stack": ["LangGraph", "Azure OpenAI", "SQL", "ETL pipelines", "Dashboards"]
+    "stack": [
+      "LangGraph",
+      "Azure OpenAI",
+      "SQL",
+      "ETL pipelines",
+      "Dashboards"
+    ]
   },
   {
     "slug": "dhani-transaction-platform",
@@ -51,10 +119,22 @@
     "category": "Transaction Platform · Lending",
     "tagline": "Event-driven credit and transaction platform processing 50K+ daily applications across e-commerce, healthcare and financial-services lines of business.",
     "hero_metrics": [
-      {"value": "99.95%", "label": "Platform uptime"},
-      {"value": "50K+", "label": "Applications processed daily"},
-      {"value": "1M+", "label": "Monthly active users on the credit journey"},
-      {"value": "−45%", "label": "Time-to-production across 15+ teams"}
+      {
+        "value": "99.95%",
+        "label": "Platform uptime"
+      },
+      {
+        "value": "50K+",
+        "label": "Applications processed daily"
+      },
+      {
+        "value": "1M+",
+        "label": "Monthly active users on the credit journey"
+      },
+      {
+        "value": "−45%",
+        "label": "Time-to-production across 15+ teams"
+      }
     ],
     "context": "Dhani's super app served 10M+ users across e-commerce, healthcare and financial services. Each line of business needed order intake, decisioning, authorization and servicing, but the lending journey in particular had to scale to tens of thousands of applications a day without reliability regressions or rising contact rates.",
     "role_scope": "Owned product vision and roadmap for the order and transaction platform. Defined validation, orchestration, retry and intelligent-routing behaviour across the application-to-disbursal lifecycle. Led incident learnings and root-cause analysis with operations and support, and coordinated 15+ cross-functional teams.",
@@ -66,24 +146,80 @@
     ],
     "architecture_summary": "Application intake publishes events to Kafka; validation, KYC and fraud checks, decisioning, authorization and disbursal run as independent microservices with idempotent retries and routing rules. Monitoring and alerting feed a defect-reduction loop owned jointly with operations.",
     "architecture": [
-      {"layer": "Channels", "items": ["Super app (iOS / Android)", "Partner and web journeys"]},
-      {"layer": "Transaction Services", "items": ["Order intake", "Validation", "KYC and fraud", "Decisioning", "Authorization", "Disbursal and servicing"]},
-      {"layer": "Orchestration", "items": ["Kafka event streams", "Retry and fallback", "Intelligent routing", "Idempotency"]},
-      {"layer": "Intelligence & Data", "items": ["XGBoost propensity models", "A/B experimentation", "Success-rate dashboards"]},
-      {"layer": "Operations", "items": ["Monitoring and alerting", "Incident RCA loop", "SLAs / SLOs"]}
+      {
+        "layer": "Channels",
+        "items": [
+          "Super app (iOS / Android)",
+          "Partner and web journeys"
+        ]
+      },
+      {
+        "layer": "Transaction Services",
+        "items": [
+          "Order intake",
+          "Validation",
+          "KYC and fraud",
+          "Decisioning",
+          "Authorization",
+          "Disbursal and servicing"
+        ]
+      },
+      {
+        "layer": "Orchestration",
+        "items": [
+          "Kafka event streams",
+          "Retry and fallback",
+          "Intelligent routing",
+          "Idempotency"
+        ]
+      },
+      {
+        "layer": "Intelligence & Data",
+        "items": [
+          "XGBoost propensity models",
+          "A/B experimentation",
+          "Success-rate dashboards"
+        ]
+      },
+      {
+        "layer": "Operations",
+        "items": [
+          "Monitoring and alerting",
+          "Incident RCA loop",
+          "SLAs / SLOs"
+        ]
+      }
     ],
     "impact": [
-      {"value": "99.95%", "detail": "Uptime sustained for 1M+ monthly active users through monitoring, alerting and defect-reduction programs."},
-      {"value": "50+ features", "detail": "Shipped across 15+ cross-functional teams with time-to-production cut by 45%."},
-      {"value": "+35%", "detail": "Product adoption lift from propensity-model-driven cross-sell experiments."},
-      {"value": "Lower contact rate", "detail": "Fixes prioritised by failed-interaction impact reduced repeat contacts to support."}
+      {
+        "value": "99.95%",
+        "detail": "Uptime sustained for 1M+ monthly active users through monitoring, alerting and defect-reduction programs."
+      },
+      {
+        "value": "50+ features",
+        "detail": "Shipped across 15+ cross-functional teams with time-to-production cut by 45%."
+      },
+      {
+        "value": "+35%",
+        "detail": "Product adoption lift from propensity-model-driven cross-sell experiments."
+      },
+      {
+        "value": "Lower contact rate",
+        "detail": "Fixes prioritised by failed-interaction impact reduced repeat contacts to support."
+      }
     ],
     "decisions": [
       "Chose event streaming over synchronous orchestration so a slow downstream partner could not stall intake.",
       "Made retry and routing behaviour explicit product requirements rather than leaving them to implementation.",
       "Ran executive trade-off reviews with finance and risk so growth experiments and credit policy stayed aligned."
     ],
-    "stack": ["Kafka", "Microservices", "XGBoost", "A/B testing", "Monitoring and alerting"]
+    "stack": [
+      "Kafka",
+      "Microservices",
+      "XGBoost",
+      "A/B testing",
+      "Monitoring and alerting"
+    ]
   },
   {
     "slug": "llm-quality-platform",
@@ -94,10 +230,22 @@
     "category": "AI Platform · Quality & Cost",
     "tagline": "Production quality gates for LLM features plus an enterprise RAG servicing assistant for finance and procurement users.",
     "hero_metrics": [
-      {"value": "94%", "label": "Issues caught before deployment"},
-      {"value": "−52%", "label": "Inference cost across 2M+ requests"},
-      {"value": "<3s", "label": "Answer latency at 99.9% uptime"},
-      {"value": "−30%", "label": "Infrastructure cost from CDC-based ETL"}
+      {
+        "value": "94%",
+        "label": "Issues caught before deployment"
+      },
+      {
+        "value": "−52%",
+        "label": "Inference cost across 2M+ requests"
+      },
+      {
+        "value": "<3s",
+        "label": "Answer latency at 99.9% uptime"
+      },
+      {
+        "value": "−30%",
+        "label": "Infrastructure cost from CDC-based ETL"
+      }
     ],
     "context": "LLM features were reaching production without systematic checks for accuracy, hallucination or safety, and inference spend was growing with volume. Finance and procurement teams also needed fast, compliant answers on SLAs, renewals and contract terms buried in documents.",
     "role_scope": "Led technology, product and business as head of function. Owned the evaluation platform, the RAG assistant and the data-warehouse ETL framework, including cost and telemetry efficiency programs.",
@@ -109,24 +257,78 @@
     ],
     "architecture_summary": "An evaluation and monitoring layer wraps every LLM feature with offline test suites and online quality gates. The RAG assistant runs on Azure OpenAI and Cognitive Search with guardrails and RBAC. A CDC-based ETL framework with validation checkpoints feeds the enterprise data warehouse.",
     "architecture": [
-      {"layer": "Users", "items": ["Finance", "Procurement", "Product and engineering teams"]},
-      {"layer": "Applications", "items": ["RAG servicing assistant", "LLM product features"]},
-      {"layer": "Quality & Governance", "items": ["Accuracy gates", "Hallucination detection", "Safety and content filtering", "RBAC"]},
-      {"layer": "AI Services", "items": ["Azure OpenAI", "Cognitive Search", "Prompt and cost telemetry"]},
-      {"layer": "Data", "items": ["CDC-based ETL", "Validation checkpoints", "Automated scheduling", "Enterprise data warehouse"]}
+      {
+        "layer": "Users",
+        "items": [
+          "Finance",
+          "Procurement",
+          "Product and engineering teams"
+        ]
+      },
+      {
+        "layer": "Applications",
+        "items": [
+          "RAG servicing assistant",
+          "LLM product features"
+        ]
+      },
+      {
+        "layer": "Quality & Governance",
+        "items": [
+          "Accuracy gates",
+          "Hallucination detection",
+          "Safety and content filtering",
+          "RBAC"
+        ]
+      },
+      {
+        "layer": "AI Services",
+        "items": [
+          "Azure OpenAI",
+          "Cognitive Search",
+          "Prompt and cost telemetry"
+        ]
+      },
+      {
+        "layer": "Data",
+        "items": [
+          "CDC-based ETL",
+          "Validation checkpoints",
+          "Automated scheduling",
+          "Enterprise data warehouse"
+        ]
+      }
     ],
     "impact": [
-      {"value": "94%", "detail": "Of defects detected pre-deployment by automated quality gates."},
-      {"value": "−52%", "detail": "Inference cost reduction across 2M+ requests through routing, caching and telemetry efficiency."},
-      {"value": "99.9%", "detail": "Uptime for the RAG assistant with answers surfaced in under three seconds."},
-      {"value": "−30%", "detail": "Infrastructure cost reduction from the CDC-based ETL framework."}
+      {
+        "value": "94%",
+        "detail": "Of defects detected pre-deployment by automated quality gates."
+      },
+      {
+        "value": "−52%",
+        "detail": "Inference cost reduction across 2M+ requests through routing, caching and telemetry efficiency."
+      },
+      {
+        "value": "99.9%",
+        "detail": "Uptime for the RAG assistant with answers surfaced in under three seconds."
+      },
+      {
+        "value": "−30%",
+        "detail": "Infrastructure cost reduction from the CDC-based ETL framework."
+      }
     ],
     "decisions": [
       "Treated hallucination and safety as release-blocking defects, equal to functional bugs.",
       "Chose managed Azure services to meet compliance and RBAC requirements quickly rather than building custom infrastructure.",
       "Used CDC instead of batch extracts so the warehouse stayed fresh without full reloads."
     ],
-    "stack": ["Azure OpenAI", "Azure Cognitive Search", "RAG", "CDC / ETL", "Telemetry"]
+    "stack": [
+      "Azure OpenAI",
+      "Azure Cognitive Search",
+      "RAG",
+      "CDC / ETL",
+      "Telemetry"
+    ]
   },
   {
     "slug": "dmi-loan-management",
@@ -137,10 +339,22 @@
     "category": "Lending Platform · System of Record",
     "tagline": "Configurable rule engine for validation, credit evaluation, risk scoring and approval automation that unlocked 10x processing capacity.",
     "hero_metrics": [
-      {"value": "10x", "label": "Processing capacity"},
-      {"value": "₹800Cr → ₹2,100Cr", "label": "Portfolio growth (+162%)"},
-      {"value": "60 → 2 days", "label": "Partner onboarding time"},
-      {"value": "−60%", "label": "Manual support burden"}
+      {
+        "value": "10x",
+        "label": "Processing capacity"
+      },
+      {
+        "value": "₹800Cr → ₹2,100Cr",
+        "label": "Portfolio growth (+162%)"
+      },
+      {
+        "value": "60 → 2 days",
+        "label": "Partner onboarding time"
+      },
+      {
+        "value": "−60%",
+        "label": "Manual support burden"
+      }
     ],
     "context": "Lending growth was capped by manual credit evaluation and a 60-day partner onboarding cycle. Each new B2B partner required bespoke integration work, and servicing requests from 5M customers landed on human agents.",
     "role_scope": "Owned the loan management system of record from the CEO's office. Defined the rule engine, led lending digitisation with ML-based instant decisioning, and delivered an NLP self-service chatbot for customer servicing.",
@@ -152,23 +366,69 @@
     ],
     "architecture_summary": "A loan management system of record sits at the centre, with a configurable rule engine for validation, credit evaluation, risk scoring and approval. Partner APIs feed applications in, ML decisioning scores them, and a servicing layer with an NLP chatbot handles customer requests.",
     "architecture": [
-      {"layer": "Partners & Customers", "items": ["B2B partner integrations", "Customer app and web", "Self-service chatbot"]},
-      {"layer": "Decisioning", "items": ["Configurable rule engine", "ML instant decisioning", "Risk scoring", "Approval workflows"]},
-      {"layer": "System of Record", "items": ["Loan management system", "Loan lifecycle states", "Audit and compliance"]},
-      {"layer": "Servicing", "items": ["NLP intent classification", "Entity extraction", "Case routing"]}
+      {
+        "layer": "Partners & Customers",
+        "items": [
+          "B2B partner integrations",
+          "Customer app and web",
+          "Self-service chatbot"
+        ]
+      },
+      {
+        "layer": "Decisioning",
+        "items": [
+          "Configurable rule engine",
+          "ML instant decisioning",
+          "Risk scoring",
+          "Approval workflows"
+        ]
+      },
+      {
+        "layer": "System of Record",
+        "items": [
+          "Loan management system",
+          "Loan lifecycle states",
+          "Audit and compliance"
+        ]
+      },
+      {
+        "layer": "Servicing",
+        "items": [
+          "NLP intent classification",
+          "Entity extraction",
+          "Case routing"
+        ]
+      }
     ],
     "impact": [
-      {"value": "10x", "detail": "Processing capacity increase from automated workflows and instant decisioning."},
-      {"value": "+162%", "detail": "Portfolio growth from ₹800Cr to ₹2,100Cr enabled by the platform."},
-      {"value": "60 → 2 days", "detail": "Partner onboarding time reduced through standardised integration."},
-      {"value": "−60%", "detail": "Manual servicing workload reduced by the NLP chatbot for 5M customers."}
+      {
+        "value": "10x",
+        "detail": "Processing capacity increase from automated workflows and instant decisioning."
+      },
+      {
+        "value": "+162%",
+        "detail": "Portfolio growth from ₹800Cr to ₹2,100Cr enabled by the platform."
+      },
+      {
+        "value": "60 → 2 days",
+        "detail": "Partner onboarding time reduced through standardised integration."
+      },
+      {
+        "value": "−60%",
+        "detail": "Manual servicing workload reduced by the NLP chatbot for 5M customers."
+      }
     ],
     "decisions": [
       "Built the rule engine to be owned by risk, not engineering, so policy changes shipped in hours.",
       "Automated the easy majority first and kept humans on exceptions, which raised capacity without raising risk.",
       "Prioritised partner onboarding as a growth lever because distribution, not credit appetite, was the constraint."
     ],
-    "stack": ["Rule engine", "ML decisioning", "Partner APIs", "NLP chatbot"]
+    "stack": [
+      "Rule engine",
+      "ML decisioning",
+      "Partner APIs",
+      "NLP chatbot"
+    ]
   },
   {
     "slug": "angel-one-servicing-ai",
@@ -179,10 +439,22 @@
     "category": "Servicing Platform · Automation",
     "tagline": "Transformer-based query classification, intelligent routing and automated document verification for 10M+ brokerage customers.",
     "hero_metrics": [
-      {"value": "60%", "label": "Manual ticket handling automated"},
-      {"value": "2 days → 30 min", "label": "KYC processing time"},
-      {"value": "10M+", "label": "Customers served across email and chat"},
-      {"value": "2 awards", "label": "Employee of the Quarter, Design Lab winner"}
+      {
+        "value": "60%",
+        "label": "Manual ticket handling automated"
+      },
+      {
+        "value": "2 days → 30 min",
+        "label": "KYC processing time"
+      },
+      {
+        "value": "10M+",
+        "label": "Customers served across email and chat"
+      },
+      {
+        "value": "2 awards",
+        "label": "Employee of the Quarter, Design Lab winner"
+      }
     ],
     "context": "Support for 10M+ brokerage customers across email and chat was manual and slow to route, producing repeat contacts and long resolution times. KYC document checks for onboarding and fraud verification took days.",
     "role_scope": "From the COO's office, defined and delivered the NLP-powered CRM and automated KYC programs, working across operations, support, compliance and data science.",
@@ -194,24 +466,76 @@
     ],
     "architecture_summary": "Incoming email and chat flow through an NLP classification layer that assigns intent and routes to queues or automated resolvers. A separate document pipeline classifies uploads, extracts entities and runs fraud checks before KYC approval.",
     "architecture": [
-      {"layer": "Channels", "items": ["Email", "Chat", "Document uploads"]},
-      {"layer": "Understanding", "items": ["Transformer query classification", "BERT document classification", "Entity extraction"]},
-      {"layer": "Routing & Resolution", "items": ["Intelligent routing", "Automated resolvers", "Agent queues"]},
-      {"layer": "Verification", "items": ["KYC checks", "Fraud verification", "Compliance audit trail"]},
-      {"layer": "CRM", "items": ["Case management", "Contact-rate dashboards"]}
+      {
+        "layer": "Channels",
+        "items": [
+          "Email",
+          "Chat",
+          "Document uploads"
+        ]
+      },
+      {
+        "layer": "Understanding",
+        "items": [
+          "Transformer query classification",
+          "BERT document classification",
+          "Entity extraction"
+        ]
+      },
+      {
+        "layer": "Routing & Resolution",
+        "items": [
+          "Intelligent routing",
+          "Automated resolvers",
+          "Agent queues"
+        ]
+      },
+      {
+        "layer": "Verification",
+        "items": [
+          "KYC checks",
+          "Fraud verification",
+          "Compliance audit trail"
+        ]
+      },
+      {
+        "layer": "CRM",
+        "items": [
+          "Case management",
+          "Contact-rate dashboards"
+        ]
+      }
     ],
     "impact": [
-      {"value": "60%", "detail": "Of manual ticket handling automated through classification and routing."},
-      {"value": "2 days → 30 min", "detail": "KYC and fraud verification time through document AI."},
-      {"value": "Fewer repeat contacts", "detail": "First-attempt routing reduced failed and repeat interactions."},
-      {"value": "Recognition", "detail": "Employee of the Quarter and Design Lab winner (₹1 Lakh prize) for AI-driven product launches."}
+      {
+        "value": "60%",
+        "detail": "Of manual ticket handling automated through classification and routing."
+      },
+      {
+        "value": "2 days → 30 min",
+        "detail": "KYC and fraud verification time through document AI."
+      },
+      {
+        "value": "Fewer repeat contacts",
+        "detail": "First-attempt routing reduced failed and repeat interactions."
+      },
+      {
+        "value": "Recognition",
+        "detail": "Employee of the Quarter and Design Lab winner (₹1 Lakh prize) for AI-driven product launches."
+      }
     ],
     "decisions": [
       "Started with routing rather than full automation because misrouting was the biggest driver of repeat contacts.",
       "Kept humans in the loop for low-confidence classifications and measured confidence thresholds explicitly.",
       "Built the KYC pipeline with a full audit trail so compliance could sign off on automation."
     ],
-    "stack": ["Transformers", "BERT", "NLP", "CRM", "Document AI"]
+    "stack": [
+      "Transformers",
+      "BERT",
+      "NLP",
+      "CRM",
+      "Document AI"
+    ]
   },
   {
     "slug": "onyourrank-edtech",
@@ -222,10 +546,22 @@
     "category": "Marketplace · 0 to 1",
     "tagline": "A high-volume EdTech platform built from zero to 5K+ concurrent users and 100K+ monthly transactions with AI-assisted evaluation.",
     "hero_metrics": [
-      {"value": "5K+", "label": "Concurrent users"},
-      {"value": "100K+", "label": "Monthly transactions"},
-      {"value": "99.9%", "label": "Uptime"},
-      {"value": "+50%", "label": "Journey completion efficiency"}
+      {
+        "value": "5K+",
+        "label": "Concurrent users"
+      },
+      {
+        "value": "100K+",
+        "label": "Monthly transactions"
+      },
+      {
+        "value": "99.9%",
+        "label": "Uptime"
+      },
+      {
+        "value": "+50%",
+        "label": "Journey completion efficiency"
+      }
     ],
     "context": "As co-founder, the brief was to build a discover-to-purchase-to-serve journey from scratch that could hold up under exam-season spikes, while using AI to evaluate learner responses at scale with high relevance.",
     "role_scope": "Owned end-to-end product strategy, PRDs and roadmap. Ran prioritisation from funnel dashboards and experiments, and partnered with engineering on API design, retry handling and failure monitoring for AI pipelines.",
@@ -237,23 +573,593 @@
     ],
     "architecture_summary": "An Angular front end talks to FastAPI microservices over PostgreSQL. Orders, payments and content delivery are separate services with retry handling. AI evaluation pipelines process learner submissions asynchronously with relevance monitoring and fallbacks.",
     "architecture": [
-      {"layer": "Experience", "items": ["Angular web app", "Learner and educator journeys"]},
-      {"layer": "Services", "items": ["Catalogue and discovery", "Orders and payments", "Content delivery", "Evaluation API"]},
-      {"layer": "AI Pipelines", "items": ["Async evaluation workers", "Relevance monitoring", "Retry and fallback"]},
-      {"layer": "Platform", "items": ["FastAPI microservices", "PostgreSQL", "CI/CD", "Horizontal scaling"]},
-      {"layer": "Insight", "items": ["Funnel dashboards", "Experimentation"]}
+      {
+        "layer": "Experience",
+        "items": [
+          "Angular web app",
+          "Learner and educator journeys"
+        ]
+      },
+      {
+        "layer": "Services",
+        "items": [
+          "Catalogue and discovery",
+          "Orders and payments",
+          "Content delivery",
+          "Evaluation API"
+        ]
+      },
+      {
+        "layer": "AI Pipelines",
+        "items": [
+          "Async evaluation workers",
+          "Relevance monitoring",
+          "Retry and fallback"
+        ]
+      },
+      {
+        "layer": "Platform",
+        "items": [
+          "FastAPI microservices",
+          "PostgreSQL",
+          "CI/CD",
+          "Horizontal scaling"
+        ]
+      },
+      {
+        "layer": "Insight",
+        "items": [
+          "Funnel dashboards",
+          "Experimentation"
+        ]
+      }
     ],
     "impact": [
-      {"value": "+50%", "detail": "Completion efficiency across the discover-to-purchase-to-serve journey."},
-      {"value": "100K+", "detail": "AI evaluations processed at 95% relevance accuracy."},
-      {"value": "99.9%", "detail": "Uptime at 5K+ concurrent users and 100K+ monthly transactions."},
-      {"value": "Lower support load", "detail": "Friction fixes reduced support contacts per transaction."}
+      {
+        "value": "+50%",
+        "detail": "Completion efficiency across the discover-to-purchase-to-serve journey."
+      },
+      {
+        "value": "100K+",
+        "detail": "AI evaluations processed at 95% relevance accuracy."
+      },
+      {
+        "value": "99.9%",
+        "detail": "Uptime at 5K+ concurrent users and 100K+ monthly transactions."
+      },
+      {
+        "value": "Lower support load",
+        "detail": "Friction fixes reduced support contacts per transaction."
+      }
     ],
     "decisions": [
       "Ran AI evaluation asynchronously so a slow model never blocked purchase or delivery.",
       "Chose a boring, scalable stack over novelty to protect reliability during exam-season peaks.",
       "Treated the funnel dashboard as the roadmap input, which kept the small team focused on measurable friction."
     ],
-    "stack": ["Angular", "FastAPI", "PostgreSQL", "CI/CD", "AI evaluation pipelines"]
+    "stack": [
+      "Angular",
+      "FastAPI",
+      "PostgreSQL",
+      "CI/CD",
+      "AI evaluation pipelines"
+    ]
+  },
+  {
+    "slug": "credit-marketplace",
+    "name": "Credit Marketplace: Loan Origination & Credit Cards",
+    "org": "Credit Mantri",
+    "role": "Technical Product Manager",
+    "period": "Mar 2017 – May 2019",
+    "category": "Credit Marketplace · Loans & Cards",
+    "tagline": "A credit marketplace matching 2M+ customers to personal loans and credit cards, with ML underwriting on alternative data and integrations with lenders, bureaus and payment partners.",
+    "hero_metrics": [
+      {
+        "value": "2M+",
+        "label": "Customers on the marketplace"
+      },
+      {
+        "value": "85%+",
+        "label": "Accuracy of risk and income models"
+      },
+      {
+        "value": "Loans + Cards",
+        "label": "Two product lines on one origination flow"
+      },
+      {
+        "value": "Multi-lender",
+        "label": "Lender, bureau and payment partner integrations"
+      }
+    ],
+    "context": "Millions of Indian consumers were thin-file or new to credit. They applied to lenders blindly, were rejected, and every rejection hurt their bureau score. Lenders in turn could not assess these customers with bureau data alone.",
+    "role_scope": "Owned the loan and credit-card origination product: eligibility, matching, application and hand-off to lenders. Built the ML underwriting and decisioning platform on alternative data and led integrations with lender, bureau and payment partners.",
+    "strategy": [
+      "Lead with eligibility: show customers only the offers they are likely to be approved for, instead of letting them apply blind.",
+      "Use alternative data such as SMS transaction patterns and digital footprints to assess thin-file customers.",
+      "Run loans and credit cards through one origination flow, with lender-specific rules plugged in per partner.",
+      "Integrate lenders, bureaus and payment partners through standard APIs so new partners could be added quickly."
+    ],
+    "architecture_summary": "Customer data and consented alternative data feed an ML underwriting layer that scores risk and income. A matching engine applies each lender's rules and routes applications to lender APIs, with bureau and payment integrations alongside.",
+    "architecture": [
+      {
+        "layer": "Customers",
+        "items": [
+          "Web and app",
+          "Credit score and report",
+          "Eligibility checker"
+        ]
+      },
+      {
+        "layer": "Underwriting",
+        "items": [
+          "Alternative-data features",
+          "Risk models",
+          "Income estimation"
+        ]
+      },
+      {
+        "layer": "Origination",
+        "items": [
+          "Offer matching",
+          "Lender rules",
+          "Application hand-off"
+        ]
+      },
+      {
+        "layer": "Partners",
+        "items": [
+          "Lender APIs",
+          "Credit bureaus",
+          "Payment partners"
+        ]
+      }
+    ],
+    "impact": [
+      {
+        "value": "2M+",
+        "detail": "Customers served by the underwriting and decisioning platform."
+      },
+      {
+        "value": "85%+",
+        "detail": "Accuracy of ensemble models for risk assessment and income estimation."
+      },
+      {
+        "value": "One flow",
+        "detail": "Personal loans and credit cards originated through a single journey."
+      },
+      {
+        "value": "Partner network",
+        "detail": "Lender, bureau and payment partners integrated through standard APIs."
+      }
+    ],
+    "decisions": [
+      "Showed pre-qualified offers first, trading a smaller offer list for higher approval rates and protected credit scores.",
+      "Used ensemble models (XGBoost, Random Forest, neural networks) because no single model was reliable on thin-file data.",
+      "Kept lender rules configurable per partner instead of building one global policy."
+    ],
+    "stack": [
+      "XGBoost",
+      "Random Forest",
+      "Neural networks",
+      "Bureau APIs",
+      "Lender APIs"
+    ]
+  },
+  {
+    "slug": "contract-redlining",
+    "name": "AI Contract Evaluation & Redlining",
+    "org": "Snap Funds",
+    "role": "Head of Technology, Product & Business",
+    "period": "Oct 2023 – May 2024",
+    "category": "GenAI · Legal & Procurement",
+    "tagline": "LLM-powered contract review that redlines clauses against a company's own policy playbook and answers questions about any contract through a chatbot.",
+    "hero_metrics": [
+      {
+        "value": "Custom",
+        "label": "Policy playbooks per organisation"
+      },
+      {
+        "value": "Clause-level",
+        "label": "Redlines with suggested wording"
+      },
+      {
+        "value": "Cited",
+        "label": "Every suggestion linked to the policy it applies"
+      },
+      {
+        "value": "Chat",
+        "label": "Ask questions across any contract"
+      }
+    ],
+    "context": "Legal and procurement teams reviewed every vendor and customer contract by hand against internal policies that lived in people's heads and scattered documents. Reviews were slow, inconsistent between reviewers, and business teams waited days for simple answers.",
+    "role_scope": "Owned the product from problem definition to launch: the policy playbook model, clause extraction, redlining logic, chatbot experience and the guardrails needed for legal use.",
+    "strategy": [
+      "Turn each organisation's policy into a structured playbook of clauses, positions and fallback wording.",
+      "Extract and classify every clause, then compare it with the playbook rather than asking the model for open-ended opinions.",
+      "Show redlines as tracked changes with a reason and a link to the policy, so reviewers stay in control.",
+      "Add a chatbot so business users can ask questions about any contract without waiting for legal."
+    ],
+    "architecture_summary": "Uploaded contracts are parsed and split into clauses. Each clause is classified, compared against the organisation's policy playbook, and redlined with suggested wording. A retrieval-backed chatbot answers questions over the same clause index.",
+    "architecture": [
+      {
+        "layer": "Users",
+        "items": [
+          "Legal reviewers",
+          "Procurement",
+          "Business teams"
+        ]
+      },
+      {
+        "layer": "Document processing",
+        "items": [
+          "Upload and parsing",
+          "Clause segmentation",
+          "Clause classification"
+        ]
+      },
+      {
+        "layer": "Policy engine",
+        "items": [
+          "Policy playbook",
+          "Deviation scoring",
+          "Suggested redlines"
+        ]
+      },
+      {
+        "layer": "AI services",
+        "items": [
+          "LLM for redlining",
+          "Retrieval index",
+          "Contract chatbot"
+        ]
+      },
+      {
+        "layer": "Governance",
+        "items": [
+          "Role-based access",
+          "Audit trail",
+          "Human approval"
+        ]
+      }
+    ],
+    "impact": [
+      {
+        "value": "Faster reviews",
+        "detail": "First-pass review automated, so legal focuses on real deviations."
+      },
+      {
+        "value": "Consistent",
+        "detail": "Every contract is checked against the same written policy."
+      },
+      {
+        "value": "Self-serve",
+        "detail": "Business teams get contract answers from the chatbot instead of waiting for legal."
+      },
+      {
+        "value": "Auditable",
+        "detail": "Each redline records the policy rule and reviewer decision behind it."
+      }
+    ],
+    "decisions": [
+      "Compared clauses against a written playbook instead of letting the model judge contracts freely, which made outputs explainable.",
+      "Kept a human approval step on every redline, because legal liability stays with the reviewer.",
+      "Built the chatbot on the same clause index as redlining, so answers and redlines never disagree."
+    ],
+    "stack": [
+      "LLMs",
+      "RAG",
+      "Clause classification",
+      "Document parsing",
+      "RBAC"
+    ]
+  },
+  {
+    "slug": "loan-sales-assistant",
+    "name": "LLM Sales-Enablement Assistant for Loan Products",
+    "org": "Snap Funds",
+    "role": "Head of Technology, Product & Business",
+    "period": "Oct 2023 – May 2024",
+    "category": "GenAI · Sales Enablement",
+    "tagline": "An LLM-powered chatbot that gives sales teams and channel partners instant, compliant answers on loan products, eligibility, pricing and documentation.",
+    "hero_metrics": [
+      {
+        "value": "Instant",
+        "label": "Answers on products, eligibility and documents"
+      },
+      {
+        "value": "Compliant",
+        "label": "Answers only from approved content"
+      },
+      {
+        "value": "Multi-product",
+        "label": "Covers the full loan product range"
+      },
+      {
+        "value": "Field-ready",
+        "label": "Built for sales teams and partners on mobile"
+      }
+    ],
+    "context": "Sales teams and channel partners sold many loan products, each with its own eligibility rules, pricing and document checklist. Product information sat in long PDFs and circulars that changed often, so reps called product teams, gave customers wrong answers, or lost deals while waiting.",
+    "role_scope": "Owned the product end to end: knowledge sources, conversation design, eligibility tools, compliance guardrails and rollout to sales teams.",
+    "strategy": [
+      "Answer only from approved, versioned product content so reps never quote outdated terms.",
+      "Pair retrieval with deterministic tools for eligibility and EMI calculations instead of letting the model do maths.",
+      "Design for the field: short answers, document checklists and shareable summaries for customers.",
+      "Log every unanswered question to show product teams where content was missing."
+    ],
+    "architecture_summary": "Sales users chat through a mobile-friendly interface. The assistant retrieves from an index of approved product content, calls tools for eligibility and EMI calculations, and passes every answer through compliance guardrails before replying.",
+    "architecture": [
+      {
+        "layer": "Users",
+        "items": [
+          "Sales executives",
+          "Channel partners",
+          "Product managers"
+        ]
+      },
+      {
+        "layer": "Interface",
+        "items": [
+          "Mobile chat",
+          "Web chat",
+          "Shareable summaries"
+        ]
+      },
+      {
+        "layer": "Assistant",
+        "items": [
+          "Intent detection",
+          "Retrieval",
+          "Answer generation",
+          "Tool calls"
+        ]
+      },
+      {
+        "layer": "Knowledge and tools",
+        "items": [
+          "Product content index",
+          "Eligibility rules",
+          "EMI calculator"
+        ]
+      },
+      {
+        "layer": "Governance",
+        "items": [
+          "Approved-content only",
+          "Compliance filters",
+          "Gap analytics"
+        ]
+      }
+    ],
+    "impact": [
+      {
+        "value": "Faster answers",
+        "detail": "Reps get product and eligibility answers in the conversation instead of escalating."
+      },
+      {
+        "value": "Fewer errors",
+        "detail": "Answers come only from current, approved product content."
+      },
+      {
+        "value": "Content gaps",
+        "detail": "Unanswered questions show product teams exactly what to document next."
+      },
+      {
+        "value": "Partner reach",
+        "detail": "Channel partners get the same answers as the internal sales team."
+      }
+    ],
+    "decisions": [
+      "Used tools for eligibility and EMI maths because model arithmetic is not reliable enough for pricing.",
+      "Restricted answers to approved content even when it meant replying 'I don't know'.",
+      "Launched with one product line first, then expanded once accuracy was proven."
+    ],
+    "stack": [
+      "LLMs",
+      "RAG",
+      "Tool calling",
+      "Guardrails",
+      "Analytics"
+    ]
+  },
+  {
+    "slug": "gst-lending",
+    "name": "India's First GST-Based Lending Program",
+    "org": "DMI Finance",
+    "role": "Technical Product Manager, CEO's Office",
+    "period": "May 2019 – Sep 2020",
+    "category": "SME Lending · 0 to 1",
+    "tagline": "Cash-flow-based credit for small businesses, underwritten on GST return data with consent-based access, automated scoring and a digital journey.",
+    "hero_metrics": [
+      {
+        "value": "First",
+        "label": "GST-based lending program in India"
+      },
+      {
+        "value": "GST data",
+        "label": "Cash-flow underwriting for small businesses"
+      },
+      {
+        "value": "Digital",
+        "label": "End-to-end application and decision"
+      },
+      {
+        "value": "60 → 2 days",
+        "label": "Partner onboarding on the lending platform"
+      }
+    ],
+    "context": "Small businesses in India struggled to get credit because they lacked collateral and formal financial statements. After GST launched, their filed returns became a verified record of sales and purchases, but no lender had yet built a credit product on that data.",
+    "role_scope": "Led the program from the CEO's office: defined the product, the GST data integration, the underwriting rules with risk, and the digital journey, working with partners who brought small-business customers.",
+    "strategy": [
+      "Use GST returns as the primary underwriting signal for turnover, stability and growth.",
+      "Get the business owner's consent to fetch GST data directly, avoiding manual document uploads.",
+      "Encode risk policy in the configurable rule engine so thresholds could change without code.",
+      "Distribute through partners who already served small businesses, onboarding them by configuration."
+    ],
+    "architecture_summary": "Small businesses apply through partners or directly. With consent, GST return data is fetched and turned into cash-flow features, scored by risk models and the rule engine, and approved loans are booked on the loan management system.",
+    "architecture": [
+      {
+        "layer": "Applicants",
+        "items": [
+          "Small businesses",
+          "Distribution partners"
+        ]
+      },
+      {
+        "layer": "Data access",
+        "items": [
+          "Consent capture",
+          "GST return fetch",
+          "Bank and bureau data"
+        ]
+      },
+      {
+        "layer": "Underwriting",
+        "items": [
+          "Cash-flow features",
+          "Risk scoring",
+          "Rule engine"
+        ]
+      },
+      {
+        "layer": "Fulfilment",
+        "items": [
+          "Digital sanction",
+          "Disbursal",
+          "Loan management system"
+        ]
+      }
+    ],
+    "impact": [
+      {
+        "value": "First",
+        "detail": "India's first lending program built on GST return data."
+      },
+      {
+        "value": "New segment",
+        "detail": "Opened formal credit to small businesses without collateral or audited financials."
+      },
+      {
+        "value": "Digital",
+        "detail": "Consent-based data fetch replaced manual document collection."
+      },
+      {
+        "value": "Scalable",
+        "detail": "Ran on the same rule engine and partner onboarding as the wider lending platform."
+      }
+    ],
+    "decisions": [
+      "Built on GST data rather than bank statements alone, because filed returns were harder to manipulate.",
+      "Required explicit consent for every data fetch to keep the program compliant from day one.",
+      "Started with conservative limits and widened them as repayment data came in."
+    ],
+    "stack": [
+      "GST data APIs",
+      "Consent management",
+      "Rule engine",
+      "Risk models",
+      "Loan management system"
+    ]
+  },
+  {
+    "slug": "angel-broking-onboarding",
+    "name": "Digital Account Opening for Angel Broking",
+    "org": "Angel One (Angel Broking)",
+    "role": "Process Excellence Lead, COO's Office",
+    "period": "Sep 2020 – Mar 2022",
+    "category": "Onboarding · Stock Broking",
+    "tagline": "A digital stock-broking onboarding journey with AI-driven KYC verification that cut account activation time from days to minutes.",
+    "hero_metrics": [
+      {
+        "value": "2 days → 30 min",
+        "label": "KYC verification time"
+      },
+      {
+        "value": "10M+",
+        "label": "Customer base served"
+      },
+      {
+        "value": "BERT",
+        "label": "Document classification and extraction"
+      },
+      {
+        "value": "Automated",
+        "label": "Fraud and verification checks"
+      }
+    ],
+    "context": "Angel Broking was growing fast as new investors entered the market. Opening a trading and demat account needed identity, address, bank and income documents, and manual verification took around two days. Many customers dropped off before their account was active.",
+    "role_scope": "From the COO's office, redesigned the account-opening journey and led the automation of KYC: document classification, entity extraction and fraud checks, working with operations, compliance and data science.",
+    "strategy": [
+      "Treat time-to-first-trade as the main metric, not just form completion.",
+      "Automate document checks with BERT-based classification and entity extraction.",
+      "Run fraud and consistency checks automatically and send only exceptions to people.",
+      "Keep a full audit trail so compliance could approve the automation."
+    ],
+    "architecture_summary": "Customers complete a digital journey and upload documents. Document AI classifies each file and extracts key fields, which are cross-checked against each other and against fraud rules. Clean applications activate automatically and exceptions go to reviewers.",
+    "architecture": [
+      {
+        "layer": "Journey",
+        "items": [
+          "Sign-up",
+          "Personal and bank details",
+          "Document upload",
+          "e-Sign"
+        ]
+      },
+      {
+        "layer": "Document AI",
+        "items": [
+          "BERT classification",
+          "Entity extraction",
+          "Quality checks"
+        ]
+      },
+      {
+        "layer": "Verification",
+        "items": [
+          "Cross-field matching",
+          "Fraud rules",
+          "Exception queue"
+        ]
+      },
+      {
+        "layer": "Activation",
+        "items": [
+          "Trading account",
+          "Demat account",
+          "Welcome and first trade"
+        ]
+      }
+    ],
+    "impact": [
+      {
+        "value": "2 days → 30 min",
+        "detail": "KYC verification time after document AI went live."
+      },
+      {
+        "value": "Faster activation",
+        "detail": "Customers could trade the same day instead of waiting."
+      },
+      {
+        "value": "Less manual work",
+        "detail": "Reviewers handled only exceptions, not every application."
+      },
+      {
+        "value": "Recognition",
+        "detail": "Employee of the Quarter and Design Lab winner for AI-driven products."
+      }
+    ],
+    "decisions": [
+      "Measured success by time-to-activation, which exposed verification as the real bottleneck.",
+      "Kept humans on low-confidence documents rather than forcing full automation.",
+      "Designed the audit trail first so compliance sign-off did not block launch."
+    ],
+    "stack": [
+      "BERT",
+      "Document AI",
+      "Entity extraction",
+      "Fraud rules",
+      "Workflow automation"
+    ]
   }
 ]
