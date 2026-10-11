@@ -49,7 +49,7 @@ def diagram(spec):
     BH = 76
     H = col_h + (40 + BH if bands else 0) + 24
 
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="End-to-end agentic AI architecture">',
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="End-to-end architecture diagram">',
            f'<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="{GOLD}"/></marker></defs>']
 
     for i, c in enumerate(cols):
@@ -90,22 +90,22 @@ def agentic_tab(a):
     return f"""
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Agentic AI architecture</p><h2>End to end, from raw signal to action</h2><p class="section__sub">{e(a['summary'])}</p></div>
+      <div class="section__head"><p class="eyebrow">{e(a.get('eyebrow', 'Agentic AI architecture'))}</p><h2>{e(a.get('headline', 'End to end, from raw signal to action'))}</h2><p class="section__sub">{e(a['summary'])}</p></div>
       <div class="diagram">{diagram(a)}</div>
       <p class="diagram__hint">Scroll sideways to see the full diagram on small screens.</p>
     </div>
   </section>
   <section class="section section--tight section--alt">
     <div class="container detail">
-      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>How one signal moves through the system</h2></div>
+      <div class="detail__side"><p class="eyebrow">Request lifecycle</p><h2>{e(a.get('flow_title', 'How one signal moves through the system'))}</h2></div>
       <div class="detail__main"><ol class="numbered">{flow}</ol></div>
     </div>
   </section>
   <section class="section section--tight">
     <div class="container">
-      <div class="section__head"><p class="eyebrow">Agent roster</p><h2>Who does what, and what keeps it safe</h2></div>
+      <div class="section__head"><p class="eyebrow">{e(a.get('roster_label', 'Agent'))} roster</p><h2>Who does what, and what keeps it safe</h2></div>
       <div class="table-wrap"><table class="agents">
-        <thead><tr><th>Agent</th><th>Responsibility</th><th>Guardrail</th></tr></thead>
+        <thead><tr><th>{e(a.get('roster_label', 'Agent'))}</th><th>Responsibility</th><th>Guardrail</th></tr></thead>
         <tbody>{rows}</tbody>
       </table></div>
     </div>
@@ -159,7 +159,7 @@ def tabs_for(slug):
     tabs = [('overview', 'Overview')]
     panels = ''
     if 'agentic' in data:
-        tabs.append(('architecture', 'Agentic AI Architecture'))
+        tabs.append(('architecture', data['agentic'].get('tab_label', 'Agentic AI Architecture')))
         panels += f'<div class="tabpanel" id="tab-architecture" role="tabpanel" hidden>{agentic_tab(data["agentic"])}\n</div>\n'
     if 'research' in data:
         tabs.append(('research', 'Product Research'))
